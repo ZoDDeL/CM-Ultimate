@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1004.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1004.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -7816,7 +7816,8 @@ youtube.com/ZoDDeL
             </CheatEntry>
             <CheatEntry>
               <ID>635</ID>
-              <Description>"sets all xp token (weapon, rank, battlepass) to 600 minutes"</Description>
+              <Description>"sets all xp token (weapon, rank, battlepass) to 600 minutes (10 hours)"</Description>
+              <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
@@ -7845,18 +7846,21 @@ fp:60 w:108 fp:45 w:668 fp:30 w:108 fp:15
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 60
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 90 // v0.16.11
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 30 // v0.17.18
-
+// F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 10 // v0.18.38
 
 [ENABLE]
 
-aobscanmodule(xpToken,project.dll,48 8B 43 40 48 89 7C 24 38 48 85 C0 0F 84 * * * * F3 0F 10 40 64) // should be unique
+aobscanmodule(xpToken,project.dll,F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 10) // should be unique
 alloc(newmem,$1000,xpToken)
 
 label(code)
 label(return)
 
 newmem:
-  mov [rax+64],(float)600 //in minutes (60000 = 1000 hours)
+  push rbx
+  mov rbx,[tokenMinutes]
+  mov [rax+64],rbx
+  pop rbx
 
 code:
   movss xmm0,[rax+64]
@@ -7866,7 +7870,7 @@ tokenMinutes:
 dd (float)600
 
 
-xpToken+12:
+xpToken:
   jmp newmem
 return:
 registersymbol(xpToken)
@@ -7874,7 +7878,7 @@ registersymbol(tokenMinutes)
 
 [DISABLE]
 
-xpToken+12:
+xpToken:
   db F3 0F 10 40 64
 
 unregistersymbol(xpToken)
@@ -7969,6 +7973,15 @@ project.dll+3C801A8: 48 8B 48 40           - mov rcx,[rax+40]
 
 
 </AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1404</ID>
+                  <Description>"set minutes (1440 = 24 hours / 43200 = 30 days / 525600 = 365 days)  ---&gt;"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>tokenMinutes</Address>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
             <CheatEntry>
               <ID>636</ID>
