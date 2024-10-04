@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2     -----"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1004.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -11489,7 +11489,7 @@ youtube.com/ZoDDeL
 	end
 
 	function addGitHubButton()
-		if updatemenualreadyexists then return end
+		if githubmenualreadyexists then return end
 		local parent = getMainForm().Menu.Items
 		githubmenuitem = createMenuItem( parent )
 		parent.add( githubmenuitem )
@@ -11502,8 +11502,8 @@ youtube.com/ZoDDeL
 	pushGitHub( nil, true )
 
 
-	local url = "https://raw.githubusercontent.com/ZoDDeL/CM_Ultimate/refs/heads/master/CM_Ultimate.CT"
-	local filename = "C:/Users/CM_ULtimate.CT"
+	local url = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/CM_Ultimate.CT"
+	local filename = "C:/CM_Ultimate.CT"
 
 	function downloadFile(url, filename)
 		local http = getInternet()
@@ -11513,6 +11513,7 @@ youtube.com/ZoDDeL
 			file:close()
 		end
 		http.destroy()
+
 	end
 
 	function pushDownload( sender, force )
@@ -11523,6 +11524,7 @@ youtube.com/ZoDDeL
 		downloadmenuitem.Caption = state and 'Download latest Table' or 'Download latest Table'
 		if force == nil then
 			downloadFile(url, filename)
+			sleep(1000)
 			loadTable(filename)
 		end
 	end
