@@ -27,5 +27,5 @@ https://github.com/ZoDDeL/CM-Ultimate/releases
 
 getting most current table updates/minor changes:
 hit the "Download latest Table" button in the table header top-right.
-this will download the most current commit directly into your open table and relace its contents!
+this will download the most current commit directly into your open table and replace its contents!
 after that you can hit File -> Save to save the new commit or check C:/CM_Ultimate.CT
