@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -11673,6 +11673,11 @@ youtube.com/ZoDDeL
 	local filename = "C:/CM_Ultimate.CT"
 
 	function downloadFile(url, filename)
+	    if fileExists(filename) then
+        os.remove(filename)
+		end
+
+
 		local http = getInternet()
 		local file = io.open(filename, "wb")
 		if file then
