@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.3)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -3806,6 +3806,76 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
                     <Offset>B8</Offset>
                   </Offsets>
                 </CheatEntry>
+                <CheatEntry>
+                  <ID>1432</ID>
+                  <Description>"score opcode"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-05
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(score,Project.dll,89 7C C2 20 8B CE 8B D7 E8 6F) // should be unique
+alloc(newmem,$1000,score)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rdx+rax*8+20],edi
+  mov ecx,esi
+  jmp return
+
+score:
+  jmp newmem
+  nop
+return:
+registersymbol(score)
+
+[DISABLE]
+
+score:
+  db 89 7C C2 20 8B CE
+
+unregistersymbol(score)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+8B86F4
+
+Project.dll+8B86D2: 74 6D                 - je Project.dll+8B8741
+Project.dll+8B86D4: 48 8B 90 A0 00 00 00  - mov rdx,[rax+000000A0]
+Project.dll+8B86DB: 48 85 D2              - test rdx,rdx
+Project.dll+8B86DE: 74 61                 - je Project.dll+8B8741
+Project.dll+8B86E0: 48 63 43 34           - movsxd  rax,dword ptr [rbx+34]
+Project.dll+8B86E4: 48 83 C0 05           - add rax,05
+Project.dll+8B86E8: 3B 42 18              - cmp eax,[rdx+18]
+Project.dll+8B86EB: 73 5A                 - jae Project.dll+8B8747
+Project.dll+8B86ED: 48 8D 04 40           - lea rax,[rax+rax*2]
+Project.dll+8B86F1: 45 33 C0              - xor r8d,r8d
+// ---------- INJECTING HERE ----------
+Project.dll+8B86F4: 89 7C C2 20           - mov [rdx+rax*8+20],edi
+// ---------- DONE INJECTING  ----------
+Project.dll+8B86F8: 8B CE                 - mov ecx,esi
+Project.dll+8B86FA: 8B D7                 - mov edx,edi
+Project.dll+8B86FC: E8 6F EC 04 00        - call Project.dll+907370
+Project.dll+8B8701: 84 C0                 - test al,al
+Project.dll+8B8703: 74 2C                 - je Project.dll+8B8731
+Project.dll+8B8705: 48 8B 13              - mov rdx,[rbx]
+Project.dll+8B8708: 48 8B CB              - mov rcx,rbx
+Project.dll+8B870B: 48 8B 82 78 01 00 00  - mov rax,[rdx+00000178]
+Project.dll+8B8712: 48 8B 92 80 01 00 00  - mov rdx,[rdx+00000180]
+Project.dll+8B8719: FF D0                 - call rax
+}
+</AssemblerScript>
+                </CheatEntry>
               </CheatEntries>
             </CheatEntry>
           </CheatEntries>
@@ -6947,7 +7017,7 @@ Project.dll+35E709B: CC                    - int 3
             </CheatEntry>
             <CheatEntry>
               <ID>1387</ID>
-              <Description>"blue teamscore 0"</Description>
+              <Description>"blue teamscore 0 (updates on next score point)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
@@ -7018,6 +7088,82 @@ Project.dll+8E772D: 48 8B CB              - mov rcx,rbx
 Project.dll+8E7730: 48 8B 82 78 01 00 00  - mov rax,[rdx+00000178]
 Project.dll+8E7737: 48 8B 92 80 01 00 00  - mov rdx,[rdx+00000180]
 Project.dll+8E773E: FF D0                 - call rax
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1429</ID>
+              <Description>"red teamscore 0 (updates on next score point)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-05
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(teamscoreR,Project.dll,89 7C C2 20 8B CE 8B D7 E8 3A FB) // should be unique
+alloc(newmem,$1000,teamscoreR)
+
+label(code)
+label(return)
+
+newmem:
+  mov edi,[teamscoreRed]
+
+code:
+  mov [rdx+rax*8+20],edi
+  mov ecx,esi
+  jmp return
+
+teamscoreRed:
+dd #0
+
+teamscoreR:
+  jmp newmem
+  nop
+return:
+registersymbol(teamscoreR)
+registersymbol(teamscoreRed)
+
+[DISABLE]
+
+teamscoreR:
+  db 89 7C C2 20 8B CE
+
+unregistersymbol(teamscoreR)
+unregistersymbol(teamscoreRed)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+8E7829
+
+Project.dll+8E7807: 74 6D                 - je Project.dll+8E7876
+Project.dll+8E7809: 48 8B 90 A0 00 00 00  - mov rdx,[rax+000000A0]
+Project.dll+8E7810: 48 85 D2              - test rdx,rdx
+Project.dll+8E7813: 74 61                 - je Project.dll+8E7876
+Project.dll+8E7815: 48 63 43 34           - movsxd  rax,dword ptr [rbx+34]
+Project.dll+8E7819: 48 83 C0 5F           - add rax,5F
+Project.dll+8E781D: 3B 42 18              - cmp eax,[rdx+18]
+Project.dll+8E7820: 73 5A                 - jae Project.dll+8E787C
+Project.dll+8E7822: 48 8D 04 40           - lea rax,[rax+rax*2]
+Project.dll+8E7826: 45 33 C0              - xor r8d,r8d
+// ---------- INJECTING HERE ----------
+Project.dll+8E7829: 89 7C C2 20           - mov [rdx+rax*8+20],edi
+// ---------- DONE INJECTING  ----------
+Project.dll+8E782D: 8B CE                 - mov ecx,esi
+Project.dll+8E782F: 8B D7                 - mov edx,edi
+Project.dll+8E7831: E8 3A FB 01 00        - call Project.dll+907370
+Project.dll+8E7836: 84 C0                 - test al,al
+Project.dll+8E7838: 74 2C                 - je Project.dll+8E7866
+Project.dll+8E783A: 48 8B 13              - mov rdx,[rbx]
+Project.dll+8E783D: 48 8B CB              - mov rcx,rbx
+Project.dll+8E7840: 48 8B 82 78 01 00 00  - mov rax,[rdx+00000178]
+Project.dll+8E7847: 48 8B 92 80 01 00 00  - mov rdx,[rdx+00000180]
+Project.dll+8E784E: FF D0                 - call rax
 }
 </AssemblerScript>
             </CheatEntry>
