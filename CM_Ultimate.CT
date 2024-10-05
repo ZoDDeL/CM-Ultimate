@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1004.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -11400,6 +11400,160 @@ Project.dll+3C803BD: 0F 11 48 D0                       - movups [rax-30],xmm1
                   <Address>_leathalSwap</Address>
                   <Offsets>
                     <Offset>-80</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1423</ID>
+              <Description>"skill swap (updates on skill 1 change)"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-05
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(swapSkills,Project.dll,89 91 DC 03 00 00 C3 89 91 D8 03 00 00 C3 89 91 D4 03 00 00 C3) // should be unique
+alloc(newmem,$1000,swapSkills)
+
+label(code)
+label(return)
+
+newmem:
+  mov [_swapSkills],rcx
+
+code:
+  test r8d,r8d
+  jmp return
+
+_swapSkills:
+dd #0
+
+swapSkills-11:
+  jmp1 newmem
+  nop 2
+return:
+registersymbol(swapSkills)
+registersymbol(_swapSkills)
+
+[DISABLE]
+
+swapSkills-11:
+  //db 89 91 DC 03 00 00
+  db 45 85 C0 74 1A
+
+unregistersymbol(swapSkills)
+unregistersymbol(_swapSkills)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3888E41
+
+Project.dll+3888E2C: CC                 - int 3 
+Project.dll+3888E2D: CC                 - int 3 
+Project.dll+3888E2E: CC                 - int 3 
+Project.dll+3888E2F: CC                 - int 3 
+Project.dll+3888E30: 45 85 C0           - test r8d,r8d
+Project.dll+3888E33: 74 1A              - je Project.dll+3888E4F
+Project.dll+3888E35: 41 83 E8 01        - sub r8d,01
+Project.dll+3888E39: 74 0D              - je Project.dll+3888E48
+Project.dll+3888E3B: 41 83 F8 01        - cmp r8d,01
+Project.dll+3888E3F: 75 14              - jne Project.dll+3888E55
+// ---------- INJECTING HERE ----------
+Project.dll+3888E41: 89 91 DC 03 00 00  - mov [rcx+000003DC],edx
+// ---------- DONE INJECTING  ----------
+Project.dll+3888E47: C3                 - ret 
+Project.dll+3888E48: 89 91 D8 03 00 00  - mov [rcx+000003D8],edx
+Project.dll+3888E4E: C3                 - ret 
+Project.dll+3888E4F: 89 91 D4 03 00 00  - mov [rcx+000003D4],edx
+Project.dll+3888E55: C3                 - ret 
+Project.dll+3888E56: CC                 - int 3 
+Project.dll+3888E57: CC                 - int 3 
+Project.dll+3888E58: CC                 - int 3 
+Project.dll+3888E59: CC                 - int 3 
+Project.dll+3888E5A: CC                 - int 3 
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1424</ID>
+                  <Description>"skill 1   (dropdown menu)   ------------------------------------&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">151060480:Soft Landing
+151060481:EOD
+151060482:Quick Heal
+151060483:Predator
+151060487:Overcharge
+151060484:Tempered
+151060485:Extra Lethal
+151060486:Sonar
+151060493:Parachute Master
+151060489:Agile
+151060488:Quick Swap
+151060490:Hunter
+151060491:Sprint Reload
+151060492:Power Throw
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_swapSkills</Address>
+                  <Offsets>
+                    <Offset>3D4</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1425</ID>
+                  <Description>"skill 2   (dropdown menu)   ------------------------------------&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">151060480:Soft Landing
+151060481:EOD
+151060482:Quick Heal
+151060483:Predator
+151060487:Overcharge
+151060484:Tempered
+151060485:Extra Lethal
+151060486:Sonar
+151060493:Parachute Master
+151060489:Agile
+151060488:Quick Swap
+151060490:Hunter
+151060491:Sprint Reload
+151060492:Power Throw
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_swapSkills</Address>
+                  <Offsets>
+                    <Offset>3D8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1426</ID>
+                  <Description>"skill 3   (dropdown menu)   ------------------------------------&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">151060480:Soft Landing
+151060481:EOD
+151060482:Quick Heal
+151060483:Predator
+151060487:Overcharge
+151060484:Tempered
+151060485:Extra Lethal
+151060486:Sonar
+151060493:Parachute Master
+151060489:Agile
+151060488:Quick Swap
+151060490:Hunter
+151060491:Sprint Reload
+151060492:Power Throw
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_swapSkills</Address>
+                  <Offsets>
+                    <Offset>3DC</Offset>
                   </Offsets>
                 </CheatEntry>
               </CheatEntries>
