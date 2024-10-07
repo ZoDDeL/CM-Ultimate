@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1005.3)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1007.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -3876,6 +3876,79 @@ Project.dll+8B8719: FF D0                 - call rax
 }
 </AssemblerScript>
                 </CheatEntry>
+                <CheatEntry>
+                  <ID>1454</ID>
+                  <Description>"streak wip"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-07
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+4p:7 w:16 4p:21 4p:9 wp:16 4p:30
+}
+
+[ENABLE]
+
+aobscanmodule(dailyStreak,Project.dll,F2 0F 10 44 CA 30 0F 11 4B 20) // should be unique
+alloc(newmem,$1000,dailyStreak)
+
+label(code)
+label(return)
+
+newmem:
+  mov [rdx+rcx*8+30+4],#1
+  mov [rdx+rcx*8+30-10],#1
+
+code:
+  movsd xmm0,[rdx+rcx*8+30]
+  jmp return
+
+dailyStreak:
+  jmp newmem
+  nop
+return:
+registersymbol(dailyStreak)
+
+[DISABLE]
+
+dailyStreak:
+  db F2 0F 10 44 CA 30
+
+unregistersymbol(dailyStreak)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+1FC9B4
+
+Project.dll+1FC992: 44 3B 41 18           - cmp r8d,[rcx+18]
+Project.dll+1FC996: 73 36                 - jae Project.dll+1FC9CE
+Project.dll+1FC998: 48 8B 51 10           - mov rdx,[rcx+10]
+Project.dll+1FC99C: 48 85 D2              - test rdx,rdx
+Project.dll+1FC99F: 74 7B                 - je Project.dll+1FCA1C
+Project.dll+1FC9A1: 44 3B 42 18           - cmp r8d,[rdx+18]
+Project.dll+1FC9A5: 73 7B                 - jae Project.dll+1FCA22
+Project.dll+1FC9A7: 4B 8D 0C 40           - lea rcx,[r8+r8*2]
+Project.dll+1FC9AB: 0F 10 4C CA 20        - movups xmm1,[rdx+rcx*8+20]
+Project.dll+1FC9B0: 41 8D 40 01           - lea eax,[r8+01]
+// ---------- INJECTING HERE ----------
+Project.dll+1FC9B4: F2 0F 10 44 CA 30     - movsd xmm0,[rdx+rcx*8+30]
+// ---------- DONE INJECTING  ----------
+Project.dll+1FC9BA: 0F 11 4B 20           - movups [rbx+20],xmm1
+Project.dll+1FC9BE: 89 43 18              - mov [rbx+18],eax
+Project.dll+1FC9C1: B0 01                 - mov al,01
+Project.dll+1FC9C3: F2 0F 11 43 30        - movsd [rbx+30],xmm0
+Project.dll+1FC9C8: 48 83 C4 20           - add rsp,20
+Project.dll+1FC9CC: 5B                    - pop rbx
+Project.dll+1FC9CD: C3                    - ret 
+Project.dll+1FC9CE: 48 8B 4A 18           - mov rcx,[rdx+18]
+Project.dll+1FC9D2: F6 81 32 01 00 00 01  - test byte ptr [rcx+00000132],01
+Project.dll+1FC9D9: 75 05                 - jne Project.dll+1FC9E0
+}
+</AssemblerScript>
+                </CheatEntry>
               </CheatEntries>
             </CheatEntry>
           </CheatEntries>
@@ -3918,6 +3991,8 @@ label(return)
 
 newmem:
   mov [basekill],rcx
+  cmp [toggleMEGA],#2
+  je code
   cmp [toggleMEGA],#1
   je megaXP
   cmp [toggleMEGA],#0
@@ -4030,7 +4105,7 @@ code:
   jmp return
 
 toggleMEGA:
-  dd #0
+  dd #2
 
 basekill:
   dw #0
@@ -4523,8 +4598,9 @@ project.dll+3957C80: 4C 8B F0              - mov r14,rax
                 <CheatEntry>
                   <ID>680</ID>
                   <Description>"clean MEGA XP"</Description>
-                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:normal xp
-1:mega xp
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:normal xp (writes default values)
+1:mega xp (writes 4000 kill/assist)
+2:off (just get the pointer)
 </DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
@@ -4534,7 +4610,7 @@ project.dll+3957C80: 4C 8B F0              - mov r14,rax
             </CheatEntry>
             <CheatEntry>
               <ID>987</ID>
-              <Description>"passive bots (bot reaction delay 2000sec)"</Description>
+              <Description>"super passive bots (no slide, jump, shooting, rotation, sight)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
@@ -4571,13 +4647,18 @@ newmem:
 
 
 code:
-  movss xmm6,[botdelay]
-  movss [rax+30],xmm6
+  mov [rax+30],(float)2000  // reaction time
+  mov [rax+30+4],(float)0  // sight angle
+  mov [rax+30+8],(float)0  // move rotation speed
+  mov [rax+30+C],(float)0  // shoot rotation speed
+  //mov [rax+30+18],(float)0  // ???
+  mov [rax+30+1C],(float)0  // re-path rate
+  mov [rax+30+28],#0  //  chance lethal
+  mov [rax+30+2C],#0  //  chance slide
+  mov [rax+30+30],#0  //  chance jump
   movss xmm6,[rax+30]
   jmp return
 
-botdelay:
-dd (float)2000.00
 
 
 botINJECT:
@@ -8774,6 +8855,7 @@ ax holds current count
 0 0 0 128 15
 
 BS:76 OOO:U 4p:400 4:100 4:200 4:333
+4p:400 4:0 wp:16 4p:100 4p:0 wp:16 4p:200 4p:0
 }
 
 [ENABLE]
