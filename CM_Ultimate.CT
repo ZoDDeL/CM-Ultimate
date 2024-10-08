@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1007.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1008.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -3789,24 +3789,6 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
                   </CheatEntries>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>1385</ID>
-                  <Description>"F171518E354DCC85"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>String</VariableType>
-                  <Length>16</Length>
-                  <Unicode>1</Unicode>
-                  <CodePage>0</CodePage>
-                  <ZeroTerminate>1</ZeroTerminate>
-                  <Address>"Project.dll"+04B66758</Address>
-                  <Offsets>
-                    <Offset>14</Offset>
-                    <Offset>10</Offset>
-                    <Offset>78</Offset>
-                    <Offset>C0</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
                   <ID>1432</ID>
                   <Description>"score opcode"</Description>
                   <VariableType>Auto Assembler Script</VariableType>
@@ -3948,6 +3930,96 @@ Project.dll+1FC9D2: F6 81 32 01 00 00 01  - test byte ptr [rcx+00000132],01
 Project.dll+1FC9D9: 75 05                 - jne Project.dll+1FC9E0
 }
 </AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1472</ID>
+                  <Description>"daily task #2 write"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-08
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+define(address,"Project.dll"+377ABD9)
+define(bytes,41 0F 11 4E 50)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,"Project.dll"+377ABD9)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movups [r14+50],xmm1
+  mov [r14+50],#1  // total required
+  mov [r14+54],#1  // current count
+  jmp return
+
+address:
+  jmp newmem
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // movups [r14+50],xmm1
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+377ABD9
+
+Project.dll+377ABAC: 0F 29 4D F7              - movaps [rbp-09],xmm1
+Project.dll+377ABB0: 41 0F 10 8E 90 00 00 00  - movups xmm1,[r14+00000090]
+Project.dll+377ABB8: 0F 29 45 07              - movaps [rbp+07],xmm0
+Project.dll+377ABBC: 0F 29 4D 17              - movaps [rbp+17],xmm1
+Project.dll+377ABC0: E8 BB D6 DC FD           - call Project.dll+1548280
+Project.dll+377ABC5: FF 40 14                 - inc [rax+14]
+Project.dll+377ABC8: 0F 28 45 C7              - movaps xmm0,[rbp-39]
+Project.dll+377ABCC: 0F 28 4D D7              - movaps xmm1,[rbp-29]
+Project.dll+377ABD0: 41 0F 11 46 40           - movups [r14+40],xmm0
+Project.dll+377ABD5: 0F 28 45 E7              - movaps xmm0,[rbp-19]
+// ---------- INJECTING HERE ----------
+Project.dll+377ABD9: 41 0F 11 4E 50           - movups [r14+50],xmm1
+// ---------- DONE INJECTING  ----------
+Project.dll+377ABDE: 0F 28 4D F7              - movaps xmm1,[rbp-09]
+Project.dll+377ABE2: 41 0F 11 46 60           - movups [r14+60],xmm0
+Project.dll+377ABE7: 0F 28 45 07              - movaps xmm0,[rbp+07]
+Project.dll+377ABEB: 41 0F 11 4E 70           - movups [r14+70],xmm1
+Project.dll+377ABF0: 0F 28 4D 17              - movaps xmm1,[rbp+17]
+Project.dll+377ABF4: 41 0F 11 86 80 00 00 00  - movups [r14+00000080],xmm0
+Project.dll+377ABFC: 41 0F 11 8E 90 00 00 00  - movups [r14+00000090],xmm1
+Project.dll+377AC04: 41 FF C7                 - inc r15d
+Project.dll+377AC07: 41 8B D7                 - mov edx,r15d
+Project.dll+377AC0A: E9 71 FE FF FF           - jmp Project.dll+377AA80
+}
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1385</ID>
+                  <Description>"user ID hash"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>16</Length>
+                  <Unicode>1</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>"Project.dll"+04B66758</Address>
+                  <Offsets>
+                    <Offset>14</Offset>
+                    <Offset>10</Offset>
+                    <Offset>78</Offset>
+                    <Offset>C0</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
                 </CheatEntry>
               </CheatEntries>
             </CheatEntry>
@@ -6960,7 +7032,7 @@ Project.dll+9226BE: FF D0                 - call rax
             </CheatEntry>
             <CheatEntry>
               <ID>1332</ID>
-              <Description>"inf jump (affects all in lobby)"</Description>
+              <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
@@ -8281,6 +8353,215 @@ engine.dll+590D89: 74 09              - je engine.dll+590D94
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
+              <ID>755</ID>
+              <Description>"free blackmarket"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-08-08
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+48 8B 44 C3 20 33
+48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 B9
+48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9 // 18.38
+}
+
+[ENABLE]
+
+aobscanmodule(blackmarket,Project.dll,48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9) // should be unique
+alloc(newmem,$1000,blackmarket)
+
+label(code)
+label(return)
+
+newmem:
+  cmp dword ptr [rbx+rax*8+20+4],#0
+  je code
+  cmp dword ptr [rbx+rax*8+20+4],#15000
+  jg code
+  mov dword ptr [rbx+rax*8+20+4],#0
+  jmp code
+
+code:
+  mov rax,[rbx+rax*8+20]
+  jmp return
+
+blackmarket:
+  jmp newmem
+return:
+registersymbol(blackmarket)
+
+[DISABLE]
+
+blackmarket:
+  db 48 8B 44 C3 20
+
+unregistersymbol(blackmarket)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3D8BBB0
+
+Project.dll+3D8BB8E: 0F 84 81 00 00 00        - je Project.dll+3D8BC15
+Project.dll+3D8BB94: 48 8B 5B 38              - mov rbx,[rbx+38]
+Project.dll+3D8BB98: 48 8D 4C 24 20           - lea rcx,[rsp+20]
+Project.dll+3D8BB9D: 33 D2                    - xor edx,edx
+Project.dll+3D8BB9F: E8 DC 85 DE FF           - call Project.dll+3B74180
+Project.dll+3D8BBA4: 48 85 DB                 - test rbx,rbx
+Project.dll+3D8BBA7: 74 6C                    - je Project.dll+3D8BC15
+Project.dll+3D8BBA9: 48 98                    - cdqe 
+Project.dll+3D8BBAB: 3B 43 18                 - cmp eax,[rbx+18]
+Project.dll+3D8BBAE: 73 6B                    - jae Project.dll+3D8BC1B
+// ---------- INJECTING HERE ----------
+Project.dll+3D8BBB0: 48 8B 44 C3 20           - mov rax,[rbx+rax*8+20]
+// ---------- DONE INJECTING  ----------
+Project.dll+3D8BBB5: 33 D2                    - xor edx,edx
+Project.dll+3D8BBB7: 48 8B CF                 - mov rcx,rdi
+Project.dll+3D8BBBA: 48 89 84 24 C0 00 00 00  - mov [rsp+000000C0],rax
+Project.dll+3D8BBC2: E8 29 FB FF FF           - call Project.dll+3D8B6F0
+Project.dll+3D8BBC7: 84 C0                    - test al,al
+Project.dll+3D8BBC9: 74 2A                    - je Project.dll+3D8BBF5
+Project.dll+3D8BBCB: 48 8B 9C 24 C0 00 00 00  - mov rbx,[rsp+000000C0]
+Project.dll+3D8BBD3: 48 8D 4C 24 20           - lea rcx,[rsp+20]
+Project.dll+3D8BBD8: 33 D2                    - xor edx,edx
+Project.dll+3D8BBDA: E8 E1 73 DE FF           - call Project.dll+3B72FC0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1029</ID>
+              <Description>"free bundles (disabling this script = gamecrash!!!)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-08-29
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+slava ukraini
+0000000003010007 00000175EA457840 00000174B53D5F40 00000174B53D5F40 0000000000000001 0000000000000000
+
+
+#50462718 // combat master points
+#50462719 // "coming soon" placeholder
+
+#50397184 // desert cobra bundle
+#50397185 // hype racer bundle
+#50397186 // red storm bundle
+#50397187 // skull face bundle
+#50397188 // welcome back bundle
+#50397189 // phoenix rise bundle
+#50397190 // dual katana bundle
+#50397191 // slava ukraini bundle
+#50397192 // polar star bundle
+#50397193 // shadow rider bundle
+#50397194 // wolverine bundle
+#50397195 // street fighter bundle
+#50397196 // cobra queen bundle
+#50397197 // wolf bundle
+#50397198 // starter pack bundle
+#50397199 // dino rex bundle
+}
+
+[ENABLE]
+
+aobscanmodule(bundlesINJECT,Project.dll,8B 52 20 48 83 C1 10) // should be unique
+alloc(newmem,$1000,bundlesINJECT)
+//alloc(freeAOB,100)
+
+label(code)
+label(return)
+label(getAOB)
+label(free)
+
+newmem:
+  cmp dword ptr [rdx+20],#50397191 // checking free bundle slava ukraini
+  je getAOB  // jump if compare is true (to grab the "FREE" pointer)
+  cmp dword ptr [rdx+20],#50462718 // skip CM points // crashfix
+  je code
+  cmp dword ptr [rdx+20],#50462719 // skip coming soon // crashfix
+  je code
+  jmp free  // else jump to free section (to overwrite the bundle price values / pointer)
+
+
+getAOB:
+  push rax  // backup rax
+  lea rax,[rdx+30]  //  getting the "FREE" pointer from slava ukraini bundle into rax
+  mov [freeAOB],rax  // saving the free pointer
+  pop rax  // return rax to default
+  jmp free
+
+
+free:
+  push rax  // backup rax
+  lea rax,[freeAOB]  // pull back the saved "FRRE" pointer
+  mov [rdx+30],rax  // writing the "FREE" pointer to bundle pointer 1
+  mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 2
+  mov [rdx+44],#0  // setting the premium value from 1 to 0
+  mov [rdx+48],#0  // setting the price for CP bundles to 0
+  pop rax  // return rax to default
+  jmp code
+
+
+code:
+  mov edx,[rdx+20]
+  add rcx,10
+  jmp return
+
+
+freeAOB:
+db 0
+
+
+bundlesINJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(bundlesINJECT)
+registersymbol(freeAOB)
+[DISABLE]
+
+bundlesINJECT:
+  db 8B 52 20 48 83 C1 10
+
+unregistersymbol(bundlesINJECT)
+unregistersymbol(freeAOB)
+dealloc(newmem)
+//dealloc(freeAOB)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3E189E5
+
+Project.dll+3E189C9: E8 E2 E0 75 FC  - call Project.dll+576AB0
+Project.dll+3E189CE: CC              - int 3 
+Project.dll+3E189CF: CC              - int 3 
+Project.dll+3E189D0: 48 89 5C 24 08  - mov [rsp+08],rbx
+Project.dll+3E189D5: 57              - push rdi
+Project.dll+3E189D6: 48 83 EC 20     - sub rsp,20
+Project.dll+3E189DA: 48 8B DA        - mov rbx,rdx
+Project.dll+3E189DD: 48 8B F9        - mov rdi,rcx
+Project.dll+3E189E0: 48 85 D2        - test rdx,rdx
+Project.dll+3E189E3: 74 45           - je Project.dll+3E18A2A
+// ---------- INJECTING HERE ----------
+Project.dll+3E189E5: 8B 52 20        - mov edx,[rdx+20]
+// ---------- DONE INJECTING  ----------
+Project.dll+3E189E8: 48 83 C1 10     - add rcx,10
+Project.dll+3E189EC: 45 33 C0        - xor r8d,r8d
+Project.dll+3E189EF: E8 0C 0C D5 FF  - call Project.dll+3B69600
+Project.dll+3E189F4: 84 C0           - test al,al
+Project.dll+3E189F6: 74 0D           - je Project.dll+3E18A05
+Project.dll+3E189F8: 32 C0           - xor al,al
+Project.dll+3E189FA: 48 8B 5C 24 30  - mov rbx,[rsp+30]
+Project.dll+3E189FF: 48 83 C4 20     - add rsp,20
+Project.dll+3E18A03: 5F              - pop rdi
+Project.dll+3E18A04: C3              - ret 
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
               <ID>1249</ID>
               <Description>"turn daily CP rewards into 15.000"</Description>
               <VariableType>Auto Assembler Script</VariableType>
@@ -8493,211 +8774,88 @@ Project.dll+1406E5E: CC              - int 3
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
-              <ID>755</ID>
-              <Description>"free blackmarket"</Description>
+              <ID>1478</ID>
+              <Description>"instant unlock daily task rewards"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+              <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
-  Date   : 2024-08-08
+  Date   : 2024-10-08
   Author : ZoDDeL
 
   This script does blah blah blah
 
-48 8B 44 C3 20 33
-48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 B9
-48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9 // 18.38
+
+#1      (+4)    #2    (+4)    #3    (+4)
+total current total current total current
+4p:5 4p:0 w:24 4p:8 4p:0 w:24 4p:3 4p:0
 }
+
+define(address,"Project.dll"+3B08CA8)
+define(bytes,0F 10 00 0F 10 48 10)
 
 [ENABLE]
 
-aobscanmodule(blackmarket,Project.dll,48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9) // should be unique
-alloc(newmem,$1000,blackmarket)
+assert(address,bytes)
+alloc(newmem,$1000,"Project.dll"+3B08CA8)
 
 label(code)
 label(return)
 
 newmem:
-  cmp dword ptr [rbx+rax*8+20+4],#0
-  je code
-  cmp dword ptr [rbx+rax*8+20+4],#15000
-  jg code
-  mov dword ptr [rbx+rax*8+20+4],#0
-  jmp code
 
-code:
-  mov rax,[rbx+rax*8+20]
-  jmp return
-
-blackmarket:
-  jmp newmem
-return:
-registersymbol(blackmarket)
-
-[DISABLE]
-
-blackmarket:
-  db 48 8B 44 C3 20
-
-unregistersymbol(blackmarket)
-dealloc(newmem)
-
-{
-// ORIGINAL CODE - INJECTION POINT: Project.dll+3D8BBB0
-
-Project.dll+3D8BB8E: 0F 84 81 00 00 00        - je Project.dll+3D8BC15
-Project.dll+3D8BB94: 48 8B 5B 38              - mov rbx,[rbx+38]
-Project.dll+3D8BB98: 48 8D 4C 24 20           - lea rcx,[rsp+20]
-Project.dll+3D8BB9D: 33 D2                    - xor edx,edx
-Project.dll+3D8BB9F: E8 DC 85 DE FF           - call Project.dll+3B74180
-Project.dll+3D8BBA4: 48 85 DB                 - test rbx,rbx
-Project.dll+3D8BBA7: 74 6C                    - je Project.dll+3D8BC15
-Project.dll+3D8BBA9: 48 98                    - cdqe 
-Project.dll+3D8BBAB: 3B 43 18                 - cmp eax,[rbx+18]
-Project.dll+3D8BBAE: 73 6B                    - jae Project.dll+3D8BC1B
-// ---------- INJECTING HERE ----------
-Project.dll+3D8BBB0: 48 8B 44 C3 20           - mov rax,[rbx+rax*8+20]
-// ---------- DONE INJECTING  ----------
-Project.dll+3D8BBB5: 33 D2                    - xor edx,edx
-Project.dll+3D8BBB7: 48 8B CF                 - mov rcx,rdi
-Project.dll+3D8BBBA: 48 89 84 24 C0 00 00 00  - mov [rsp+000000C0],rax
-Project.dll+3D8BBC2: E8 29 FB FF FF           - call Project.dll+3D8B6F0
-Project.dll+3D8BBC7: 84 C0                    - test al,al
-Project.dll+3D8BBC9: 74 2A                    - je Project.dll+3D8BBF5
-Project.dll+3D8BBCB: 48 8B 9C 24 C0 00 00 00  - mov rbx,[rsp+000000C0]
-Project.dll+3D8BBD3: 48 8D 4C 24 20           - lea rcx,[rsp+20]
-Project.dll+3D8BBD8: 33 D2                    - xor edx,edx
-Project.dll+3D8BBDA: E8 E1 73 DE FF           - call Project.dll+3B72FC0
-}
-</AssemblerScript>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1029</ID>
-              <Description>"free bundles (disabling this script = gamecrash!!!)"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
-  Version: 
-  Date   : 2024-08-29
-  Author : ZoDDeL
-
-  This script does blah blah blah
-
-slava ukraini
-0000000003010007 00000175EA457840 00000174B53D5F40 00000174B53D5F40 0000000000000001 0000000000000000
-
-
-#50462718 // combat master points
-#50462719 // "coming soon" placeholder
-
-#50397184 // desert cobra bundle
-#50397185 // hype racer bundle
-#50397186 // red storm bundle
-#50397187 // skull face bundle
-#50397188 // welcome back bundle
-#50397189 // phoenix rise bundle
-#50397190 // dual katana bundle
-#50397191 // slava ukraini bundle
-#50397192 // polar star bundle
-#50397193 // shadow rider bundle
-#50397194 // wolverine bundle
-#50397195 // street fighter bundle
-#50397196 // cobra queen bundle
-#50397197 // wolf bundle
-#50397198 // starter pack bundle
-#50397199 // dino rex bundle
-}
-
-[ENABLE]
-
-aobscanmodule(bundlesINJECT,Project.dll,8B 52 20 48 83 C1 10) // should be unique
-alloc(newmem,$1000,bundlesINJECT)
-//alloc(freeAOB,100)
-
-label(code)
-label(return)
-label(getAOB)
-label(free)
-
-newmem:
-  cmp dword ptr [rdx+20],#50397191 // checking free bundle slava ukraini
-  je getAOB  // jump if compare is true (to grab the "FREE" pointer)
-  cmp dword ptr [rdx+20],#50462718 // skip CM points // crashfix
-  je code
-  cmp dword ptr [rdx+20],#50462719 // skip coming soon // crashfix
-  je code
-  jmp free  // else jump to free section (to overwrite the bundle price values / pointer)
-
-
-getAOB:
-  push rax  // backup rax
-  lea rax,[rdx+30]  //  getting the "FREE" pointer from slava ukraini bundle into rax
-  mov [freeAOB],rax  // saving the free pointer
-  pop rax  // return rax to default
-  jmp free
-
-
-free:
-  push rax  // backup rax
-  lea rax,[freeAOB]  // pull back the saved "FRRE" pointer
-  mov [rdx+30],rax  // writing the "FREE" pointer to bundle pointer 1
-  mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 2
-  mov [rdx+44],#0  // setting the premium value from 1 to 0
-  mov [rdx+48],#0  // setting the price for CP bundles to 0
-  pop rax  // return rax to default
-  jmp code
+  mov [rax+50],#0  // total requirement of task #1
+  //mov [rax+54],#99  // current count task #1
+  mov [rax+70],#0  // total requirement of task #2
+  //mov [rax+74],#99 // current count task #2
+  mov [rax+90],#0  // total requirement of task #3
+  //mov [rax+90],#99 // current count task #3
 
 
 code:
-  mov edx,[rdx+20]
-  add rcx,10
+  movups xmm0,[rax]
+  movups xmm1,[rax+10]
   jmp return
 
-
-freeAOB:
-db 0
-
-
-bundlesINJECT:
+address:
   jmp newmem
   nop 2
 return:
-registersymbol(bundlesINJECT)
-registersymbol(freeAOB)
+
 [DISABLE]
 
-bundlesINJECT:
-  db 8B 52 20 48 83 C1 10
+address:
+  db bytes
+  // movups xmm0,[rax]
+  // movups xmm1,[rax+10]
 
-unregistersymbol(bundlesINJECT)
-unregistersymbol(freeAOB)
 dealloc(newmem)
-//dealloc(freeAOB)
 
 {
-// ORIGINAL CODE - INJECTION POINT: Project.dll+3E189E5
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3B08CA8
 
-Project.dll+3E189C9: E8 E2 E0 75 FC  - call Project.dll+576AB0
-Project.dll+3E189CE: CC              - int 3 
-Project.dll+3E189CF: CC              - int 3 
-Project.dll+3E189D0: 48 89 5C 24 08  - mov [rsp+08],rbx
-Project.dll+3E189D5: 57              - push rdi
-Project.dll+3E189D6: 48 83 EC 20     - sub rsp,20
-Project.dll+3E189DA: 48 8B DA        - mov rbx,rdx
-Project.dll+3E189DD: 48 8B F9        - mov rdi,rcx
-Project.dll+3E189E0: 48 85 D2        - test rdx,rdx
-Project.dll+3E189E3: 74 45           - je Project.dll+3E18A2A
+Project.dll+3B08C75: 0F 11 82 90 00 00 00     - movups [rdx+00000090],xmm0
+Project.dll+3B08C7C: E8 5F 13 C1 FF           - call Project.dll+3719FE0
+Project.dll+3B08C81: 48 85 C0                 - test rax,rax
+Project.dll+3B08C84: 0F 84 AE 01 00 00        - je Project.dll+3B08E38
+Project.dll+3B08C8A: 33 D2                    - xor edx,edx
+Project.dll+3B08C8C: 48 8B C8                 - mov rcx,rax
+Project.dll+3B08C8F: E8 CC CB C2 FF           - call Project.dll+3735860
+Project.dll+3B08C94: 48 8D 4C 24 20           - lea rcx,[rsp+20]
+Project.dll+3B08C99: 48 8D 89 80 00 00 00     - lea rcx,[rcx+00000080]
+Project.dll+3B08CA0: 48 8D 94 24 A0 01 00 00  - lea rdx,[rsp+000001A0]
 // ---------- INJECTING HERE ----------
-Project.dll+3E189E5: 8B 52 20        - mov edx,[rdx+20]
+Project.dll+3B08CA8: 0F 10 00                 - movups xmm0,[rax]
 // ---------- DONE INJECTING  ----------
-Project.dll+3E189E8: 48 83 C1 10     - add rcx,10
-Project.dll+3E189EC: 45 33 C0        - xor r8d,r8d
-Project.dll+3E189EF: E8 0C 0C D5 FF  - call Project.dll+3B69600
-Project.dll+3E189F4: 84 C0           - test al,al
-Project.dll+3E189F6: 74 0D           - je Project.dll+3E18A05
-Project.dll+3E189F8: 32 C0           - xor al,al
-Project.dll+3E189FA: 48 8B 5C 24 30  - mov rbx,[rsp+30]
-Project.dll+3E189FF: 48 83 C4 20     - add rsp,20
-Project.dll+3E18A03: 5F              - pop rdi
-Project.dll+3E18A04: C3              - ret 
+Project.dll+3B08CAB: 0F 10 48 10              - movups xmm1,[rax+10]
+Project.dll+3B08CAF: 0F 11 41 80              - movups [rcx-80],xmm0
+Project.dll+3B08CB3: 0F 11 49 90              - movups [rcx-70],xmm1
+Project.dll+3B08CB7: 0F 10 40 20              - movups xmm0,[rax+20]
+Project.dll+3B08CBB: 0F 10 48 30              - movups xmm1,[rax+30]
+Project.dll+3B08CBF: 0F 11 41 A0              - movups [rcx-60],xmm0
+Project.dll+3B08CC3: 0F 11 49 B0              - movups [rcx-50],xmm1
+Project.dll+3B08CC7: 0F 10 40 40              - movups xmm0,[rax+40]
+Project.dll+3B08CCB: 0F 10 48 50              - movups xmm1,[rax+50]
+Project.dll+3B08CCF: 0F 11 41 C0              - movups [rcx-40],xmm0
 }
 </AssemblerScript>
             </CheatEntry>
