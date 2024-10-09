@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1009.4)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1009.5)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -10528,6 +10528,28 @@ Project.dll+3C9065D: 0F 11 48 D0           - movups [rax-30],xmm1
 168624903:Kahles K624i Precision(SPEAR)
 168624904:Kahles K624i Precision(ORION PRECISION)
 168624905:Kahles K624i Precision(GRIN)
+168624384:Optech MRS Open (RED DOT)
+168624385:Optech MRS Open (RED ARROW)
+168624386:Optech MRS Open (GREEN CROSS)
+168624387:Optech MRS Open (TOXIC TRIS)
+168624388:Optech MRS Open (BLUE DOT)
+168624389:Optech MRS Open (CIRCLE DOT)
+168624390:Optech MRS Open (RISE)
+168624391:Optech MRS Open (PURPLE HORIZON)
+168624392:Optech MRS Open (SUN)
+168624393:Optech MRS Open (OPEN CROSS)
+168624394:Optech MRS Open (JET FIGHTER)
+168624395:Optech MRS Open (NUKE)
+168624640:BRAVO 4 (RED DOT)
+168624641:BRAVO 4 (BLUE ARROW)
+168624642:BRAVO 4 (JET FIGHTER)
+168624643:BRAVO 4 (BLUE DOT)
+168624644:BRAVO 4 (RED CROSS)
+168624645:BRAVO 4 (SEMI-CIRCLE DOT)
+168624646:BRAVO 4 (SUN)
+168624647:BRAVO 4 (OPENCROSS)
+168624648:BRAVO 4 (PURPLE)
+168624649:BRAVO 4 (ORION)
 </DropDownList>
                       <ShowAsSigned>0</ShowAsSigned>
                       <VariableType>4 Bytes</VariableType>
@@ -11523,6 +11545,28 @@ Project.dll+3C8045D: 0F 11 48 D0                    - movups [rax-30],xmm1
 168624903:Kahles K624i Precision(SPEAR)
 168624904:Kahles K624i Precision(ORION PRECISION)
 168624905:Kahles K624i Precision(GRIN)
+168624384:Optech MRS Open (RED DOT)
+168624385:Optech MRS Open (RED ARROW)
+168624386:Optech MRS Open (GREEN CROSS)
+168624387:Optech MRS Open (TOXIC TRIS)
+168624388:Optech MRS Open (BLUE DOT)
+168624389:Optech MRS Open (CIRCLE DOT)
+168624390:Optech MRS Open (RISE)
+168624391:Optech MRS Open (PURPLE HORIZON)
+168624392:Optech MRS Open (SUN)
+168624393:Optech MRS Open (OPEN CROSS)
+168624394:Optech MRS Open (JET FIGHTER)
+168624395:Optech MRS Open (NUKE)
+168624640:BRAVO 4 (RED DOT)
+168624641:BRAVO 4 (BLUE ARROW)
+168624642:BRAVO 4 (JET FIGHTER)
+168624643:BRAVO 4 (BLUE DOT)
+168624644:BRAVO 4 (RED CROSS)
+168624645:BRAVO 4 (SEMI-CIRCLE DOT)
+168624646:BRAVO 4 (SUN)
+168624647:BRAVO 4 (OPENCROSS)
+168624648:BRAVO 4 (PURPLE)
+168624649:BRAVO 4 (ORION)
 </DropDownList>
                       <ShowAsSigned>0</ShowAsSigned>
                       <VariableType>4 Bytes</VariableType>
