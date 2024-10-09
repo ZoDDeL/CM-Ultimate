@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1009.3)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1009.4)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -4859,7 +4859,7 @@ Project.dll+91B2F3: 48 85 C0              - test rax,rax
               <ID>1136</ID>
               <Description>"no spawnprotection"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-07
   Author : ZoDDeL
@@ -4944,7 +4944,7 @@ Project.dll+3A5220A: E8 C1 9A FF FF        - call Project.dll+3A4BCD0
               <Description>"bot vacum V2 (freeze bots on your X axis) / teleport"</Description>
               <Options moHideChildren="1" moManualExpandCollapse="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-09
   Author : ZoDDeL
@@ -7034,7 +7034,7 @@ Project.dll+9226BE: FF D0                 - call rax
               <ID>1332</ID>
               <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-30
   Author : ZoDDeL
@@ -7103,7 +7103,7 @@ Project.dll+35EB55B: CC                    - int 3
               <ID>1342</ID>
               <Description>"inf slide (affects all in lobby / start slide and hold forward W)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-30
   Author : ZoDDeL
@@ -7172,7 +7172,7 @@ Project.dll+35E709B: CC                    - int 3
               <ID>1387</ID>
               <Description>"blue teamscore 0 (updates on next score point)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-02
   Author : ZoDDeL
@@ -7248,7 +7248,7 @@ Project.dll+8E773E: FF D0                 - call rax
               <ID>1429</ID>
               <Description>"red teamscore 0 (updates on next score point)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-05
   Author : ZoDDeL
@@ -8565,7 +8565,7 @@ Project.dll+3E18A04: C3              - ret
               <ID>1249</ID>
               <Description>"turn daily CP rewards into 15.000"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-28
   Author : ZoDDeL
@@ -8777,7 +8777,7 @@ Project.dll+1406E5E: CC              - int 3
               <ID>1478</ID>
               <Description>"instant unlock daily task rewards"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-08
   Author : ZoDDeL
@@ -8864,7 +8864,7 @@ Project.dll+3B08CCF: 0F 11 41 C0              - movups [rcx-40],xmm0
               <Description>"instant unlock operation rewards"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-28
   Author : ZoDDeL
@@ -8993,7 +8993,7 @@ Project.dll+39148A9: 84 C0                          - test al,al
               <Description>"easy unlock camo masters (solid gold, rose, platinum, slayer, laser) per weapon"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-25
   Author : ZoDDeL
@@ -9117,7 +9117,7 @@ Project.dll+3BD0970: 0F B7 48 08              - movzx ecx,word ptr [rax+08]
               <Description>"easy unlock camo masters (demon ruby, combat zone topo) all weapon"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-01
   Author : ZoDDeL
@@ -11921,7 +11921,7 @@ Project.dll+3C803BD: 0F 11 48 D0                       - movups [rax-30],xmm1
               <Description>"skill swap (updates on skill 1 change)"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-05
   Author : ZoDDeL
