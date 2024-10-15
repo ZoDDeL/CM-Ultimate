@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1015.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1015.3)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -7109,7 +7109,7 @@ Project.dll+9226BE: FF D0                 - call rax
               <ID>1493</ID>
               <Description>"no fall damage (custom lobby)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-15
   Author : ZoDDeL
@@ -7119,8 +7119,8 @@ Project.dll+9226BE: FF D0                 - call rax
 
 [ENABLE]
 
-aobscanmodule(falling,Project.dll,44 88 B7 D8 01 00 00) // should be unique
-alloc(newmem,$1000,falling)
+aobscanmodule(noFallDMG,Project.dll,44 88 B7 D8 01 00 00) // should be unique
+alloc(newmem,$1000,noFallDMG)
 
 label(code)
 label(return)
@@ -7131,18 +7131,18 @@ code:
   mov [rdi+000001D8],#0 //r14b
   jmp return
 
-falling:
+noFallDMG:
   jmp newmem
   nop 2
 return:
-registersymbol(falling)
+registersymbol(noFallDMG)
 
 [DISABLE]
 
-falling:
+noFallDMG:
   db 44 88 B7 D8 01 00 00
 
-unregistersymbol(falling)
+unregistersymbol(noFallDMG)
 dealloc(newmem)
 
 {
@@ -7179,7 +7179,7 @@ Project.dll+35E566C: CC                       - int 3
               <Description>"slowfall (low gravity) (custom lobby)"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-15
   Author : ZoDDeL
@@ -7568,7 +7568,7 @@ Project.dll+8E784E: FF D0                 - call rax
               <ID>1483</ID>
               <Description>"no recoil"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-10-15
   Author : ZoDDeL
