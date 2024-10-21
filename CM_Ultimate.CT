@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.18.38 V2 (1015.3)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.19.4 (1021.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -4096,6 +4096,129 @@ Project.dll+3444995: 48 89 74 24 10           - mov [rsp+10],rsi
                 </CheatEntry>
               </CheatEntries>
             </CheatEntry>
+            <CheatEntry>
+              <ID>1511</ID>
+              <Description>"research 19.4"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1510</ID>
+                  <Description>"viewing angle"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-20
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+vertical angle?
+90 float = look feet
+-90 float = look sky
+
+inverted horizontal angle?
+offset -54
+
+horizontal angle?
+offset -5C
+}
+
+[ENABLE]
+
+aobscanmodule(readViewingAngle,Project.dll,F3 0F 11 74 C1 20 0F 28 C7 E8 EA EE) // should be unique
+alloc(newmem,$1000,readViewingAngle)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movss [rcx+rax*8+20],xmm6
+  jmp return
+
+readViewingAngle:
+  jmp newmem
+  nop
+return:
+registersymbol(readViewingAngle)
+
+[DISABLE]
+
+readViewingAngle:
+  db F3 0F 11 74 C1 20
+
+unregistersymbol(readViewingAngle)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+8EB038
+
+Project.dll+8EB015: 48 8B 88 A0 00 00 00  - mov rcx,[rax+000000A0]
+Project.dll+8EB01C: 48 85 C9              - test rcx,rcx
+Project.dll+8EB01F: 74 65                 - je Project.dll+8EB086
+Project.dll+8EB021: 48 63 43 34           - movsxd  rax,dword ptr [rbx+34]
+Project.dll+8EB025: 48 83 C0 09           - add rax,09
+Project.dll+8EB029: 3B 41 18              - cmp eax,[rcx+18]
+Project.dll+8EB02C: 73 5E                 - jae Project.dll+8EB08C
+Project.dll+8EB02E: 48 8D 04 40           - lea rax,[rax+rax*2]
+Project.dll+8EB032: 45 33 C0              - xor r8d,r8d
+Project.dll+8EB035: 0F 28 CE              - movaps xmm1,xmm6
+// ---------- INJECTING HERE ----------
+Project.dll+8EB038: F3 0F 11 74 C1 20     - movss [rcx+rax*8+20],xmm6
+// ---------- DONE INJECTING  ----------
+Project.dll+8EB03E: 0F 28 C7              - movaps xmm0,xmm7
+Project.dll+8EB041: E8 EA EE 02 00        - call Project.dll+919F30
+Project.dll+8EB046: 84 C0                 - test al,al
+Project.dll+8EB048: 74 2C                 - je Project.dll+8EB076
+Project.dll+8EB04A: 48 8B 13              - mov rdx,[rbx]
+Project.dll+8EB04D: 48 8B CB              - mov rcx,rbx
+Project.dll+8EB050: 48 8B 82 90 01 00 00  - mov rax,[rdx+00000190]
+Project.dll+8EB057: 48 8B 92 98 01 00 00  - mov rdx,[rdx+00000198]
+Project.dll+8EB05E: FF D0                 - call rax
+Project.dll+8EB060: 48 85 C0              - test rax,rax
+}
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1515</ID>
+                  <Description>"pointerscan result"</Description>
+                  <VariableType>Double</VariableType>
+                  <Address>"Project.dll"+04BB4040</Address>
+                  <Offsets>
+                    <Offset>1F8</Offset>
+                    <Offset>70</Offset>
+                    <Offset>10</Offset>
+                    <Offset>98</Offset>
+                    <Offset>8</Offset>
+                    <Offset>A8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1516</ID>
+                  <Description>"pointerscan result"</Description>
+                  <VariableType>Double</VariableType>
+                  <Address>"Project.dll"+04B941C8</Address>
+                  <Offsets>
+                    <Offset>1F8</Offset>
+                    <Offset>70</Offset>
+                    <Offset>10</Offset>
+                    <Offset>20</Offset>
+                    <Offset>18</Offset>
+                    <Offset>A8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1517</ID>
+                  <Description>"No description"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>"Project.dll"+04BB4040</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
@@ -4776,13 +4899,14 @@ diff 5 = 0.1000000015
 
 
 48 8B F0 49 8B 47 28 48 85 C0 0F 84 * * * * F3 0F 10 70 30
-
-F3 0F 10 70 30 48 8B 0D * * * * 83 B9 E0 00 00 00 00 75 05 E8 * * * * 0F 5A C6 33 D2 E8 * * * * 48 8B D8 48 8B 0D * * * * 83 B9 E0 00 00 00 00
+                                            F3 0F 10 70 30 48 8B 0D * * * * 83 B9 E0 00 00 00 00 75 05 E8 * * * * 0F 5A C6 33 D2 E8 * * * * 48 8B D8 48 8B 0D * * * * 83 B9 E0 00 00 00 00
+                                   05 00 00 F3 0F 10 70 30
+                                            F3 0F 10 70 30 48 8B 0D * * * * 83 B9 D0 00 00 00 00 75 05 E8 * * * * 0F 5A C6 33 D2 E8 * * * * 48 8B D8 48 8B 0D * * * * 83 B9 D0 00 00 00 00
 }
 
 [ENABLE]
 
-aobscanmodule(botINJECT,Project.dll,F3 0F 10 70 30 48 8B 0D * * * * 83 B9 E0 00 00 00 00 75 05 E8 * * * * 0F 5A C6 33 D2 E8 * * * * 48 8B D8 48 8B 0D * * * * 83 B9 E0 00 00 00 00) // should be unique
+aobscanmodule(botINJECT,Project.dll,F3 0F 10 70 30 48 8B 0D * * * * 83 B9 D0 00 00 00 00 75 05 E8 * * * * 0F 5A C6 33 D2 E8 * * * * 48 8B D8 48 8B 0D * * * * 83 B9 D0 00 00 00 00) // should be unique
 alloc(newmem,$1000,botINJECT)
 
 label(code)
@@ -4865,11 +4989,15 @@ Project.dll+398B7D3: 83 B9 E0 00 00 00 00  - cmp dword ptr [rcx+000000E0],00
 
 F3 0F 11 74 C1 20 0F 28 C7 E8 07
 F3 0F 11 74 C1 20 0F 28 C7 E8 37
+F3 0F 11 74 C1 20 0F 28 C7 E8 87
+
+
+blue -18(hex) = red
 }
 
 [ENABLE]
 
-aobscanmodule(matchTime,Project.dll,F3 0F 11 74 C1 20 0F 28 C7 E8 37) // should be unique
+aobscanmodule(matchTime,Project.dll,F3 0F 11 74 C1 20 0F 28 C7 E8 87) // should be unique
 alloc(newmem,$1000,matchTime)
 
 label(code)
@@ -4947,11 +5075,12 @@ B9 39 00 00 00 4C 8B C0 48 83 C4 20 5B E9 * * * * E8 * * * * CC CC CC CC CC CC C
 B9 * * 00 00 4C 8B C0 48 83 C4 20 5B E9 * * * * E8 * * * * CC CC CC CC CC CC CC CC CC CC CC CC CC CC 40 53 48 83 EC 20 80 3D * * * * 00 48 8B D9 75 * 48 8D 0D * * * * E8 * * * * C6 05 * * * * 01 33 D2 48 8B CB E8 * * * *
                                         //
 B9 * * 00 00 4C 8B C0 48 83 C4 20 5B E9 23 * * * E8 * * * * CC CC CC CC CC CC CC CC CC CC CC CC CC CC 40 53 48 83 EC 20 80 3D * * * * 00 48 8B D9 75 * 48 8D 0D * * * * E8 * * * * C6 05 * * * * 01 33 D2 48 8B CB E8 * * * *
+                                        D3
 }
 
 [ENABLE]
 
-aobscanmodule(spawnprotection,Project.dll,B9 * * 00 00 4C 8B C0 48 83 C4 20 5B E9 23 * * * E8 * * * * CC CC CC CC CC CC CC CC CC CC CC CC CC CC 40 53 48 83 EC 20 80 3D * * * * 00 48 8B D9 75 * 48 8D 0D * * * * E8 * * * * C6 05 * * * * 01 33 D2 48 8B CB E8 * * * *) // should be unique
+aobscanmodule(spawnprotection,Project.dll,B9 * * 00 00 4C 8B C0 48 83 C4 20 5B E9 D3 * * * E8 * * * * CC CC CC CC CC CC CC CC CC CC CC CC CC CC 40 53 48 83 EC 20 80 3D * * * * 00 48 8B D9 75 * 48 8D 0D * * * * E8 * * * * C6 05 * * * * 01 33 D2 48 8B CB E8 * * * *) // should be unique
 alloc(newmem,$1000,spawnprotection)
 
 label(code)
@@ -5036,10 +5165,50 @@ dq (double)5.67747486236476
 
 credits to norolls for sharing
 AOB of a similar opcode for XZY coords
+
+
+player instance
+Project.dll+04B23AB8
+
+
+Project.dll+04BB4040  // base access value
+
+
+player instance base
+// ORIGINAL CODE - INJECTION POINT: Project.dll+392E637
+
+Project.dll+392E603: E8 68 5D B5 FC        - call Project.EcYmLupSauz+2C0
+Project.dll+392E608: C6 05 B8 7D 52 01 01  - mov byte ptr [Project.dll+4E563C7],01
+Project.dll+392E60F: 48 8B 0D 1A 7D 2E 01  - mov rcx,[Project.dll+4C16330]
+Project.dll+392E616: 83 B9 D0 00 00 00 00  - cmp dword ptr [rcx+000000D0],00
+Project.dll+392E61D: 75 05                 - jne Project.dll+392E624
+Project.dll+392E61F: E8 DC 5F B5 FC        - call Project.ihLrXJSyfFs
+Project.dll+392E624: 48 8B 05 05 7D 2E 01  - mov rax,[Project.dll+4C16330]
+Project.dll+392E62B: 48 8B 88 A8 00 00 00  - mov rcx,[rax+000000A8]
+Project.dll+392E632: 38 59 01              - cmp [rcx+01],bl
+Project.dll+392E635: 75 60                 - jne Project.dll+392E697
+// ---------- INJECTING HERE ----------
+Project.dll+392E637: 48 8B 0D 02 5A 28 01  - mov rcx,[Project.dll+4BB4040]
+// ---------- DONE INJECTING  ----------
+Project.dll+392E63E: 83 B9 D0 00 00 00 00  - cmp dword ptr [rcx+000000D0],00
+Project.dll+392E645: 75 05                 - jne Project.dll+392E64C
+Project.dll+392E647: E8 B4 5F B5 FC        - call Project.ihLrXJSyfFs
+Project.dll+392E64C: 33 C9                 - xor ecx,ecx
+Project.dll+392E64E: E8 FD BF D1 FF        - call Project.dll+364A650
+Project.dll+392E653: 48 85 C0              - test rax,rax
+Project.dll+392E656: 74 70                 - je Project.dll+392E6C8
+Project.dll+392E658: 48 8B 0D 19 67 26 01  - mov rcx,[Project.dll+4B94D78]
+Project.dll+392E65F: 33 D2                 - xor edx,edx
+Project.dll+392E661: 48 39 08              - cmp [rax],rcx
+
+
+
+48 8B 0D * * * * 39 99 E0 00 00 00 75 0C E8    * * * * 48 8B 0D * * * * 48 8B 89 B8 00 00 00 48 8B 71 10
+48 8B 0D * * * * 83 B9 D0 00 00 00 00 75 05 E8 * * * * 33 C9 E8 * * * * 48 85 C0 74 70 48 8B 0D 19 67 26 01
 }
 
 [ENABLE]
-aobscanmodule(aobReadPlayerInstance,Project.dll,48 8B 0D * * * * 39 99 E0 00 00 00 75 0C E8 * * * * 48 8B 0D * * * * 48 8B 89 B8 00 00 00 48 8B 71 10)
+aobscanmodule(aobReadPlayerInstance,Project.dll,48 8B 0D * * * * 83 B9 D0 00 00 00 00 75 05 E8 * * * * 33 C9 E8 * * * * 48 85 C0 74 70 48 8B 0D 19 67 26 01)
 registersymbol(aobReadPlayerInstance)
 
 label(pPlayer)
@@ -5065,9 +5234,9 @@ newmem:
   mov rax,[pPlayer]
   //mov rax,["Project.dll"+04B23AB8]
 
-  cmp [rax+B8],0  // crash prevention while dead/dying
+  cmp [rax+A8],0  // crash prevention while dead/dying
   je clean
-  mov rax,[rax+B8]
+  mov rax,[rax+A8]
 
   cmp [rax+8],0  // crash prevention while dead/dying
   je clean
@@ -5357,7 +5526,8 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 31
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 71
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 21
-aobscanmodule(infAmmo,project.dll,42 89 7C C2 20 45 33 C0 8B D7 E8 21) // should be unique
+// 42 89 7C C2 20 45 33 C0 8B D7 E8 41
+aobscanmodule(infAmmo,project.dll,42 89 7C C2 20 45 33 C0 8B D7 E8 41) // should be unique
 alloc(newmem,$1000,infAmmo)
 
 // sidearm
@@ -5367,14 +5537,16 @@ alloc(newmem,$1000,infAmmo)
 // 89 7C C2 20 8B CE 8B D7 E8 2C
 // 89 7C C2 20 8B CE 8B D7 E8 6C
 // 89 7C C2 20 8B CE 8B D7 E8 1C
-aobscanmodule(infAmmoB,project.dll,89 7C C2 20 8B CE 8B D7 E8 1C) // should be unique
+// 89 7C C2 20 8B CE 8B D7 E8 3C
+aobscanmodule(infAmmoB,project.dll,89 7C C2 20 8B CE 8B D7 E8 3C) // should be unique
 alloc(newmemB,$1000,infAmmoB)
 
 
 // lethal / throwables
 // 89 7C C2 20 8B CE 8B D7 E8 6D
 // 89 7C C2 20 8B CE 8B D7 E8 1D FD
-aobscanmodule(infLethal,Project.dll,89 7C C2 20 8B CE 8B D7 E8 1D FD) // should be unique
+// 89 7C C2 20 8B CE 8B D7 E8 3D 1E
+aobscanmodule(infLethal,Project.dll,89 7C C2 20 8B CE 8B D7 E8 3D 1E) // should be unique
 alloc(newmemC,$1000,infLethal)
 
 
@@ -6073,7 +6245,8 @@ project.dll+8BCEBC: FF D0                 - call rax
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 71
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 11
 // 42 89 7C C2 20 45 33 C0 8B D7 E8 F1
-aobscanmodule(dmgwrite,project.dll,42 89 7C C2 20 45 33 C0 8B D7 E8 F1) // should be unique
+// 42 89 7C C2 20 45 33 C0 8B D7 E8 A1
+aobscanmodule(dmgwrite,project.dll,42 89 7C C2 20 45 33 C0 8B D7 E8 A1) // should be unique
 alloc(newmem,$1000,dmgwrite)
 
 label(code)
@@ -6776,11 +6949,12 @@ dealloc(newmem)
 89 7C C2 20 8B CE 8B D7 E8 6A 03
 89 7C C2 20 8B CE 8B D7 E8 2A 1F
 89 7C C2 20 8B CE 8B D7 E8 0A 3B
+89 7C C2 20 8B CE 8B D7 E8 BA 5B
 }
 
 [ENABLE]
 
-aobscanmodule(moneyINJECT,Project.dll,89 7C C2 20 8B CE 8B D7 E8 0A 3B) // should be unique
+aobscanmodule(moneyINJECT,Project.dll,89 7C C2 20 8B CE 8B D7 E8 BA 5B) // should be unique
 alloc(newmem,$1000,moneyINJECT)
 
 label(code)
@@ -7115,11 +7289,14 @@ Project.dll+9226BE: FF D0                 - call rax
   Author : ZoDDeL
 
   This script does blah blah blah
+
+44 88 B7 D8 01 00 00
+44 88 B7 E0 01 00 00
 }
 
 [ENABLE]
 
-aobscanmodule(noFallDMG,Project.dll,44 88 B7 D8 01 00 00) // should be unique
+aobscanmodule(noFallDMG,Project.dll,44 88 B7 E0 01 00 00) // should be unique
 alloc(newmem,$1000,noFallDMG)
 
 label(code)
@@ -7128,7 +7305,7 @@ label(return)
 newmem:
 
 code:
-  mov [rdi+000001D8],#0 //r14b
+  mov [rdi+000001E0],#0 //r14b
   jmp return
 
 noFallDMG:
@@ -7140,7 +7317,8 @@ registersymbol(noFallDMG)
 [DISABLE]
 
 noFallDMG:
-  db 44 88 B7 D8 01 00 00
+//db 44 88 B7 D8 01 00 00
+  db 44 88 B7 E0 01 00 00
 
 unregistersymbol(noFallDMG)
 dealloc(newmem)
@@ -7284,11 +7462,13 @@ Project.dll+35E04B9: 48 8B 15 C0 5D 59 01     - mov rdx,[Project.dll+4B76280]
   Author : ZoDDeL
 
   This script does blah blah blah
+2A A2 FC 40 88 BB 8C 00 00 00
+6D 9E FC
 }
 
 [ENABLE]
 
-aobscanmodule(infJump,Project.dll,2A A2 FC 40 88 BB 8C 00 00 00) // should be unique
+aobscanmodule(infJump,Project.dll,6D 9E FC 40 88 BB 8C 00 00 00) // should be unique
 alloc(newmem,$1000,infJump)
 
 label(code)
@@ -7422,21 +7602,24 @@ Project.dll+35E709B: CC                    - int 3
   Author : ZoDDeL
 
   This script does blah blah blah
+
+89 7C C2 20 8B CE 8B D7 E8 4A
+89 7C C2 20 8B CE 8B D7 E8 9A
 }
 
 [ENABLE]
 
-aobscanmodule(teamscore,Project.dll,89 7C C2 20 8B CE 8B D7 E8 4A) // should be unique
+aobscanmodule(teamscore,Project.dll,89 7C C2 20 8B CE 8B D7 E8 9A) // should be unique
 alloc(newmem,$1000,teamscore)
 
 label(code)
 label(return)
 
 newmem:
-  mov esi,[teamscoreBlue]
+  mov edi,[teamscoreBlue]
 
 code:
-  mov [rdx+rax*8+20],esi  // &lt;- write score value to address
+  mov [rdx+rax*8+20],edi  // &lt;- write score value to address
   mov ecx,esi
   jmp return
 
@@ -7498,11 +7681,14 @@ Project.dll+8E773E: FF D0                 - call rax
   Author : ZoDDeL
 
   This script does blah blah blah
+
+89 7C C2 20 8B CE 8B D7 E8 3A FB
+89 7C C2 20 8B CE 8B D7 E8 8A 33
 }
 
 [ENABLE]
 
-aobscanmodule(teamscoreR,Project.dll,89 7C C2 20 8B CE 8B D7 E8 3A FB) // should be unique
+aobscanmodule(teamscoreR,Project.dll,89 7C C2 20 8B CE 8B D7 E8 8A 33) // should be unique
 alloc(newmem,$1000,teamscoreR)
 
 label(code)
@@ -8463,10 +8649,11 @@ fp:60 w:108 fp:45 w:668 fp:30 w:108 fp:15
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 90 // v0.16.11
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 30 // v0.17.18
 // F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 10 // v0.18.38
+// F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 70 // v0.19.4
 
 [ENABLE]
 
-aobscanmodule(xpToken,project.dll,F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 10) // should be unique
+aobscanmodule(xpToken,project.dll,F3 0F 10 40 64 33 C9 0F 2F 05 * * * * 73 3B E8 70) // should be unique
 alloc(newmem,$1000,xpToken)
 
 label(code)
@@ -8683,11 +8870,12 @@ engine.dll+590D89: 74 09              - je engine.dll+590D94
 48 8B 44 C3 20 33
 48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 B9
 48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9 // 18.38
+48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 89 // 0.19.4
 }
 
 [ENABLE]
 
-aobscanmodule(blackmarket,Project.dll,48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 F9) // should be unique
+aobscanmodule(blackmarket,Project.dll,48 8B 44 C3 20 33 D2 48 8B CF 48 89 84 24 C0 00 00 00 E8 89) // should be unique
 alloc(newmem,$1000,blackmarket)
 
 label(code)
@@ -8781,12 +8969,16 @@ slava ukraini
 #50397197 // wolf bundle
 #50397198 // starter pack bundle
 #50397199 // dino rex bundle
+
+
+8B 52 20 48 83 C1 10
+8B 52 20 48 83 C1 18
 }
 
 [ENABLE]
 
-aobscanmodule(bundlesINJECT,Project.dll,8B 52 20 48 83 C1 10) // should be unique
-alloc(newmem,$1000,bundlesINJECT)
+aobscanmodule(bundlesINJECT,Project.dll,8B 52 20 48 83 C1 18) // should be unique
+alloc(newmem,$2000,bundlesINJECT)
 //alloc(freeAOB,100)
 
 label(code)
@@ -8806,7 +8998,9 @@ newmem:
 
 getAOB:
   push rax  // backup rax
-  lea rax,[rdx+30]  //  getting the "FREE" pointer from slava ukraini bundle into rax
+  //lea rax,[rdx+30]  //  getting the "FREE" pointer from slava ukraini bundle into rax
+  //mov [freeAOB],rax  // saving the free pointer
+  lea rax,[rdx+38]  //  getting the "FREE" pointer from slava ukraini bundle into rax
   mov [freeAOB],rax  // saving the free pointer
   pop rax  // return rax to default
   jmp free
@@ -8814,23 +9008,27 @@ getAOB:
 
 free:
   push rax  // backup rax
-  lea rax,[freeAOB]  // pull back the saved "FRRE" pointer
-  mov [rdx+30],rax  // writing the "FREE" pointer to bundle pointer 1
-  mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 2
-  mov [rdx+44],#0  // setting the premium value from 1 to 0
-  mov [rdx+48],#0  // setting the price for CP bundles to 0
+  lea rax,[freeAOB]  // pull back the saved "FRRE" pointer 1
+  //mov [rdx+30],rax  // writing the "FREE" pointer to bundle pointer 1
+  //mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 2
+  mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 1
+  mov [rdx+40],rax  // writing the "FREE" pointer to bundle pointer 2
+  //mov [rdx+44],#0  // setting the premium value from 1 to 0
+  //mov [rdx+48],#0  // setting the price for CP bundles to 0
+  mov [rdx+4C],#0  // setting the premium value from 1 to 0
+  mov [rdx+50],#0  // setting the price for CP bundles to 0
   pop rax  // return rax to default
   jmp code
 
 
 code:
   mov edx,[rdx+20]
-  add rcx,10
+  add rcx,18
   jmp return
 
 
 freeAOB:
-db 0
+dd 0
 
 
 bundlesINJECT:
@@ -8842,7 +9040,7 @@ registersymbol(freeAOB)
 [DISABLE]
 
 bundlesINJECT:
-  db 8B 52 20 48 83 C1 10
+  db 8B 52 20 48 83 C1 18
 
 unregistersymbol(bundlesINJECT)
 unregistersymbol(freeAOB)
@@ -9105,15 +9303,18 @@ Project.dll+1406E5E: CC              - int 3
 #1      (+4)    #2    (+4)    #3    (+4)
 total current total current total current
 4p:5 4p:0 w:24 4p:8 4p:0 w:24 4p:3 4p:0
+
+3B08CA8
+3B813D8
 }
 
-define(address,"Project.dll"+3B08CA8)
+define(address,"Project.dll"+3B813D8)
 define(bytes,0F 10 00 0F 10 48 10)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+3B08CA8)
+alloc(newmem,$1000,"Project.dll"+3B813D8)
 
 label(code)
 label(return)
@@ -9125,7 +9326,9 @@ newmem:
   mov [rax+70],#0  // total requirement of task #2
   //mov [rax+74],#99 // current count task #2
   mov [rax+90],#0  // total requirement of task #3
-  //mov [rax+90],#99 // current count task #3
+  //mov [rax+94],#99 // current count task #3
+
+  jmp code
 
 
 code:
@@ -9177,13 +9380,13 @@ Project.dll+3B08CCF: 0F 11 41 C0              - movups [rcx-40],xmm0
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
-              <ID>1296</ID>
+              <ID>1501</ID>
               <Description>"instant unlock operation rewards"</Description>
               <Options moHideChildren="1"/>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
-  Date   : 2024-09-28
+  Date   : 2024-10-20
   Author : ZoDDeL
 
   This script does blah blah blah
@@ -9193,12 +9396,16 @@ Project.dll+3B08CCF: 0F 11 41 C0              - movups [rcx-40],xmm0
 req1                        req2                       req3
 4p:5 4:1 4:67108865 4:1 4:0 4:8 4:1 4:67108866 4:1 4:0 4:14 4:1 4:67108885
 
+42 0F 10 4C 09 70 0F 29 48
 }
+
+define(address,"Project.dll"+397314C)
+define(bytes,42 0F 10 4C 09 70)
 
 [ENABLE]
 
-aobscanmodule(operationUnlock,Project.dll,42 0F 10 4C 09 70 0F 29 48) // should be unique
-alloc(newmem,$1000,operationUnlock)
+assert(address,bytes)
+alloc(newmem,$1000,"Project.dll"+397314C)
 
 label(code)
 label(return)
@@ -9242,50 +9449,50 @@ dd #0
 toggleInstantOPS:
 dd #1
 
-operationUnlock:
+address:
   jmp newmem
   nop
 return:
-registersymbol(operationUnlock)
+
 registersymbol(toggleCash)
 registersymbol(toggleInstantOPS)
 
 [DISABLE]
 
-operationUnlock:
-  db 42 0F 10 4C 09 70
+address:
+  db bytes
+  // movups xmm1,[rcx+r9+70]
 
-unregistersymbol(operationUnlock)
 unregistersymbol(toggleCash)
 unregistersymbol(toggleInstantOPS)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: Project.dll+391486C
+// ORIGINAL CODE - INJECTION POINT: Project.dll+397314C
 
-Project.dll+3914831: 42 0F 10 44 09 20              - movups xmm0,[rcx+r9+20]
-Project.dll+3914837: 0F 29 44 24 50                 - movaps [rsp+50],xmm0
-Project.dll+391483C: 42 0F 10 4C 09 30              - movups xmm1,[rcx+r9+30]
-Project.dll+3914842: 0F 29 4C 24 60                 - movaps [rsp+60],xmm1
-Project.dll+3914847: 42 0F 10 44 09 40              - movups xmm0,[rcx+r9+40]
-Project.dll+391484D: 0F 29 44 24 70                 - movaps [rsp+70],xmm0
-Project.dll+3914852: 42 0F 10 4C 09 50              - movups xmm1,[rcx+r9+50]
-Project.dll+3914858: 0F 29 88 68 FF FF FF           - movaps [rax-00000098],xmm1
-Project.dll+391485F: 42 0F 10 44 09 60              - movups xmm0,[rcx+r9+60]
-Project.dll+3914865: 0F 29 80 78 FF FF FF           - movaps [rax-00000088],xmm0
+Project.dll+3973111: 42 0F 10 44 09 20              - movups xmm0,[rcx+r9+20]
+Project.dll+3973117: 0F 29 44 24 50                 - movaps [rsp+50],xmm0
+Project.dll+397311C: 42 0F 10 4C 09 30              - movups xmm1,[rcx+r9+30]
+Project.dll+3973122: 0F 29 4C 24 60                 - movaps [rsp+60],xmm1
+Project.dll+3973127: 42 0F 10 44 09 40              - movups xmm0,[rcx+r9+40]
+Project.dll+397312D: 0F 29 44 24 70                 - movaps [rsp+70],xmm0
+Project.dll+3973132: 42 0F 10 4C 09 50              - movups xmm1,[rcx+r9+50]
+Project.dll+3973138: 0F 29 88 68 FF FF FF           - movaps [rax-00000098],xmm1
+Project.dll+397313F: 42 0F 10 44 09 60              - movups xmm0,[rcx+r9+60]
+Project.dll+3973145: 0F 29 80 78 FF FF FF           - movaps [rax-00000088],xmm0
 // ---------- INJECTING HERE ----------
-Project.dll+391486C: 42 0F 10 4C 09 70              - movups xmm1,[rcx+r9+70]
+Project.dll+397314C: 42 0F 10 4C 09 70              - movups xmm1,[rcx+r9+70]
 // ---------- DONE INJECTING  ----------
-Project.dll+3914872: 0F 29 48 88                    - movaps [rax-78],xmm1
-Project.dll+3914876: 42 0F 10 84 09 80 00 00 00     - movups xmm0,[rcx+r9+00000080]
-Project.dll+391487F: 0F 29 40 98                    - movaps [rax-68],xmm0
-Project.dll+3914883: 42 0F 10 8C 09 90 00 00 00     - movups xmm1,[rcx+r9+00000090]
-Project.dll+391488C: 0F 29 48 A8                    - movaps [rax-58],xmm1
-Project.dll+3914890: F2 42 0F 10 84 09 A0 00 00 00  - movsd xmm0,[rcx+r9+000000A0]
-Project.dll+391489A: 48 8D 4C 24 50                 - lea rcx,[rsp+50]
-Project.dll+391489F: F2 0F 11 40 B8                 - movsd [rax-48],xmm0
-Project.dll+39148A4: E8 17 40 75 FF                 - call Project.dll+30688C0
-Project.dll+39148A9: 84 C0                          - test al,al
+Project.dll+3973152: 0F 29 48 88                    - movaps [rax-78],xmm1
+Project.dll+3973156: 42 0F 10 84 09 80 00 00 00     - movups xmm0,[rcx+r9+00000080]
+Project.dll+397315F: 0F 29 40 98                    - movaps [rax-68],xmm0
+Project.dll+3973163: 42 0F 10 8C 09 90 00 00 00     - movups xmm1,[rcx+r9+00000090]
+Project.dll+397316C: 0F 29 48 A8                    - movaps [rax-58],xmm1
+Project.dll+3973170: F2 42 0F 10 84 09 A0 00 00 00  - movsd xmm0,[rcx+r9+000000A0]
+Project.dll+397317A: 48 8D 4C 24 50                 - lea rcx,[rsp+50]
+Project.dll+397317F: F2 0F 11 40 B8                 - movsd [rax-48],xmm0
+Project.dll+3973184: E8 A7 A6 72 FF                 - call Project.dll+309D830
+Project.dll+3973189: 84 C0                          - test al,al
 }
 </AssemblerScript>
               <CheatEntries>
@@ -9542,11 +9749,12 @@ Project.dll+374F333: 48 8B C8              - mov rcx,rax
 
 8B 48 20 48 83 C4 20 5B E9 2E
 8B 48 40 48 83 C4 20 5B E9 4E
+8B 48 20 48 83 C4 20 5B E9 EE
 }
 
 [ENABLE]
 
-aobscanmodule(multiSwapper,Project.dll,8B 48 40 48 83 C4 20 5B E9 4E) // should be unique
+aobscanmodule(multiSwapper,Project.dll,8B 48 20 48 83 C4 20 5B E9 EE) // should be unique
 alloc(newmem,$1000,multiSwapper)
 
 label(code)
@@ -9557,7 +9765,7 @@ newmem:
   jmp code
 
 code:
-  mov ecx,[rax+40]
+  mov ecx,[rax+20]
   add rsp,20
   jmp return
 
@@ -9574,8 +9782,7 @@ registersymbol(_multiSwapper)
 [DISABLE]
 
 multiSwapper:
-//db 8B 48 20 48 83 C4 20
-  db 8B 48 40 48 83 C4 20
+  db 8B 48 20 48 83 C4 20
 
 unregistersymbol(multiSwapper)
 unregistersymbol(_multiSwapper)
@@ -9663,6 +9870,7 @@ Project.dll+39FE41C: CC              - int 3
 83886144:S2 Coat of Arms
 83886151:Feels(S2 BP)
 83886153:S2 Bling
+83886178:Hell Gourd
 </DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
@@ -9703,6 +9911,7 @@ Project.dll+39FE41C: CC              - int 3
 83951642:AlfaBravoSupporter
 83951643:LaserStrike
 83951644:LaserOps
+83951645:Nightmare
 </DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
@@ -9735,6 +9944,9 @@ Project.dll+39FE41C: CC              - int 3
 33554441:Polar Star
 33554452:Dino Rex
 33554451:Nightshade
+33554455:Aberration
+33554456:John O. Lantern
+33554457:Pincushion
 </DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
@@ -9773,6 +9985,7 @@ Project.dll+39FE41C: CC              - int 3
 84017176:Fanatic
 84017177:Dino Friendz
 84017178:Resistant
+84017179:Wrist Candy
 </DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
@@ -9876,15 +10089,18 @@ Project.dll+39FE41C: CC              - int 3
 +396CAA3
 +39C2823
 +353DAC3
+354CDE3
+358DAC3
+
 }
 
-define(address,"Project.dll"+354CDE3)
+define(address,"Project.dll"+358DAC3)
 define(bytes,0F 11 00 0F 10 49 10)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+354CDE3)
+alloc(newmem,$1000,"Project.dll"+358DAC3)
 
 label(code)
 label(return)
@@ -10190,19 +10406,22 @@ Project.dll+396CACA: 0F 11 48 50              - movups [rax+50],xmm1
 +3C90635
 +3CF6945
 +38773F5
+3889B25
+38C8CF5
+
 
 
 
 48 8D 47 44 B9 02 00 00 00 66 90 48 8D 80 80 00 00 00 0F 10 03 0F 10 4B 10 48 8D 9B 80 00 00 00 0F 11 40 80
 }
 
-define(address,"Project.dll"+3889B25)
+define(address,"Project.dll"+38C8CF5)
 define(bytes,0F 11 40 80 0F 10 43 A0)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+3889B25)
+alloc(newmem,$1000,"Project.dll"+38C8CF5)
 
 label(code)
 label(return)
@@ -11090,16 +11309,19 @@ Project.dll+3C9065D: 0F 11 48 D0           - movups [rax-30],xmm1
 +3C905D5
 +3CF68E5
 +3877395
+3889AC5
+38C8C95
+
 
 }
 
-define(address,"Project.dll"+3889AC5)
+define(address,"Project.dll"+38C8C95)
 define(bytes,0F 11 40 80 0F 10 43 A0)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+3889AC5)
+alloc(newmem,$1000,"Project.dll"+38C8C95)
 
 label(code)
 label(return)
@@ -12151,16 +12373,19 @@ Project.dll+3C8045D: 0F 11 48 D0                    - movups [rax-30],xmm1
 +3C90535
 +3CF6845
 +38772F5
+3889A25
+38C8BF5
+
 
 }
 
-define(address,"Project.dll"+3889A25)
+define(address,"Project.dll"+38C8BF5)
 define(bytes,0F 11 40 80 0F 10 43 A0)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+3889A25)
+alloc(newmem,$1000,"Project.dll"+38C8BF5)
 
 label(code)
 label(return)
