@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.19.4 (1021.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.19.4 (1024.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -10853,6 +10853,7 @@ Project.dll+3C9065D: 0F 11 48 D0           - movups [rax-30],xmm1
 167903296:Rock Island Tris Precision (M4)
 167903298:F1 Marksman (M4)
 167903264:Hawk Ti Full Auto (Desert Eagle)
+167903311:Gauss Mk. VII (R7000)
 </DropDownList>
                       <ShowAsSigned>0</ShowAsSigned>
                       <VariableType>4 Bytes</VariableType>
@@ -11873,6 +11874,7 @@ Project.dll+3C8045D: 0F 11 48 D0                    - movups [rax-30],xmm1
 167903296:Rock Island Tris Precision (M4)
 167903298:F1 Marksman (M4)
 167903264:Hawk Ti Full Auto (Desert Eagle)
+167903311:Gauss Mk. VII (R7000)
 </DropDownList>
                       <ShowAsSigned>0</ShowAsSigned>
                       <VariableType>4 Bytes</VariableType>
