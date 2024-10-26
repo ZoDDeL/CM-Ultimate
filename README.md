@@ -40,3 +40,13 @@ https://github.com/ZoDDeL/CM-Ultimate/releases
 hit the "Download latest Table" button in the table header top-right.
 this will download the most current commit directly into your open table and replace its contents!
 after that you can hit File -> Save to save the new commit or check C:/CM_Ultimate.CT
+
+
+[how to use the CE table:]
+
+make sure you have installed(not packed loose files!) cheat engine 7.5 or newer first.
+before starting the table make sure the game runs!!! you can sit in the mainscrean of the game.
+to run the table just doubleclick the CM_Ultimate.CT file.
+when asked to to executue lua code hit allow or allow always(you wont get asked anymore).
+this is required for the custom header in the CE window (buttons, compact mode) and to automatic hook the game exe.
+
