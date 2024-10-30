@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.19.4 (1026.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.19.4 (1030.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -5406,7 +5406,7 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
               <CheatEntries>
                 <CheatEntry>
                   <ID>1371</ID>
-                  <Description>"toggle vaccum / static / off      ---&gt;"</Description>
+                  <Description>"toggle vacuum / static / off      ---&gt;"</Description>
                   <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
 1:VACUUM
 2:STATIC
@@ -7822,6 +7822,131 @@ Project.dll+35E40F6: 48 85 C0                 - test rax,rax
 Project.dll+35E40F9: 0F 84 8F 01 00 00        - je Project.dll+35E428E
 }
 </AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1519</ID>
+              <Description>"map swapper (select a map to update pointer)"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-10-28
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+  credits to FireNinja
+  for giving inputs on discord.
+
+
+1 30 117440514 8
+
+4p:117440514 4:8 w:152 4p:117440520 4:8
+
+}
+
+[ENABLE]
+
+aobscanmodule(mapSwapper,Project.dll,8B 1B 75 37) // should be unique
+alloc(newmem,$1000,mapSwapper)
+
+label(code)
+label(return)
+
+newmem:
+  cmp [rcx],#117440500
+  jl code
+  cmp [rcx],#117440600
+  jg code
+  mov [_mapSwapper],rcx
+  jmp code
+
+code:
+  mov ebx,[rbx]
+  jmp return
+
+_mapSwapper:
+dd #0
+
+mapSwapper:
+  jmp1 newmem
+  nop
+return:
+registersymbol(mapSwapper)
+registersymbol(_mapSwapper)
+
+[DISABLE]
+
+mapSwapper:
+  db 8B 1B
+
+unregistersymbol(mapSwapper)
+unregistersymbol(_mapSwapper)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+38C00BA
+
+Project.dll+38C0084: 75 13                 - jne Project.dll+38C0099
+Project.dll+38C0086: 48 8D 0D 2B 50 31 01  - lea rcx,[Project.dll+4BD50B8]
+Project.dll+38C008D: E8 DE 42 BC FC        - call Project.EcYmLupSauz+2C0
+Project.dll+38C0092: C6 05 D7 7A 59 01 01  - mov byte ptr [Project.dll+4E57B70],01
+Project.dll+38C0099: 48 8B 05 18 50 31 01  - mov rax,[Project.dll+4BD50B8]
+Project.dll+38C00A0: 48 8B 90 A8 00 00 00  - mov rdx,[rax+000000A8]
+Project.dll+38C00A7: 48 8B 3A              - mov rdi,[rdx]
+Project.dll+38C00AA: 48 85 FF              - test rdi,rdi
+Project.dll+38C00AD: 0F 84 C9 00 00 00     - je Project.dll+38C017C
+Project.dll+38C00B3: 80 3D 41 7F 59 01 00  - cmp byte ptr [Project.dll+4E57FFB],00
+// ---------- INJECTING HERE ----------
+Project.dll+38C00BA: 8B 1B                 - mov ebx,[rbx]
+// ---------- DONE INJECTING  ----------
+Project.dll+38C00BC: 75 37                 - jne Project.dll+38C00F5
+Project.dll+38C00BE: 48 8D 0D 8B 10 2F 01  - lea rcx,[Project.dll+4BB1150]
+Project.dll+38C00C5: E8 A6 42 BC FC        - call Project.EcYmLupSauz+2C0
+Project.dll+38C00CA: 48 8D 0D 2F 7B 33 01  - lea rcx,[Project.dll+4BF7C00]
+Project.dll+38C00D1: E8 9A 42 BC FC        - call Project.EcYmLupSauz+2C0
+Project.dll+38C00D6: 48 8D 0D 33 78 30 01  - lea rcx,[Project.dll+4BC7910]
+Project.dll+38C00DD: E8 8E 42 BC FC        - call Project.EcYmLupSauz+2C0
+Project.dll+38C00E2: 48 8D 0D CF 67 31 01  - lea rcx,[Project.dll+4BD68B8]
+Project.dll+38C00E9: E8 82 42 BC FC        - call Project.EcYmLupSauz+2C0
+Project.dll+38C00EE: C6 05 06 7F 59 01 01  - mov byte ptr [Project.dll+4E57FFB],01
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1521</ID>
+                  <Description>"current selected map      (change map in dropdown menu) ------&gt;"</Description>
+                  <DropDownList DisplayValueAsItem="1">117440519:Pumpkins(TDM!!!)
+117440512:Test Polygon(FREEZE!!!)
+117440513:Art Gallery
+117440514:Hangar-X87
+117440515:Subway
+117440516:Power Station
+117440517:Farm
+117440518:Train Yard
+117440520:Forest
+117440521:Pokrovsk(FREEZE!!!)
+117440522:Pool
+117440523:Egypt
+117440524:Highrise
+117440525:Warehouse
+117440526:Caribbean
+117440527:Caribbean Night
+117440529:Museum
+117440530:Cargo Night
+117440532:Cargo
+117440528:Oil Platform
+117440531:Oil Platform Night
+117440533:Heaven
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_mapSwapper</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -10520,7 +10645,7 @@ Project.dll+3C9065D: 0F 11 48 D0           - movups [rax-30],xmm1
                 <CheatEntry>
                   <ID>899</ID>
                   <Description>"full weapon build array (doubleclick value for dropdown menu) ------&gt;"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 00 04 01 14 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 04 00 09 0A 00 00 00 00 35 00 06 0A 00 00 00 00 1A 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 05 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 00 00 0A 0A:M4 Special(Gauss Dragonbreath Akimbo Ultimate)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 00 04 01 12 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 19 00 05 0A 00 00 00 00 05 00 09 0A 00 00 00 00 35 00 06 0A 00 00 00 00 1A 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 1B 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 00 00 0A 0A:M4 Special(Gauss Dragonbreath Akimbo Ultimate)
 00 02 02 01 17 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 00 00 00 00 00 00 00 00 35 00 06 0A 00 00 00 00 33 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 05 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 04 00 0A 0A:ShotStorm Special(Dragonbreath Hollow Ultimate)
 00 03 04 01 00 00 00 00 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 24 00 06 0A 00 00 00 00 2B 00 04 0A 00 00 00 00 00 00 00 00 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 00 0A 0A:M1 Socom Special (Unreleased Weapon)
 05 00 07 01 11 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2B 00 04 0A 00 00 00 00 1D 00 07 0A 00 00 00 00 1B 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 04 00 0A 0A:Super Gatling (Minigun)
@@ -11397,7 +11522,7 @@ Project.dll+3C8045D: 0F 11 48 D0                    - movups [rax-30],xmm1
                 <CheatEntry>
                   <ID>942</ID>
                   <Description>"full weapon build array for guns (doubleclick value for dropdown menu) ------&gt;"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 00 04 01 14 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 04 00 09 0A 00 00 00 00 35 00 06 0A 00 00 00 00 1A 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 05 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 00 00 0A 0A:M4 Special(Gauss Dragonbreath Akimbo Ultimate)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 00 04 01 12 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 19 00 05 0A 00 00 00 00 05 00 09 0A 00 00 00 00 35 00 06 0A 00 00 00 00 1A 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 1B 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 00 00 0A 0A:M4 Special(Gauss Dragonbreath Akimbo Ultimate)
 00 02 02 01 17 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 00 00 00 00 00 00 00 00 35 00 06 0A 00 00 00 00 33 00 04 0A 00 00 00 00 30 00 07 0A 00 00 00 00 05 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 04 00 0A 0A:ShotStorm Special(Dragonbreath Hollow Ultimate)
 00 03 04 01 00 00 00 00 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 24 00 06 0A 00 00 00 00 2B 00 04 0A 00 00 00 00 00 00 00 00 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 00 0A 0A:M1 Socom Special (Unreleased Weapon)
 05 00 07 01 11 00 10 0A 00 00 00 00 0C 00 00 0A 00 00 00 00 4F 00 02 0A 00 00 00 00 13 00 03 0A 00 00 00 00 3D 00 05 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2B 00 04 0A 00 00 00 00 1D 00 07 0A 00 00 00 00 1B 00 01 0A 00 00 00 00 00 00 00 00 00 0B 08 0A 02 04 0E 0A 00 00 00 00 04 00 0A 0A:Super Gatling (Minigun)
