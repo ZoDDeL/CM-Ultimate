@@ -108,7 +108,7 @@
                   <Description>"primary weapon highlight pointer  (select weapon to update pointer)"</Description>
                   <Options moHideChildren="1"/>
                   <VariableType>Auto Assembler Script</VariableType>
-                  <AssemblerScript>{ Game   : CombatMaster.exe
+                  <AssemblerScript>{ Game   : 000001B5-Combat Master
   Version: 
   Date   : 2024-08-08
   Author : ZoDDeL
