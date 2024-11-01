@@ -35,6 +35,11 @@ https://cheatengine.org/
 https://github.com/ZoDDeL/CM-Ultimate/releases
 
 
+[download Combat Master 19.4 part1:] https://bunkr.ph/d/nwaOeBYsldkWL
+
+[download Combat Master 19.4 part2:] https://bunkr.ph/d/kfmF14v1yga2L
+
+
 [getting most current Updates:]
 
 hit the "Download latest Table" button in the table header top-right.
