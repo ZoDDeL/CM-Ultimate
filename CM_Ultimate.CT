@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.22 (11.20.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.22 (11.20.3)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -4660,6 +4660,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>2991</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -5550,6 +5560,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>2992</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -6131,6 +6151,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>2993</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -7007,6 +7037,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>2994</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -7898,6 +7938,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>2995</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -8479,6 +8529,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>2996</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -9355,6 +9415,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>2997</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -10246,6 +10316,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>2998</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -10827,6 +10907,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>2999</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -11703,6 +11793,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>3000</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -12594,6 +12694,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>3002</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -13175,6 +13285,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>3003</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -14051,6 +14171,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>3001</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
@@ -14942,6 +15072,16 @@ Project.dll+39FE41C: CC              - int 3
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
                             </CheatEntry>
+                            <CheatEntry>
+                              <ID>3004</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
+                            </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
                         <CheatEntry>
@@ -15523,6 +15663,16 @@ Project.dll+39FE41C: CC              - int 3
                               <ShowAsSigned>0</ShowAsSigned>
                               <VariableType>4 Bytes</VariableType>
                               <Address>+4</Address>
+                            </CheatEntry>
+                            <CheatEntry>
+                              <ID>3005</ID>
+                              <Description>"Canted ADS"</Description>
+                              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">256:OFF
+0:ON
+</DropDownList>
+                              <ShowAsSigned>0</ShowAsSigned>
+                              <VariableType>4 Bytes</VariableType>
+                              <Address>+40</Address>
                             </CheatEntry>
                           </CheatEntries>
                         </CheatEntry>
