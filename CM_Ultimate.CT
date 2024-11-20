@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.22 (11.20.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.22 (11.20.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -933,12 +933,12 @@ Project.dll+3A5220A: E8 C1 9A FF FF        - call Project.dll+3A4BCD0
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
-              <ID>1540</ID>
+              <ID>2990</ID>
               <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
-  Date   : 2024-11-19
+  Date   : 2024-11-20
   Author : ZoDDeL
 
   This script does blah blah blah
@@ -949,13 +949,13 @@ Project.dll+3A5220A: E8 C1 9A FF FF        - call Project.dll+3A4BCD0
 FF 9A FC
 D6 9A FC
          40 88 BB 8C 00 00 00
-         40 88 BB 96 00 00 00
+         40 88 BB 94 00 00 00 48
 }
 
 [ENABLE]
 
-aobscanmodule(INJECT,Project.dll,40 88 BB 96 00 00 00) // should be unique
-alloc(newmem,$1000,INJECT)
+aobscanmodule(infJump,Project.dll,40 88 BB 94 00 00 00 48) // should be unique
+alloc(newmem,$1000,infJump)
 
 label(code)
 label(return)
@@ -963,49 +963,49 @@ label(return)
 newmem:
 
 code:
-  mov [rbx+00000096],#0 //dil // 1 = no jump / 0 = inf jump
+  mov [rbx+00000094],#0 // dil / 4byte 0 = not jumped / 1 = jumped
   jmp return
 
-INJECT:
+infJump:
   jmp newmem
   nop 2
 return:
-registersymbol(INJECT)
+registersymbol(infJump)
 
 [DISABLE]
 
-INJECT:
-  db 40 88 BB 96 00 00 00
+infJump:
+  db 40 88 BB 94 00 00 00
 
-unregistersymbol(INJECT)
+unregistersymbol(infJump)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: Project.dll+379F310
+// ORIGINAL CODE - INJECTION POINT: Project.dll+379F430
 
-Project.dll+379F2E9: 33 D2                 - xor edx,edx
-Project.dll+379F2EB: 48 8B CB              - mov rcx,rbx
-Project.dll+379F2EE: E8 2D DF FE FF        - call Project.dll+378D220
-Project.dll+379F2F3: 48 85 C0              - test rax,rax
-Project.dll+379F2F6: 74 2A                 - je Project.dll+379F322
-Project.dll+379F2F8: 48 8B 15 49 6A 19 01  - mov rdx,[Project.dll+4935D48]
-Project.dll+379F2FF: B9 29 00 00 00        - mov ecx,00000029
-Project.dll+379F304: 44 0F B6 CF           - movzx r9d,dil
-Project.dll+379F308: 4C 8B C0              - mov r8,rax
-Project.dll+379F30B: E8 B0 03 87 FC        - call Project.dCvvYAqBFHw+C020
+Project.dll+379F409: 33 D2                 - xor edx,edx
+Project.dll+379F40B: 48 8B CB              - mov rcx,rbx
+Project.dll+379F40E: E8 0D DE FE FF        - call Project.dll+378D220
+Project.dll+379F413: 48 85 C0              - test rax,rax
+Project.dll+379F416: 74 2A                 - je Project.dll+379F442
+Project.dll+379F418: 48 8B 15 29 69 19 01  - mov rdx,[Project.dll+4935D48]
+Project.dll+379F41F: B9 1D 00 00 00        - mov ecx,0000001D
+Project.dll+379F424: 44 0F B6 CF           - movzx r9d,dil
+Project.dll+379F428: 4C 8B C0              - mov r8,rax
+Project.dll+379F42B: E8 90 02 87 FC        - call Project.dCvvYAqBFHw+C020
 // ---------- INJECTING HERE ----------
-Project.dll+379F310: 40 88 BB 96 00 00 00  - mov [rbx+00000096],dil
+Project.dll+379F430: 40 88 BB 94 00 00 00  - mov [rbx+00000094],dil
 // ---------- DONE INJECTING  ----------
-Project.dll+379F317: 48 8B 5C 24 30        - mov rbx,[rsp+30]
-Project.dll+379F31C: 48 83 C4 20           - add rsp,20
-Project.dll+379F320: 5F                    - pop rdi
-Project.dll+379F321: C3                    - ret 
-Project.dll+379F322: E8 C9 8C D6 FC        - call Project.dll+507FF0
-Project.dll+379F327: CC                    - int 3 
-Project.dll+379F328: CC                    - int 3 
-Project.dll+379F329: CC                    - int 3 
-Project.dll+379F32A: CC                    - int 3 
-Project.dll+379F32B: CC                    - int 3 
+Project.dll+379F437: 48 8B 5C 24 30        - mov rbx,[rsp+30]
+Project.dll+379F43C: 48 83 C4 20           - add rsp,20
+Project.dll+379F440: 5F                    - pop rdi
+Project.dll+379F441: C3                    - ret 
+Project.dll+379F442: E8 A9 8B D6 FC        - call Project.dll+507FF0
+Project.dll+379F447: CC                    - int 3 
+Project.dll+379F448: CC                    - int 3 
+Project.dll+379F449: CC                    - int 3 
+Project.dll+379F44A: CC                    - int 3 
+Project.dll+379F44B: CC                    - int 3 
 }
 </AssemblerScript>
             </CheatEntry>
