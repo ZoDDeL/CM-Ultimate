@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (11.27.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (11.27.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -1046,6 +1046,353 @@ GameAssembly.dll+4C4846F: 0F 10 40 40              - movups xmm0,[rax+40]
 GameAssembly.dll+4C48473: 0F 11 49 B0              - movups [rcx-50],xmm1
 GameAssembly.dll+4C48477: 0F 10 48 50              - movups xmm1,[rax+50]
 GameAssembly.dll+4C4847B: 0F 11 41 C0              - movups [rcx-40],xmm0
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3570</ID>
+          <Description>"instant unlock operation rewards"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-11-27
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+
+5 +14(hex) 8 +14(hex) 22
+
+req1                        req2                       req3
+4p:5 4:1 4:67108865 4:1 4:0 4:8 4:1 4:67108866 4:1 4:0 4:14 4:1 4:67108885
+}
+
+[ENABLE]
+
+aobscanmodule(operation,GameAssembly.dll,42 0F 10 44 09 60 0F 29 54) // should be unique
+alloc(newmem,$1000,operation)
+
+label(code)
+label(return)
+
+newmem:
+  cmp [rcx+r9+74],#67108865
+  je cash
+  jmp easy
+
+cash:
+  cmp [toggleCash],#1
+  jne easy
+  mov [rcx+r9+74],#67108883
+  mov [rcx+r9+74+14],#67108883
+  mov [rcx+r9+74+14+14],#67108883  // 6 hours BP XP token 17039374
+  jmp easy
+
+easy:
+  cmp [toggleInstantOPS],#1
+  jne code
+  cmp [rcx+r9+74],#0
+  je code
+  {
+  cmp [rcx+r9+74],#77777777
+  jg code
+  cmp [rcx+r9+74],#10000000
+  jl code
+  }
+  mov [rcx+r9+70-4],#0
+  mov [rcx+r9+70-4+14],#0
+  mov [rcx+r9+70-4+14+14],#0
+  jmp code
+
+code:
+  movups xmm0,[rcx+r9+60]
+  jmp return
+
+toggleCash:
+dd #0
+
+toggleInstantOPS:
+dd #1
+
+operation:
+  jmp newmem
+  nop
+return:
+registersymbol(operation)
+registersymbol(toggleCash)
+registersymbol(toggleInstantOPS)
+
+[DISABLE]
+
+operation:
+  db 42 0F 10 44 09 60
+
+unregistersymbol(operation)
+unregistersymbol(toggleCash)
+unregistersymbol(toggleInstantOPS)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4D5A105
+
+GameAssembly.dll+4D5A0CD: 0F 83 52 01 00 00              - jae GameAssembly.dll+4D5A225
+GameAssembly.dll+4D5A0D3: 48 69 CF 88 00 00 00           - imul rcx,rdi,00000088
+GameAssembly.dll+4D5A0DA: 42 0F 10 44 09 20              - movups xmm0,[rcx+r9+20]
+GameAssembly.dll+4D5A0E0: 42 0F 10 4C 09 50              - movups xmm1,[rcx+r9+50]
+GameAssembly.dll+4D5A0E6: 42 0F 10 54 09 30              - movups xmm2,[rcx+r9+30]
+GameAssembly.dll+4D5A0EC: 0F 29 44 24 60                 - movaps [rsp+60],xmm0
+GameAssembly.dll+4D5A0F1: 42 0F 10 44 09 40              - movups xmm0,[rcx+r9+40]
+GameAssembly.dll+4D5A0F7: 0F 29 4D 90                    - movaps [rbp-70],xmm1
+GameAssembly.dll+4D5A0FB: 42 0F 10 4C 09 70              - movups xmm1,[rcx+r9+70]
+GameAssembly.dll+4D5A101: 0F 29 45 80                    - movaps [rbp-80],xmm0
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+4D5A105: 42 0F 10 44 09 60              - movups xmm0,[rcx+r9+60]
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+4D5A10B: 0F 29 54 24 70                 - movaps [rsp+70],xmm2
+GameAssembly.dll+4D5A110: 0F 29 45 A0                    - movaps [rbp-60],xmm0
+GameAssembly.dll+4D5A114: 42 0F 10 84 09 80 00 00 00     - movups xmm0,[rcx+r9+00000080]
+GameAssembly.dll+4D5A11D: 66 0F 73 DA 08                 - psrldq xmm2,08
+GameAssembly.dll+4D5A122: 0F 29 4D B0                    - movaps [rbp-50],xmm1
+GameAssembly.dll+4D5A126: 42 0F 10 8C 09 90 00 00 00     - movups xmm1,[rcx+r9+00000090]
+GameAssembly.dll+4D5A12F: 66 0F 7E D0                    - movd eax,xmm2
+GameAssembly.dll+4D5A133: 0F 29 45 C0                    - movaps [rbp-40],xmm0
+GameAssembly.dll+4D5A137: F2 42 0F 10 84 09 A0 00 00 00  - movsd xmm0,[rcx+r9+000000A0]
+GameAssembly.dll+4D5A141: F2 0F 11 45 E0                 - movsd [rbp-20],xmm0
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>3571</ID>
+              <Description>"instant clear missions                       (toggle off/on)   ---&gt;"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
+1:on
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>toggleInstantOPS</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3572</ID>
+              <Description>"swap 10,20,50CP with 15.000CP      (toggle off/on)   ---&gt;"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
+1:on
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>toggleCash</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3541</ID>
+          <Description>"free blackmarket"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-11-27
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+4byte
+90 0 140 0 190 0 290 0 450 0 590 0 790 0 990 0 1200
+
+BS:20 OOO:A 4p:90 4:140
+}
+
+[ENABLE]
+
+aobscanmodule(blackmarket,GameAssembly.dll,48 8B 5C C3 20 33 D2 48 8B CF 48) // should be unique
+alloc(newmem,$1000,blackmarket)
+
+label(code)
+label(return)
+
+newmem:
+  cmp dword ptr [rbx+rax*8+20+4],#0
+  je code
+  cmp dword ptr [rbx+rax*8+20+4],#15000
+  jg code
+  mov dword ptr [rbx+rax*8+20+4],#0
+  jmp code
+
+code:
+  mov rbx,[rbx+rax*8+20]
+  jmp return
+
+blackmarket:
+  jmp newmem
+return:
+registersymbol(blackmarket)
+
+[DISABLE]
+
+blackmarket:
+  db 48 8B 5C C3 20
+
+unregistersymbol(blackmarket)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4DBAC17
+
+GameAssembly.dll+4DBABED: 0F 84 CD 00 00 00           - je GameAssembly.dll+4DBACC0
+GameAssembly.dll+4DBABF3: 48 8B 5B 38                 - mov rbx,[rbx+38]
+GameAssembly.dll+4DBABF7: 48 8D 4C 24 50              - lea rcx,[rsp+50]
+GameAssembly.dll+4DBABFC: 33 D2                       - xor edx,edx
+GameAssembly.dll+4DBABFE: E8 3D 47 D0 FF              - call GameAssembly.dll+4ABF340
+GameAssembly.dll+4DBAC03: 48 85 DB                    - test rbx,rbx
+GameAssembly.dll+4DBAC06: 0F 84 B4 00 00 00           - je GameAssembly.dll+4DBACC0
+GameAssembly.dll+4DBAC0C: 48 98                       - cdqe 
+GameAssembly.dll+4DBAC0E: 3B 43 18                    - cmp eax,[rbx+18]
+GameAssembly.dll+4DBAC11: 0F 83 AF 00 00 00           - jae GameAssembly.dll+4DBACC6
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+4DBAC17: 48 8B 5C C3 20              - mov rbx,[rbx+rax*8+20]
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+4DBAC1C: 33 D2                       - xor edx,edx
+GameAssembly.dll+4DBAC1E: 48 8B CF                    - mov rcx,rdi
+GameAssembly.dll+4DBAC21: 48 89 9C 24 F0 00 00 00     - mov [rsp+000000F0],rbx
+GameAssembly.dll+4DBAC29: E8 A2 00 00 00              - call GameAssembly.dll+4DBACD0
+GameAssembly.dll+4DBAC2E: 84 C0                       - test al,al
+GameAssembly.dll+4DBAC30: 74 6E                       - je GameAssembly.dll+4DBACA0
+GameAssembly.dll+4DBAC32: 0F 10 44 24 74              - movups xmm0,[rsp+74]
+GameAssembly.dll+4DBAC37: 48 8D 4C 24 30              - lea rcx,[rsp+30]
+GameAssembly.dll+4DBAC3C: 33 D2                       - xor edx,edx
+GameAssembly.dll+4DBAC3E: F2 0F 10 8C 24 84 00 00 00  - movsd xmm1,[rsp+00000084]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3518</ID>
+          <Description>"free bundles (disabling this script = gamecrash!!!)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-11-27
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+slava ukraini
+0000000003010007 00000175EA457840 00000174B53D5F40 00000174B53D5F40 0000000000000001 0000000000000000
+
+
+#50462718 // combat master points
+#50462719 // "coming soon" placeholder
+
+#50397184 // desert cobra bundle
+#50397185 // hype racer bundle
+#50397186 // red storm bundle
+#50397187 // skull face bundle
+#50397188 // welcome back bundle
+#50397189 // phoenix rise bundle
+#50397190 // dual katana bundle
+#50397191 // slava ukraini bundle
+#50397192 // polar star bundle
+#50397193 // shadow rider bundle
+#50397194 // wolverine bundle
+#50397195 // street fighter bundle
+#50397196 // cobra queen bundle
+#50397197 // wolf bundle
+#50397198 // starter pack bundle
+#50397199 // dino rex bundle
+}
+
+[ENABLE]
+
+aobscanmodule(bundles,GameAssembly.dll,8B 53 20 48 81 C1 78 1C 00 00 45 33 C0 E8 73) // should be unique
+alloc(newmem,$2000,bundles)
+
+label(code)
+label(return)
+label(getAOB)
+label(free)
+
+newmem:
+  cmp dword ptr [rbx+20],#50397191 // checking free bundle slava ukraini
+  je getAOB  // jump if compare is true (to grab the "FREE" pointer)
+  cmp dword ptr [rbx+20],#50462718 // skip CM points // crashfix
+  je code
+  cmp dword ptr [rbx+20],#50462719 // skip coming soon // crashfix
+  je code
+  jmp free  // else jump to free section (to overwrite the bundle price values / pointer)
+
+getAOB:
+  push rax  // backup rax
+  //lea rax,[rdx+30]  //  getting the "FREE" pointer from slava ukraini bundle into rax
+  //mov [freeAOB],rax  // saving the free pointer
+  lea rax,[rbx+38]  //  getting the "FREE" pointer from slava ukraini bundle into rax
+  mov [freeAOB],rax  // saving the free pointer
+  pop rax  // return rax to default
+  jmp free
+
+
+free:
+  push rax  // backup rax
+  lea rax,[freeAOB]  // pull back the saved "FREE" pointer 1
+  //mov [rdx+30],rax  // writing the "FREE" pointer to bundle pointer 1
+  //mov [rdx+38],rax  // writing the "FREE" pointer to bundle pointer 2
+  mov [rbx+38],rax  // writing the "FREE" pointer to bundle pointer 1
+  mov [rbx+40],rax  // writing the "FREE" pointer to bundle pointer 2
+  //mov [rdx+44],#0  // setting the premium value from 1 to 0
+  //mov [rdx+48],#0  // setting the price for CP bundles to 0
+  mov [rbx+4C],#0  // setting the premium value from 1 to 0
+  mov [rbx+50],#0  // setting the price for CP bundles to 0
+  pop rax  // return rax to default
+  jmp code
+
+
+code:
+  mov edx,[rbx+20]
+  add rcx,00001C78
+  jmp return
+
+freeAOB:
+dd 0
+
+bundles:
+  jmp newmem
+  nop 5
+return:
+registersymbol(bundles)
+registersymbol(freeAOB)
+
+[DISABLE]
+
+bundles:
+  db 8B 53 20 48 81 C1 78 1C 00 00
+
+unregistersymbol(bundles)
+unregistersymbol(freeAOB)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4E1E1CB
+
+GameAssembly.dll+4E1E1A7: 48 8B 05 72 38 3F 01  - mov rax,[GameAssembly.dll+6211A20]
+GameAssembly.dll+4E1E1AE: 48 8B 88 B8 00 00 00  - mov rcx,[rax+000000B8]
+GameAssembly.dll+4E1E1B5: 48 8B 01              - mov rax,[rcx]
+GameAssembly.dll+4E1E1B8: 48 85 C0              - test rax,rax
+GameAssembly.dll+4E1E1BB: 74 40                 - je GameAssembly.dll+4E1E1FD
+GameAssembly.dll+4E1E1BD: 48 8B 48 68           - mov rcx,[rax+68]
+GameAssembly.dll+4E1E1C1: 48 85 C9              - test rcx,rcx
+GameAssembly.dll+4E1E1C4: 74 37                 - je GameAssembly.dll+4E1E1FD
+GameAssembly.dll+4E1E1C6: 48 85 DB              - test rbx,rbx
+GameAssembly.dll+4E1E1C9: 74 32                 - je GameAssembly.dll+4E1E1FD
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+4E1E1CB: 8B 53 20              - mov edx,[rbx+20]
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+4E1E1CE: 48 81 C1 78 1C 00 00  - add rcx,00001C78
+GameAssembly.dll+4E1E1D5: 45 33 C0              - xor r8d,r8d
+GameAssembly.dll+4E1E1D8: E8 73 C1 C9 FF        - call GameAssembly.dll+4ABA350
+GameAssembly.dll+4E1E1DD: 84 C0                 - test al,al
+GameAssembly.dll+4E1E1DF: 74 0B                 - je GameAssembly.dll+4E1E1EC
+GameAssembly.dll+4E1E1E1: B8 02 00 00 00        - mov eax,00000002
+GameAssembly.dll+4E1E1E6: 48 83 C4 20           - add rsp,20
+GameAssembly.dll+4E1E1EA: 5B                    - pop rbx
+GameAssembly.dll+4E1E1EB: C3                    - ret 
+GameAssembly.dll+4E1E1EC: 8B 43 6C              - mov eax,[rbx+6C]
 }
 </AssemblerScript>
         </CheatEntry>
