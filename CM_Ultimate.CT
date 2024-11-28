@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (11.27.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (11.28.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -741,6 +741,164 @@ project.dll+3957C80: 4C 8B F0              - mov r14,rax
               <Address>toggleMEGA</Address>
             </CheatEntry>
           </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3628</ID>
+          <Description>"instant level weapon (1-3 kills for lv 80)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-11-28
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+mp5
+2500 5000 5000 5000 5000 5000 5000 5000 5000 5000 10000 10000 10000 10000 10000 10000 10000 10000 10000 10000 15000 15000 15000 15000 15000 15000 15000 15000 15000 15000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 20000 30000 30000 30000 30000 30000 30000 30000 30000 30000 30000 40000 40000 40000 40000 40000 50000 50000 50000 50000 4147483646
+
+4p:2500 w:308 4:50000 4p:4147483646
+
+}
+
+[ENABLE]
+
+aobscanmodule(weaponXP,GameAssembly.dll,44 03 44 81 20 49 63) // should be unique
+alloc(newmem,$1000,weaponXP)
+
+label(code)
+label(return)
+
+newmem:
+  cmp [rcx+rax*4+20],#2500 // checks for min value XP
+  jl code
+  cmp [rcx+rax*4+20],#60000 // checks for max value XP
+  jg code
+  mov [rcx+rax*4+20],#5
+  jmp code
+
+code:
+  add r8d,[rcx+rax*4+20]
+  jmp return
+
+weaponXP:
+  jmp newmem
+return:
+registersymbol(weaponXP)
+
+[DISABLE]
+
+weaponXP:
+  db 44 03 44 81 20
+
+unregistersymbol(weaponXP)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4AB6098
+
+GameAssembly.dll+4AB6071: 41 3B C9           - cmp ecx,r9d
+GameAssembly.dll+4AB6074: 7D 37              - jnl GameAssembly.dll+4AB60AD
+GameAssembly.dll+4AB6076: 3B 7A 18           - cmp edi,[rdx+18]
+GameAssembly.dll+4AB6079: 0F 83 24 01 00 00  - jae GameAssembly.dll+4AB61A3
+GameAssembly.dll+4AB607F: 48 8B 4A 10        - mov rcx,[rdx+10]
+GameAssembly.dll+4AB6083: 48 85 C9           - test rcx,rcx
+GameAssembly.dll+4AB6086: 0F 84 0B 01 00 00  - je GameAssembly.dll+4AB6197
+GameAssembly.dll+4AB608C: 3B 79 18           - cmp edi,[rcx+18]
+GameAssembly.dll+4AB608F: 0F 83 08 01 00 00  - jae GameAssembly.dll+4AB619D
+GameAssembly.dll+4AB6095: 48 63 C7           - movsxd  rax,edi
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+4AB6098: 44 03 44 81 20     - add r8d,[rcx+rax*4+20]
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+4AB609D: 49 63 C8           - movsxd  rcx,r8d
+GameAssembly.dll+4AB60A0: 8B C6              - mov eax,esi
+GameAssembly.dll+4AB60A2: 48 3B C8           - cmp rcx,rax
+GameAssembly.dll+4AB60A5: 7F 21              - jg GameAssembly.dll+4AB60C8
+GameAssembly.dll+4AB60A7: FF C7              - inc edi
+GameAssembly.dll+4AB60A9: 8B CF              - mov ecx,edi
+GameAssembly.dll+4AB60AB: EB C4              - jmp GameAssembly.dll+4AB6071
+GameAssembly.dll+4AB60AD: 48 85 D2           - test rdx,rdx
+GameAssembly.dll+4AB60B0: 0F 84 E1 00 00 00  - je GameAssembly.dll+4AB6197
+GameAssembly.dll+4AB60B6: 83 7A 18 01        - cmp dword ptr [rdx+18],01
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3629</ID>
+          <Description>"instant level player rank (1-3 kills for lv 55)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-11-28
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+2650 5200 7500 7500 7500 7500 7500 7500 7500 7500 15000 15000 15000 15000 15000 15000 15000 15000 15000 15000 30000 30000 30000 30000 30000 30000 30000 30000 30000 30000 70000 70000 70000 70000 70000 70000 70000 70000 70000 70000 225000 225000 225000 225000 225000 225000 225000 225000 225000 225000 400000 400000 400000 400000 2140483647
+
+4p:2650 w:212 4:2140483647
+}
+
+[ENABLE]
+
+aobscanmodule(playerXP,GameAssembly.dll,44 03 4C 81 20 49) // should be unique
+alloc(newmem,$1000,playerXP)
+
+label(code)
+label(return)
+
+newmem:
+  cmp [rcx+rax*4+20],#2500 // checks for min value XP
+  jl code
+  cmp [rcx+rax*4+20],#400000 // checks for max value XP
+  jg code
+  mov [rcx+rax*4+20],#5
+  jmp code
+
+code:
+  add r9d,[rcx+rax*4+20]
+  jmp return
+
+playerXP:
+  jmp newmem
+return:
+registersymbol(playerXP)
+
+[DISABLE]
+
+playerXP:
+  db 44 03 4C 81 20
+
+unregistersymbol(playerXP)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4B5CF1C
+
+GameAssembly.dll+4B5CF00: 41 3B CA        - cmp ecx,r10d
+GameAssembly.dll+4B5CF03: 7D 38           - jnl GameAssembly.dll+4B5CF3D
+GameAssembly.dll+4B5CF05: 41 3B 50 18     - cmp edx,[r8+18]
+GameAssembly.dll+4B5CF09: 73 4B           - jae GameAssembly.dll+4B5CF56
+GameAssembly.dll+4B5CF0B: 49 8B 48 10     - mov rcx,[r8+10]
+GameAssembly.dll+4B5CF0F: 48 85 C9        - test rcx,rcx
+GameAssembly.dll+4B5CF12: 74 36           - je GameAssembly.dll+4B5CF4A
+GameAssembly.dll+4B5CF14: 3B 51 18        - cmp edx,[rcx+18]
+GameAssembly.dll+4B5CF17: 73 37           - jae GameAssembly.dll+4B5CF50
+GameAssembly.dll+4B5CF19: 48 63 C2        - movsxd  rax,edx
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+4B5CF1C: 44 03 4C 81 20  - add r9d,[rcx+rax*4+20]
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+4B5CF21: 49 63 C9        - movsxd  rcx,r9d
+GameAssembly.dll+4B5CF24: 48 3B CF        - cmp rcx,rdi
+GameAssembly.dll+4B5CF27: 7F 06           - jg GameAssembly.dll+4B5CF2F
+GameAssembly.dll+4B5CF29: FF C2           - inc edx
+GameAssembly.dll+4B5CF2B: 8B CA           - mov ecx,edx
+GameAssembly.dll+4B5CF2D: EB D1           - jmp GameAssembly.dll+4B5CF00
+GameAssembly.dll+4B5CF2F: 0F B6 C2        - movzx eax,dl
+GameAssembly.dll+4B5CF32: 48 8B 5C 24 30  - mov rbx,[rsp+30]
+GameAssembly.dll+4B5CF37: 48 83 C4 20     - add rsp,20
+GameAssembly.dll+4B5CF3B: 5F              - pop rdi
+}
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>3012</ID>
