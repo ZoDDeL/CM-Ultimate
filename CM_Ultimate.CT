@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.04.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.06.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -1954,6 +1954,361 @@ project.dll+3957C80: 4C 8B F0              - mov r14,rax
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>toggleMEGA</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3659</ID>
+          <Description>"bot vacum V2 (freeze bots on your X axis) / teleport"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-09-09
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+safe coords
+_X:
+dq (double)-4.7047413200853
+
+_Z:
+dq (double)0.872063509799039
+
+_Y:
+dq (double)5.67747486236476
+
+credits to norolls for sharing
+AOB of a similar opcode for XZY coords
+
+
+player instance
+Project.dll+04B23AB8
+
+
+Project.dll+04BB4040  // base access value
+
+
+player instance base
+// ORIGINAL CODE - INJECTION POINT: Project.dll+392E637
+
+Project.dll+392E603: E8 68 5D B5 FC        - call Project.EcYmLupSauz+2C0
+Project.dll+392E608: C6 05 B8 7D 52 01 01  - mov byte ptr [Project.dll+4E563C7],01
+Project.dll+392E60F: 48 8B 0D 1A 7D 2E 01  - mov rcx,[Project.dll+4C16330]
+Project.dll+392E616: 83 B9 D0 00 00 00 00  - cmp dword ptr [rcx+000000D0],00
+Project.dll+392E61D: 75 05                 - jne Project.dll+392E624
+Project.dll+392E61F: E8 DC 5F B5 FC        - call Project.ihLrXJSyfFs
+Project.dll+392E624: 48 8B 05 05 7D 2E 01  - mov rax,[Project.dll+4C16330]
+Project.dll+392E62B: 48 8B 88 A8 00 00 00  - mov rcx,[rax+000000A8]
+Project.dll+392E632: 38 59 01              - cmp [rcx+01],bl
+Project.dll+392E635: 75 60                 - jne Project.dll+392E697
+// ---------- INJECTING HERE ----------
+Project.dll+392E637: 48 8B 0D 02 5A 28 01  - mov rcx,[Project.dll+4BB4040]
+// ---------- DONE INJECTING  ----------
+Project.dll+392E63E: 83 B9 D0 00 00 00 00  - cmp dword ptr [rcx+000000D0],00
+Project.dll+392E645: 75 05                 - jne Project.dll+392E64C
+Project.dll+392E647: E8 B4 5F B5 FC        - call Project.ihLrXJSyfFs
+Project.dll+392E64C: 33 C9                 - xor ecx,ecx
+Project.dll+392E64E: E8 FD BF D1 FF        - call Project.dll+364A650
+Project.dll+392E653: 48 85 C0              - test rax,rax
+Project.dll+392E656: 74 70                 - je Project.dll+392E6C8
+Project.dll+392E658: 48 8B 0D 19 67 26 01  - mov rcx,[Project.dll+4B94D78]
+Project.dll+392E65F: 33 D2                 - xor edx,edx
+Project.dll+392E661: 48 39 08              - cmp [rax],rcx
+
+
+
+                                               48 8B 0D * * * * 39 99 E0 00 00 00 75 0C E8    * * * * 48 8B 0D * * * * 48 8B 89 B8 00 00 00 48 8B 71 10
+                                               48 8B 0D * * * * 83 B9 D0 00 00 00 00 75 05 E8 * * * * 33 C9 E8 * * * * 48 85 C0 74 70 48 8B 0D 19 67 26 01
+                                               48 8B 0D * * * * 83 B9 E0 00 00 00 00 75 05 E8 * * * * 33 C9 E8 * * * * 48 85 C0 74 70 48 8B 0D 31 AD 06 01  // 0.21.22
+E8 14 8D C8 FB F0 83 0C 24 00 C6 05 * * * * 01 48 8B 0D
+}
+
+[ENABLE]
+
+
+aobscanmodule(positionXZ,UnityPlayer.dll,0F 10 87 F8 01 00 00 0F 94) // should be unique
+alloc(newmem,$2000,positionXZ)
+
+label(code)
+label(return)
+
+
+newmem:
+  push rax
+
+  //cmp [pPlayer],0  // crash prevention while dead/dying
+  //je clean
+  mov rax,[GameAssembly.dll+61E9A18]
+  //mov rax,["Project.dll"+04B23AB8]
+  cmp rax,0  // crash prevention while dead/dying
+  je clean
+
+  cmp [rax+B8],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+B8]
+
+  cmp [rax+8],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+8]
+
+  cmp [rax+A0],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+A0]
+
+  cmp [rax+10],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+10]
+
+  cmp [rax+60],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+60]
+
+  mov rax,[rax+1F0]
+  mov rax,[rax+38]
+  mov [_testXID],rax
+  pop rax
+  //cmp [_testXID],#3
+  //jl code
+  //cmp [_testXID],#99999
+  //jg code
+  jmp compare
+
+
+compare:
+  push rax
+  mov rax,[rdi+000001F0]
+  mov rax,[rax+38]
+  cmp rax,[_testXID]
+  pop rax
+  je playerX
+  jmp botX
+
+
+
+playerX:
+  //cmp [_testXID],0
+  //je code
+  mov [_testX],rdi
+  jmp code
+
+
+botX:
+  cmp [vacuumToggle],#0
+  je code
+  cmp [vacuumToggle],#2
+  je botStatic
+  cmp [vacuumToggle],#1
+  jne code
+  //cmp [_testX],0
+  //je code
+  push rax
+  mov rax,[_testX]
+  test rax,rax
+  je clean
+
+
+  // check free xmm register!!!
+  // xmm3 , xmm7, xmm8(not free on bot) ,xmm12
+  // X = xmm9 , Z = xmm10 , Y = xmm11
+  movsd xmm9,[rax+1F8]
+  movsd xmm10,[rax+200]
+  movsd xmm11,[rax+208]
+  mov rax,[botposOffset] // how far/close from your postion on X axis
+  movq xmm12,rax
+  addsd xmm9,xmm12
+
+  movsd [rdi+000001F8],xmm9 // x
+  movsd [rdi+00000200],xmm10 // z
+  movsd [rdi+00000208],xmm11 // y
+  pop rax
+  jmp code
+
+botStatic:
+  movsd xmm9,[_X]
+  movsd xmm10,[_Z]
+  movsd xmm11,[_Y]
+  movsd [rdi+000001F8],xmm9 // x
+  movsd [rdi+00000200],xmm10 // z
+  movsd [rdi+00000208],xmm11 // y
+  jmp code
+
+clean:
+  pop rax
+  jmp code
+
+
+code:
+  movups xmm0,[rdi+000001F8]
+  jmp return
+
+_testX:
+dq 0
+
+_testXID:
+dd 0
+
+_X:
+dq (double)-4.7047413200853
+
+_Z:
+dq (double)0.872063509799039
+
+_Y:
+dq (double)5.67747486236476
+
+botposOffset:
+dq (double)4.0
+
+vacuumToggle:
+dd #1
+
+positionXZ:
+  jmp newmem
+  nop 2
+return:
+registersymbol(positionXZ)
+registersymbol(_testX)
+registersymbol(_testXID)
+registersymbol(botposOffset)
+registersymbol(vacuumToggle)
+
+[DISABLE]
+
+
+positionXZ:
+  db 0F 10 87 F8 01 00 00
+
+unregistersymbol(positionXZ)
+unregistersymbol(_testX)
+unregistersymbol(_testXID)
+unregistersymbol(botposOffset)
+unregistersymbol(vacuumToggle)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Engine.dll+115210D
+
+Engine.dll+11520D7: C7 84 24 A0 00 00 00 C0 9F 00 00  - mov [rsp+000000A0],00009FC0
+Engine.dll+11520E2: 48 8D 4C 24 50                    - lea rcx,[rsp+50]
+Engine.dll+11520E7: 49 8B F0                          - mov rsi,r8
+Engine.dll+11520EA: 48 8B EA                          - mov rbp,rdx
+Engine.dll+11520ED: 0F AE 94 24 A0 00 00 00           - ldmxcsr [rsp+000000A0]
+Engine.dll+11520F5: E8 46 22 FF FF                    - call Engine.dll+1144340
+Engine.dll+11520FA: 83 BF 70 02 00 00 01              - cmp dword ptr [rdi+00000270],01
+Engine.dll+1152101: 48 8D 4F 08                       - lea rcx,[rdi+08]
+Engine.dll+1152105: 4C 8B CE                          - mov r9,rsi
+Engine.dll+1152108: 4C 8D 44 24 50                    - lea r8,[rsp+50]
+// ---------- INJECTING HERE ----------
+Engine.dll+115210D: 0F 10 87 F8 01 00 00              - movups xmm0,[rdi+000001F8]
+// ---------- DONE INJECTING  ----------
+Engine.dll+1152114: 0F 94 C0                          - sete al
+Engine.dll+1152117: 48 8B D5                          - mov rdx,rbp
+Engine.dll+115211A: F3 0F 10 97 68 02 00 00           - movss xmm2,[rdi+00000268]
+Engine.dll+1152122: F2 0F 10 8F 08 02 00 00           - movsd xmm1,[rdi+00000208]
+Engine.dll+115212A: 88 44 24 40                       - mov [rsp+40],al
+Engine.dll+115212E: 48 8B 84 24 D0 00 00 00           - mov rax,[rsp+000000D0]
+Engine.dll+1152136: 0F 11 44 24 58                    - movups [rsp+58],xmm0
+Engine.dll+115213B: 48 89 44 24 38                    - mov [rsp+38],rax
+Engine.dll+1152140: F3 0F 10 87 6C 02 00 00           - movss xmm0,[rdi+0000026C]
+Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>3660</ID>
+              <Description>"toggle vacuum / static / off      ---&gt;"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:VACUUM
+2:STATIC
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>vacuumToggle</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3661</ID>
+              <Description>"bot position offset (vacuum)      ---&gt;"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Double</VariableType>
+              <Address>botposOffset</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3662</ID>
+              <Description>"coordinates / teleport"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>3663</ID>
+                  <Description>"player X"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Double</VariableType>
+                  <Address>_testX</Address>
+                  <Offsets>
+                    <Offset>1F8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3664</ID>
+                  <Description>"player Z"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Double</VariableType>
+                  <Address>_testX</Address>
+                  <Offsets>
+                    <Offset>200</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3665</ID>
+                  <Description>"player Y"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Double</VariableType>
+                  <Address>_testX</Address>
+                  <Offsets>
+                    <Offset>208</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3666</ID>
+                  <Description>"player position ID"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_testX</Address>
+                  <Offsets>
+                    <Offset>38</Offset>
+                    <Offset>1F0</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3667</ID>
+                  <Description>"player position ID (for compare)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>_testXID</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3668</ID>
+                  <Description>"teleport XZY array       (use dropdown menu)      ---&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 40 6B C6 B1 DC 12 40 00 00 A0 05 A4 BC 1B 40 00 50 41 00 3F A7 42 C0:museum | blue flag
+00 32 BB 7E 2C 7C 93 3F 28 6B B7 A4 76 B3 EA 3F 00 10 CF 59 37 19 43 40:museum | red flag
+00 00 00 8D CD CF F6 BF 00 00 80 E7 5D E4 2A 40 00 00 E5 A9 85 AD 27 40:warehouse | top
+8F 85 16 B2 55 B5 15 40 A4 14 6C 9C 7C 21 3A 40 F5 AB 69 59 FC 80 22 C0:caribbean | top
+00 17 BA BF AD B8 50 40 00 00 B0 6B FC 56 23 40 00 38 AC CE BF 75 2F C0:egypt | top
+00 C0 96 C8 B7 A7 3B C0 EC AB 04 FD 87 22 0F 40 00 C0 DA 5E 38 7F 34 C0:egypt | bombspot A
+3A 2D 9B 91 3F 0C 52 40 7A 2C A8 4D F3 61 F5 3F 00 58 2B 67 C1 32 33 C0:egypt | bombspot B
+</DropDownList>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Array of byte</VariableType>
+                  <ByteLength>24</ByteLength>
+                  <Address>_testX</Address>
+                  <Offsets>
+                    <Offset>1F8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
