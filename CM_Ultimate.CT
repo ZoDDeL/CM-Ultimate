@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.06.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.06.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -2314,7 +2314,7 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
         </CheatEntry>
         <CheatEntry>
           <ID>3020</ID>
-          <Description>"multi Swapper (updates on armory,operators,shop, return to main menu)"</Description>
+          <Description>"multi Swapper (updates on Avatar selection)"</Description>
           <Options moHideChildren="1"/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript Async="1">{ Game   : CombatMaster.exe
@@ -3361,7 +3361,8 @@ GameAssembly.dll+4DF582B: CC                    - int 3
             <CheatEntry>
               <ID>3022</ID>
               <Description>"Avatar                                     (doubleclick on value to select)   ---&gt;"</Description>
-              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">83886124:Premier League 100
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">83886106:Ranger
+83886124:Premier League 100
 83886125:Premier League 10
 83886126:Premier League 5
 83886127:Premier League 3
