@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.09.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.10.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
@@ -7818,6 +7818,20 @@ youtube.com/ZoDDeL
 	getAutoAttachList().add("CombatMaster.exe")
 
 
+    PROCESS_NAME = 'CombatMaster.exe'
+    local function IsGameRunning()
+      if getProcessIDFromProcessName(PROCESS_NAME) == nil then
+         messageDialog("START GAME FIRST AND TABLE SECOND!", mtWarning)
+         os.execute'taskkill /im "cheatengine-i386.exe"'
+         os.execute'taskkill /im "cheatengine-x86_64.exe"'
+         os.execute'taskkill /im "cheatengine-x86_64-SSE4-AVX2.exe"'
+      end
+    end
+
+    IsGameRunning()
+
+
+
 
 	function cycleFullCompact( sender, force )
 		local state = not( compactmenuitem.Caption == 'Compact View Mode' )
@@ -7963,6 +7977,52 @@ youtube.com/ZoDDeL
 
 	addDownloadButton()
 	pushDownload( nil, true )
+
+
+    local urlESP = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/cmDexSubakti.dll"
+	local filenameESP = "C:/cmDexSubakti.dll"
+
+	function downloadFileESP(urlESP, filenameESP)
+	    if fileExists(filenameESP) then
+        os.remove(filenameESP)
+		end
+
+
+		local http = getInternet()
+		local file = io.open(filenameESP, "wb")
+		if file then
+			file:write(http.getURL(urlESP))
+			file:close()
+		end
+		http.destroy()
+
+	end
+
+	function pushDownloadESP( sender, force )
+		local state = not( downloadmenuitemESP.Caption == 'INJECTION DONE!' )
+		if force ~= nil then
+		   state = not force
+		end
+		downloadmenuitemESP.Caption = state and 'INJECTION DONE!' or 'Inject Aimbot/ESP'
+		if force == nil then
+			downloadFile(urlESP, filenameESP)
+			sleep(1000)
+			injectDLL(filenameESP)
+		end
+	end
+
+	function addDownloadButtonESP()
+		if downloadmenuESPalreadyexists then return end
+		local parent = getMainForm().Menu.Items
+		downloadmenuitemESP = createMenuItem( parent )
+		parent.add( downloadmenuitemESP )
+		downloadmenuitemESP.Caption = 'INJECTION DONE!'
+		downloadmenuitemESP.OnClick = pushDownloadESP
+		downloadmenuESPalreadyexists = 'yes'
+	end
+
+	addDownloadButtonESP()
+	pushDownloadESP( nil, true )
 
 
 
