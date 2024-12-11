@@ -3,16 +3,22 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1388</ID>
-      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.10.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.21.45 (12.11.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>635</ID>
-          <Description>"sets all xp token (weapon, rank, battlepass) to 600 minutes (10 hours)"</Description>
+          <ID>3673</ID>
+          <Description>"&lt;---"</Description>
           <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>635</ID>
+              <Description>"sets all xp token (weapon, rank, battlepass) to 600 minutes (10 hours)"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2023-12-31
   Author : ZoDDeL
@@ -171,21 +177,21 @@ GameAssembly.dll+4C4DBEB: 48 8B 48 40           - mov rcx,[rax+40]
 
 
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>1404</ID>
-              <Description>"set minutes (1440 = 24 hours / 43200 = 30 days / 525600 = 365 days)  ---&gt;"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>tokenMinutes</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1404</ID>
+                  <Description>"set minutes (1440 = 24 hours / 43200 = 30 days / 525600 = 365 days)  ---&gt;"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>tokenMinutes</Address>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3518</ID>
-          <Description>"free bundles (disabling this script = gamecrash!!!)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            <CheatEntry>
+              <ID>3518</ID>
+              <Description>"free bundles (disabling this script = gamecrash!!!)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-27
   Author : ZoDDeL
@@ -313,12 +319,12 @@ GameAssembly.dll+4E1E1EB: C3                    - ret
 GameAssembly.dll+4E1E1EC: 8B 43 6C              - mov eax,[rbx+6C]
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3541</ID>
-          <Description>"free blackmarket"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3541</ID>
+              <Description>"free blackmarket"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-27
   Author : ZoDDeL
@@ -392,13 +398,13 @@ GameAssembly.dll+4DBAC3C: 33 D2                       - xor edx,edx
 GameAssembly.dll+4DBAC3E: F2 0F 10 8C 24 84 00 00 00  - movsd xmm1,[rsp+00000084]
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3570</ID>
-          <Description>"instant unlock operation rewards"</Description>
-          <Options moHideChildren="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3570</ID>
+              <Description>"instant unlock operation rewards"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-27
   Author : ZoDDeL
@@ -505,34 +511,34 @@ GameAssembly.dll+4D5A137: F2 42 0F 10 84 09 A0 00 00 00  - movsd xmm0,[rcx+r9+00
 GameAssembly.dll+4D5A141: F2 0F 11 45 E0                 - movsd [rbp-20],xmm0
 }
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>3571</ID>
-              <Description>"instant clear missions                       (toggle off/on)   ---&gt;"</Description>
-              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>3571</ID>
+                  <Description>"instant clear missions                       (toggle off/on)   ---&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
 1:on
 </DropDownList>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>toggleInstantOPS</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>3572</ID>
-              <Description>"swap 10,20,50CP with 15.000CP      (toggle off/on)   ---&gt;"</Description>
-              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>toggleInstantOPS</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>3572</ID>
+                  <Description>"swap 10,20,50CP with 15.000CP      (toggle off/on)   ---&gt;"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:off
 1:on
 </DropDownList>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>toggleCash</Address>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>toggleCash</Address>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3014</ID>
-          <Description>"instant unlock daily task rewards"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            <CheatEntry>
+              <ID>3014</ID>
+              <Description>"instant unlock daily task rewards"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-26
   Author : ZoDDeL
@@ -616,12 +622,12 @@ GameAssembly.dll+4C48477: 0F 10 48 50              - movups xmm1,[rax+50]
 GameAssembly.dll+4C4847B: 0F 11 41 C0              - movups [rcx-40],xmm0
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3011</ID>
-          <Description>"turn daily CP rewards into 15.000"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3011</ID>
+              <Description>"turn daily CP rewards into 15.000"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-26
   Author : ZoDDeL
@@ -737,12 +743,12 @@ GameAssembly.dll+4C476D6: 0F 11 03              - movups [rbx],xmm0
 GameAssembly.dll+4C476D9: 48 8B 5C 24 30        - mov rbx,[rsp+30]
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3012</ID>
-          <Description>"super passive bots (no slide, jump, shooting, rotation, sight)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3012</ID>
+              <Description>"super passive bots (no slide, jump, shooting, rotation, sight)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-26
   Author : ZoDDeL
@@ -834,12 +840,12 @@ GameAssembly.dll+49E3525: 48 8B 0D 2C 3E 84 01     - mov rcx,[GameAssembly.dll+6
 GameAssembly.dll+49E352C: 83 B9 E4 00 00 00 00     - cmp dword ptr [rcx+000000E4],00
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3656</ID>
-          <Description>"no recoil (affects bots / works on server too)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3656</ID>
+              <Description>"no recoil (affects bots / works on server too)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-12-04
   Author : ZoDDeL
@@ -911,12 +917,12 @@ GameAssembly.dll+4A32C6B: 48 8B D3                 - mov rdx,rbx
 GameAssembly.dll+4A32C6E: 48 8B C8                 - mov rcx,rax
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3657</ID>
-          <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3657</ID>
+              <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-12-04
   Author : ZoDDeL
@@ -988,12 +994,12 @@ GameAssembly.dll+4A2A1E3: CC                    - int 3
 GameAssembly.dll+4A2A1E4: CC                    - int 3 
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3658</ID>
-          <Description>"infinite matchtime (not for SnD / NEVER USE WITH HUMAN PLAYERS)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3658</ID>
+              <Description>"infinite matchtime (not for SnD / NEVER USE WITH HUMAN PLAYERS)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-12-04
   Author : ZoDDeL
@@ -1063,12 +1069,12 @@ GameAssembly.dll+9D9B4B: 74 21                 - je GameAssembly.dll+9D9B6E
 GameAssembly.dll+9D9B4D: 8B 53 38              - mov edx,[rbx+38]
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3628</ID>
-          <Description>"instant level weapon (1-3 kills for lv 80)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3628</ID>
+              <Description>"instant level weapon (1-3 kills for lv 80)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-28
   Author : ZoDDeL
@@ -1143,12 +1149,12 @@ GameAssembly.dll+4AB60B0: 0F 84 E1 00 00 00  - je GameAssembly.dll+4AB6197
 GameAssembly.dll+4AB60B6: 83 7A 18 01        - cmp dword ptr [rdx+18],01
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3629</ID>
-          <Description>"instant level player rank (1-3 kills for lv 55)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3629</ID>
+              <Description>"instant level player rank (1-3 kills for lv 55)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-11-28
   Author : ZoDDeL
@@ -1221,13 +1227,13 @@ GameAssembly.dll+4B5CF37: 48 83 C4 20     - add rsp,20
 GameAssembly.dll+4B5CF3B: 5F              - pop rdi
 }
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>639</ID>
-          <Description>"host mega xp lobby"</Description>
-          <Options moHideChildren="1" moManualExpandCollapse="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript Async="1">{ Game   : CombatMaster.exe
+            </CheatEntry>
+            <CheatEntry>
+              <ID>639</ID>
+              <Description>"host mega xp lobby (Custom Lobby Host)"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-01-12
   Author : ZoDDeL
@@ -1435,534 +1441,534 @@ project.dll+3957C7B: E8 D0 04 BB FC        - call project.mono_array_element_siz
 project.dll+3957C80: 4C 8B F0              - mov r14,rax
 }
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>640</ID>
-              <Description>"pointer"</Description>
-              <Options moHideChildren="1"/>
-              <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
-                  <ID>641</ID>
-                  <Description>"Basekill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>20</Offset>
-                  </Offsets>
+                  <ID>640</ID>
+                  <Description>"pointer"</Description>
+                  <Options moHideChildren="1"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>641</ID>
+                      <Description>"Basekill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>20</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>687</ID>
+                      <Description>"BaseKillExtraXpWeaponPerk"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>22</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>642</ID>
+                      <Description>"Clear kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>24</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>643</ID>
+                      <Description>"Headshot"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>26</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>644</ID>
+                      <Description>"Revenge"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>28</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>645</ID>
+                      <Description>"MajorStopStreak"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>2A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>646</ID>
+                      <Description>"StopStreak"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>2C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>647</ID>
+                      <Description>"Grenade"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>2E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>648</ID>
+                      <Description>"Knife"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>30</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>649</ID>
+                      <Description>"Assist"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>32</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>650</ID>
+                      <Description>"DoubleKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>34</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>651</ID>
+                      <Description>"TripleKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>36</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>652</ID>
+                      <Description>"MultiKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>38</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>653</ID>
+                      <Description>"KingSlayer"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>3A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>654</ID>
+                      <Description>"OneShotMultiKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>3C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>655</ID>
+                      <Description>"ThroughWall"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>3E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>656</ID>
+                      <Description>"NoScope"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>40</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>657</ID>
+                      <Description>"LastBullet"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>42</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>658</ID>
+                      <Description>"OnVergeOfDeath"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>44</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>659</ID>
+                      <Description>"in air kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>46</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>660</ID>
+                      <Description>"in slide kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>48</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>661</ID>
+                      <Description>"team wiped"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>4A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>662</ID>
+                      <Description>"first blood"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>4C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>663</ID>
+                      <Description>"one shot one kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>4E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>664</ID>
+                      <Description>"kill actor ???"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>50</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>665</ID>
+                      <Description>"used nuke"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>52</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>666</ID>
+                      <Description>"weapon bash"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>54</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>667</ID>
+                      <Description>"armor destroy (combat master + battle royale?)"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>56</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>668</ID>
+                      <Description>"downed  (combat master + battle royale?)"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>58</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>669</ID>
+                      <Description>"no scope 360"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>5A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>670</ID>
+                      <Description>"no attachments"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>5C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>671</ID>
+                      <Description>"long shot"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>5E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>672</ID>
+                      <Description>"hip fire"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>60</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>673</ID>
+                      <Description>"gun promotion"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>62</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>674</ID>
+                      <Description>"on zipline kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>64</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>675</ID>
+                      <Description>"bomb planted"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>66</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>676</ID>
+                      <Description>"use minigun"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>68</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>677</ID>
+                      <Description>"harakiri (suicide with explosive for example)"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>6A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>678</ID>
+                      <Description>"KillDemon"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>6C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>679</ID>
+                      <Description>"KillSlayer"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>6E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>682</ID>
+                      <Description>"OnParachuteKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>70</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3515</ID>
+                      <Description>"OnParamotorKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>72</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>683</ID>
+                      <Description>"Scavanger"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>74</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>688</ID>
+                      <Description>"FlagCaptured"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>76</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3509</ID>
+                      <Description>"KillEnemyWithFlag"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>78</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3510</ID>
+                      <Description>"PickUpEnemyDogTag"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>7A</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3511</ID>
+                      <Description>"PickUpTeamDogTag"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>7C</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3512</ID>
+                      <Description>"CantedAdsKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>7E</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3513</ID>
+                      <Description>"DroneKill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>80</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3514</ID>
+                      <Description>"ShotDownDrone"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>2 Bytes</VariableType>
+                      <Address>basekill</Address>
+                      <Offsets>
+                        <Offset>82</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>687</ID>
-                  <Description>"BaseKillExtraXpWeaponPerk"</Description>
+                  <ID>680</ID>
+                  <Description>"toggle clean MEGA XP / default / off    ------&gt;"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:normal xp (writes default values)
+1:mega xp (writes 4000 kill/assist)
+2:off (just get the pointer)
+</DropDownList>
                   <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>22</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>642</ID>
-                  <Description>"Clear kill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>24</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>643</ID>
-                  <Description>"Headshot"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>26</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>644</ID>
-                  <Description>"Revenge"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>28</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>645</ID>
-                  <Description>"MajorStopStreak"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>2A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>646</ID>
-                  <Description>"StopStreak"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>2C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>647</ID>
-                  <Description>"Grenade"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>2E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>648</ID>
-                  <Description>"Knife"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>30</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>649</ID>
-                  <Description>"Assist"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>32</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>650</ID>
-                  <Description>"DoubleKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>34</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>651</ID>
-                  <Description>"TripleKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>36</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>652</ID>
-                  <Description>"MultiKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>38</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>653</ID>
-                  <Description>"KingSlayer"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>3A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>654</ID>
-                  <Description>"OneShotMultiKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>3C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>655</ID>
-                  <Description>"ThroughWall"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>3E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>656</ID>
-                  <Description>"NoScope"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>40</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>657</ID>
-                  <Description>"LastBullet"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>42</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>658</ID>
-                  <Description>"OnVergeOfDeath"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>44</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>659</ID>
-                  <Description>"in air kill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>46</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>660</ID>
-                  <Description>"in slide kill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>48</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>661</ID>
-                  <Description>"team wiped"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>4A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>662</ID>
-                  <Description>"first blood"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>4C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>663</ID>
-                  <Description>"one shot one kill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>4E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>664</ID>
-                  <Description>"kill actor ???"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>50</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>665</ID>
-                  <Description>"used nuke"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>52</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>666</ID>
-                  <Description>"weapon bash"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>54</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>667</ID>
-                  <Description>"armor destroy (combat master + battle royale?)"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>56</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>668</ID>
-                  <Description>"downed  (combat master + battle royale?)"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>58</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>669</ID>
-                  <Description>"no scope 360"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>5A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>670</ID>
-                  <Description>"no attachments"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>5C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>671</ID>
-                  <Description>"long shot"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>5E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>672</ID>
-                  <Description>"hip fire"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>60</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>673</ID>
-                  <Description>"gun promotion"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>62</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>674</ID>
-                  <Description>"on zipline kill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>64</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>675</ID>
-                  <Description>"bomb planted"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>66</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>676</ID>
-                  <Description>"use minigun"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>68</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>677</ID>
-                  <Description>"harakiri (suicide with explosive for example)"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>6A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>678</ID>
-                  <Description>"KillDemon"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>6C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>679</ID>
-                  <Description>"KillSlayer"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>6E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>682</ID>
-                  <Description>"OnParachuteKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>70</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3515</ID>
-                  <Description>"OnParamotorKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>72</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>683</ID>
-                  <Description>"Scavanger"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>74</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>688</ID>
-                  <Description>"FlagCaptured"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>76</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3509</ID>
-                  <Description>"KillEnemyWithFlag"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>78</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3510</ID>
-                  <Description>"PickUpEnemyDogTag"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>7A</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3511</ID>
-                  <Description>"PickUpTeamDogTag"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>7C</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3512</ID>
-                  <Description>"CantedAdsKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>7E</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3513</ID>
-                  <Description>"DroneKill"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>80</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3514</ID>
-                  <Description>"ShotDownDrone"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>2 Bytes</VariableType>
-                  <Address>basekill</Address>
-                  <Offsets>
-                    <Offset>82</Offset>
-                  </Offsets>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>toggleMEGA</Address>
                 </CheatEntry>
               </CheatEntries>
             </CheatEntry>
             <CheatEntry>
-              <ID>680</ID>
-              <Description>"toggle clean MEGA XP / default / off    ------&gt;"</Description>
-              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:normal xp (writes default values)
-1:mega xp (writes 4000 kill/assist)
-2:off (just get the pointer)
-</DropDownList>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>toggleMEGA</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>3659</ID>
-          <Description>"bot vacum V2 (freeze bots on your X axis) / teleport"</Description>
-          <Options moHideChildren="1" moManualExpandCollapse="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>{ Game   : CombatMaster.exe
+              <ID>3659</ID>
+              <Description>"bot vacum V2 (freeze bots on your X axis) / teleport (Custom Lobby Host)"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
   Version: 
   Date   : 2024-09-09
   Author : ZoDDeL
@@ -2215,83 +2221,83 @@ Engine.dll+1152140: F3 0F 10 87 6C 02 00 00           - movss xmm0,[rdi+0000026C
 Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
 }
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>3660</ID>
-              <Description>"toggle vacuum / static / off      ---&gt;"</Description>
-              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>3660</ID>
+                  <Description>"toggle vacuum / static / off      ---&gt;"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
 1:VACUUM
 2:STATIC
 </DropDownList>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>vacuumToggle</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>3661</ID>
-              <Description>"bot position offset (vacuum)      ---&gt;"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Double</VariableType>
-              <Address>botposOffset</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>3662</ID>
-              <Description>"coordinates / teleport"</Description>
-              <Options moHideChildren="1"/>
-              <GroupHeader>1</GroupHeader>
-              <CheatEntries>
-                <CheatEntry>
-                  <ID>3663</ID>
-                  <Description>"player X"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Double</VariableType>
-                  <Address>_testX</Address>
-                  <Offsets>
-                    <Offset>1F8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3664</ID>
-                  <Description>"player Z"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Double</VariableType>
-                  <Address>_testX</Address>
-                  <Offsets>
-                    <Offset>200</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3665</ID>
-                  <Description>"player Y"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Double</VariableType>
-                  <Address>_testX</Address>
-                  <Offsets>
-                    <Offset>208</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>3666</ID>
-                  <Description>"player position ID"</Description>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>4 Bytes</VariableType>
-                  <Address>_testX</Address>
-                  <Offsets>
-                    <Offset>38</Offset>
-                    <Offset>1F0</Offset>
-                  </Offsets>
+                  <Address>vacuumToggle</Address>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>3667</ID>
-                  <Description>"player position ID (for compare)"</Description>
+                  <ID>3661</ID>
+                  <Description>"bot position offset (vacuum)      ---&gt;"</Description>
                   <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>4 Bytes</VariableType>
-                  <Address>_testXID</Address>
+                  <VariableType>Double</VariableType>
+                  <Address>botposOffset</Address>
                 </CheatEntry>
                 <CheatEntry>
-                  <ID>3668</ID>
-                  <Description>"teleport XZY array       (use dropdown menu)      ---&gt;"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 40 6B C6 B1 DC 12 40 00 00 A0 05 A4 BC 1B 40 00 50 41 00 3F A7 42 C0:museum | blue flag
+                  <ID>3662</ID>
+                  <Description>"coordinates / teleport"</Description>
+                  <Options moHideChildren="1"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>3663</ID>
+                      <Description>"player X"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>_testX</Address>
+                      <Offsets>
+                        <Offset>1F8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3664</ID>
+                      <Description>"player Z"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>_testX</Address>
+                      <Offsets>
+                        <Offset>200</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3665</ID>
+                      <Description>"player Y"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>_testX</Address>
+                      <Offsets>
+                        <Offset>208</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3666</ID>
+                      <Description>"player position ID"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_testX</Address>
+                      <Offsets>
+                        <Offset>38</Offset>
+                        <Offset>1F0</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3667</ID>
+                      <Description>"player position ID (for compare)"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_testXID</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>3668</ID>
+                      <Description>"teleport XZY array       (use dropdown menu)      ---&gt;"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00 40 6B C6 B1 DC 12 40 00 00 A0 05 A4 BC 1B 40 00 50 41 00 3F A7 42 C0:museum | blue flag
 00 32 BB 7E 2C 7C 93 3F 28 6B B7 A4 76 B3 EA 3F 00 10 CF 59 37 19 43 40:museum | red flag
 00 00 00 8D CD CF F6 BF 00 00 80 E7 5D E4 2A 40 00 00 E5 A9 85 AD 27 40:warehouse | top
 8F 85 16 B2 55 B5 15 40 A4 14 6C 9C 7C 21 3A 40 F5 AB 69 59 FC 80 22 C0:caribbean | top
@@ -2299,13 +2305,150 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
 00 C0 96 C8 B7 A7 3B C0 EC AB 04 FD 87 22 0F 40 00 C0 DA 5E 38 7F 34 C0:egypt | bombspot A
 3A 2D 9B 91 3F 0C 52 40 7A 2C A8 4D F3 61 F5 3F 00 58 2B 67 C1 32 33 C0:egypt | bombspot B
 </DropDownList>
-                  <ShowAsHex>1</ShowAsHex>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Array of byte</VariableType>
-                  <ByteLength>24</ByteLength>
-                  <Address>_testX</Address>
+                      <ShowAsHex>1</ShowAsHex>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Array of byte</VariableType>
+                      <ByteLength>24</ByteLength>
+                      <Address>_testX</Address>
+                      <Offsets>
+                        <Offset>1F8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>3672</ID>
+              <Description>"Godmode V2 (Custom Lobby Host)"</Description>
+              <Options moAlwaysHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2024-12-11
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+define(address,"GameAssembly.dll"+9EAFFE)
+define(bytes,89 7C CA 20 3B F7)
+
+[ENABLE]
+
+assert(address,bytes)
+alloc(newmem,$1000,"GameAssembly.dll"+9EAFFE)
+
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameAssembly.dll+61E9A18]
+
+  cmp rax,0  // crash prevention while dead/dying
+  je clean
+
+  cmp [rax+B8],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+B8]
+
+  cmp [rax+8],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+8]
+
+  cmp [rax+28],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+28]
+
+  cmp [rax+68],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+68]
+
+  cmp [rax+10],0  // crash prevention while dead/dying
+  je clean
+  mov rax,[rax+10]
+
+  mov rax,[rax+A0]
+  lea rax,[rax+20]
+
+  push rbx
+  lea rbx,[rdx+rcx*8+20]
+  cmp rbx,rax
+  pop rbx
+  jne clean
+  mov edi,esi
+  pop rax
+  jmp code
+
+
+
+clean:
+  pop rax
+  jmp code
+
+
+code:
+  mov [rdx+rcx*8+20],edi
+  cmp esi,edi
+  jmp return
+
+address:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+
+address:
+  db bytes
+  // mov [rdx+rcx*8+20],edi
+  // cmp esi,edi
+
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+9EAFFE
+
+GameAssembly.dll+9EAFDE: FF D0                 - call rax
+GameAssembly.dll+9EAFE0: 48 85 C0              - test rax,rax
+GameAssembly.dll+9EAFE3: 74 5A                 - je GameAssembly.dll+9EB03F
+GameAssembly.dll+9EAFE5: 48 8B 90 A0 00 00 00  - mov rdx,[rax+000000A0]
+GameAssembly.dll+9EAFEC: 48 85 D2              - test rdx,rdx
+GameAssembly.dll+9EAFEF: 74 4E                 - je GameAssembly.dll+9EB03F
+GameAssembly.dll+9EAFF1: 48 63 43 34           - movsxd  rax,dword ptr [rbx+34]
+GameAssembly.dll+9EAFF5: 3B 42 18              - cmp eax,[rdx+18]
+GameAssembly.dll+9EAFF8: 73 4B                 - jae GameAssembly.dll+9EB045
+GameAssembly.dll+9EAFFA: 48 8D 0C 40           - lea rcx,[rax+rax*2]
+// ---------- INJECTING HERE ----------
+GameAssembly.dll+9EAFFE: 89 7C CA 20           - mov [rdx+rcx*8+20],edi
+// ---------- DONE INJECTING  ----------
+GameAssembly.dll+9EB002: 3B F7                 - cmp esi,edi
+GameAssembly.dll+9EB004: 74 29                 - je GameAssembly.dll+9EB02F
+GameAssembly.dll+9EB006: 48 8B 13              - mov rdx,[rbx]
+GameAssembly.dll+9EB009: 48 8B CB              - mov rcx,rbx
+GameAssembly.dll+9EB00C: 48 8B 82 78 01 00 00  - mov rax,[rdx+00000178]
+GameAssembly.dll+9EB013: 48 8B 92 80 01 00 00  - mov rdx,[rdx+00000180]
+GameAssembly.dll+9EB01A: FF D0                 - call rax
+GameAssembly.dll+9EB01C: 48 85 C0              - test rax,rax
+GameAssembly.dll+9EB01F: 74 1E                 - je GameAssembly.dll+9EB03F
+GameAssembly.dll+9EB021: 8B 53 38              - mov edx,[rbx+38]
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>3671</ID>
+                  <Description>"P1 current health"</Description>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"GameAssembly.dll"+061E9A18</Address>
                   <Offsets>
-                    <Offset>1F8</Offset>
+                    <Offset>20</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
                   </Offsets>
                 </CheatEntry>
               </CheatEntries>
@@ -7808,6 +7951,32 @@ GameAssembly.dll+4DF582B: CC                    - int 3
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of mov [rbx+rcx*8+20],edx</Description>
+      <AddressString>GameAssembly.dll+A2144D</AddressString>
+      <Before>
+        <Byte>C1</Byte>
+        <Byte>48</Byte>
+        <Byte>8D</Byte>
+        <Byte>0C</Byte>
+        <Byte>40</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>54</Byte>
+        <Byte>CB</Byte>
+        <Byte>20</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>5C</Byte>
+        <Byte>24</Byte>
+        <Byte>30</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols/>
   <Comments>table made by ZoDDeL
 youtube.com/ZoDDeL
