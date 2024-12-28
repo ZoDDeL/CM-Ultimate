@@ -2,11 +2,15 @@
 <p>An Advanced Cheat Engine Table for Combat Master</p>
 
 - inlcudes:
-  - **[Unlockers]**  (bundles, blackmarket, operations, masters camo)
+  - **[Unlockers]**  (bundles, blackmarket, operations, daily task)
 
-  - **[Lobby modding]**  (godmode, inf ammo, money, vacuum, passive bots, inf matchtime etc.)
+  - **[Lobby modding]**  (godmode, bot vacuum, passive bots, inf matchtime etc.)
 
-  - **[Weapon Loadout modding]**  (equip any weapon, attachment, skin, build overpowered weapons)
+  - **[MultiSwapper]**  (change full loadout: weapons, attachments, operators, skills, killstreaks etc.)
+  
+  - **[Misc]** (NoRecoil, InfJump, instant max level player/weapons, set CP rewards for dailies/operations to 15.000, change XP token duration)
+ 
+  - **[Extra]** (external loading aimbot / ESP .dll directly from github)
 
 
 ### [Videos:]
@@ -49,8 +53,8 @@ https://github.com/ZoDDeL/CM-Ultimate/releases
 > [!NOTE]
 > ### How to use the CE table:
 > make sure you have installed(not packed loose files!) cheat engine 7.5 or newer first.
-> before starting the table make sure the game runs!!! you can sit in the mainscrean of the game.
+> before starting the table make sure the game runs!!! you can sit in the mainscreen of the game.
 > to run the table just doubleclick the CM_Ultimate.CT file.
-> when asked to to executue lua code hit allow or allow always(you wont get asked anymore).
+> when asked to to execute lua code hit allow or allow always(you wont get asked anymore).
 > this is required for the custom header in the CE window (buttons, compact mode) and to automatic hook the game exe.
 
