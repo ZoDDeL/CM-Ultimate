@@ -17,7 +17,7 @@
 https://www.youtube.com/@ZoDDeL
 
 
-### [detailed Descriptions of Features:]
+### [detailed Descriptions of old Features:]
 
 https://www.unknowncheats.me/forum/combat-master/583715-combat-master-ce-godmode-mega-xp-instant-weapon-player-max-level-attachment-mod.html
 
@@ -38,12 +38,6 @@ https://cheatengine.org/
 https://github.com/ZoDDeL/CM-Ultimate/releases
 
 
-### [Download Combat Master 19.4:] https://pixeldrain.com/u/c6GBfVf9
-
-### [MIRROR download Combat Master 19.4 part1:] https://bunkr.ph/d/nwaOeBYsldkWL
-
-### [MIRROR download Combat Master 19.4 part2:] https://bunkr.ph/d/kfmF14v1yga2L
-
 > [!Important]
 > ### Getting Latest Table or Updates:
 > hit the "Download latest Table" button in the table header top-right.
@@ -57,4 +51,3 @@ https://github.com/ZoDDeL/CM-Ultimate/releases
 > to run the table just doubleclick the CM_Ultimate.CT file.
 > when asked to to execute lua code hit allow or allow always(you wont get asked anymore).
 > this is required for the custom header in the CE window (buttons, compact mode) and to automatic hook the game exe.
-
