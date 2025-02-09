@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.22.12 (02.06.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.22.12 (02.09.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -2619,6 +2619,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 0B 02 04 01 04 00 10 0A 0B 02 04 01 00 00 00 00 00 00 00 00 11 00 02 0A 0B 02 04 01 FF FF 03 0A 00 00 00 00 04 00 05 0A 0B 02 04 01 FF FF 09 0A 00 00 00 00 0C 00 06 0A 0B 02 04 01 15 00 04 0A 0B 02 04 01 0A 00 07 0A 0B 02 04 01 12 00 01 0A 0B 02 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:AK (Rattler)
 0C 02 04 01 04 00 10 0A 0C 02 04 01 00 00 00 00 00 00 00 00 10 00 02 0A 0C 02 04 01 FF FF 03 0A 00 00 00 00 06 00 05 0A 0C 02 04 01 FF FF 09 0A 00 00 00 00 0D 00 06 0A 0C 02 04 01 23 00 04 0A 0C 02 04 01 0B 00 07 0A 0C 02 04 01 13 00 01 0A 0C 02 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:AK (Howler)
 0E 02 04 01 1A 00 10 0A 0E 02 04 01 00 00 00 00 00 00 00 00 10 00 02 0A 0E 02 04 01 FF FF 03 0A 00 00 00 00 06 00 05 0A 0E 02 04 01 FF FF 09 0A 00 00 00 00 3E 00 06 0A 0E 02 04 01 0C 00 04 0A 0E 02 04 01 0B 00 07 0A 0E 02 04 01 0D 00 01 0A 0E 02 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:AK (Maverick)
+0D 02 04 01 04 00 10 0A 0D 02 04 01 00 00 00 00 00 00 00 00 0D 00 02 0A 0D 02 04 01 FF FF 03 0A 00 00 00 00 3E 00 05 0A 0D 02 04 01 FF FF 09 0A 00 00 00 00 0A 00 06 0A 0D 02 04 01 0E 00 04 0A 0D 02 04 01 0F 00 07 0A 0D 02 04 01 14 00 01 0A 0D 02 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:AK (Wrath)
 00 00 04 01 13 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 3E 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 0E 00 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 11 00 06 0A 00 00 00 00 19 00 04 0A 00 00 00 00 26 00 07 0A 00 00 00 00 19 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (default)
 05 00 04 01 14 00 10 0A 05 00 04 01 00 00 00 00 00 00 00 00 3F 00 02 0A 05 00 04 01 05 00 03 0A 05 00 04 01 21 00 05 0A 05 00 04 01 FF FF 09 0A 00 00 00 00 11 00 06 0A 05 00 04 01 19 00 04 0A 00 00 00 00 25 00 07 0A 05 00 04 01 10 00 01 0A 05 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Fight Club)
 0A 00 04 01 14 00 10 0A 0A 00 04 01 00 00 00 00 00 00 00 00 3F 00 02 0A 0A 00 04 01 FF FF 03 0A 00 00 00 00 3F 00 05 0A 0A 00 04 01 FF FF 09 0A 00 00 00 00 20 00 06 0A 0A 00 04 01 19 00 04 0A 0A 00 04 01 29 00 07 0A 0A 00 04 01 1B 00 01 0A 0A 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Twin Engine)
@@ -2640,6 +2641,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 01 00 04 01 12 00 10 0A 01 00 04 01 00 00 00 00 00 00 00 00 43 00 02 0A 01 00 04 01 FF FF 03 0A 00 00 00 00 0E 00 05 0A 01 00 04 01 FF FF 09 0A 00 00 00 00 32 00 06 0A 01 00 04 01 34 00 04 0A 01 00 04 01 34 00 07 0A 01 00 04 01 1A 00 01 0A 01 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Hellfire)
 13 00 04 01 13 00 10 0A 13 00 04 01 00 00 00 00 00 00 00 00 41 00 02 0A 13 00 04 01 FF FF 03 0A 00 00 00 00 0E 00 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 34 00 06 0A 13 00 04 01 33 00 04 0A 13 00 04 01 32 00 07 0A 13 00 04 01 1B 00 01 0A 13 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Volcano)
 14 00 04 01 13 00 10 0A 14 00 04 01 00 00 00 00 00 00 00 00 3E 00 02 0A 14 00 04 01 0F 00 03 0A 14 00 04 01 0E 00 05 0A 14 00 04 01 04 00 09 0A 14 00 04 01 24 00 06 0A 14 00 04 01 2E 00 04 0A 14 00 04 01 15 00 07 0A 14 00 04 01 0F 00 01 0A 14 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Tentacle)
+15 00 04 01 14 00 10 0A 15 00 04 01 00 00 00 00 00 00 00 00 3E 00 02 0A 15 00 04 01 FF FF 03 0A 00 00 00 00 08 00 05 0A 15 00 04 01 FF FF 09 0A 00 00 00 00 1F 00 06 0A 15 00 04 01 35 00 04 0A 15 00 04 01 34 00 07 0A 15 00 04 01 23 00 01 0A 15 00 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:M4 (Heretic)
 00 01 04 01 05 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 16 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 0E 00 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 11 00 06 0A 00 00 00 00 19 00 04 0A 00 00 00 00 16 00 07 0A 00 00 00 00 07 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (default)
 01 01 04 01 05 00 10 0A 01 01 04 01 00 00 00 00 00 00 00 00 16 00 02 0A 01 01 04 01 08 00 03 0A 01 01 04 01 0A 00 05 0A 01 01 04 01 FF FF 09 0A 00 00 00 00 1E 00 06 0A 01 01 04 01 18 00 04 0A 01 01 04 01 1A 00 07 0A 01 01 04 01 08 00 01 0A 01 01 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (Aurora)
 0A 01 04 01 05 00 10 0A 0A 01 04 01 00 00 00 00 00 00 00 00 16 00 02 0A 0A 01 04 01 0E 00 03 0A 0A 01 04 01 3D 00 05 0A 0A 01 04 01 FF FF 09 0A 00 00 00 00 12 00 06 0A 0A 01 04 01 04 00 04 0A 0A 01 04 01 23 00 07 0A 0A 01 04 01 0F 00 01 0A 0A 01 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (Shadow Lancer)
@@ -2670,6 +2672,9 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 06 05 05 01 16 00 10 0A 06 05 05 01 00 00 00 00 00 00 00 00 46 00 02 0A 06 05 05 01 08 00 03 0A 06 05 05 01 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 36 00 06 0A 06 05 05 01 06 00 04 0A 06 05 05 01 FF FF 07 0A 00 00 00 00 09 00 01 0A 06 05 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:P90 (Full Throttle)
 07 05 05 01 15 00 10 0A 07 05 05 01 00 00 00 00 00 00 00 00 48 00 02 0A 07 05 05 01 FF FF 03 0A 00 00 00 00 41 00 05 0A 07 05 05 01 FF FF 09 0A 00 00 00 00 36 00 06 0A 07 05 05 01 36 00 04 0A 07 05 05 01 38 00 07 0A 07 05 05 01 14 00 01 0A 07 05 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:P90 (Templar)
 08 05 05 01 16 00 10 0A 08 05 05 01 00 00 00 00 00 00 00 00 47 00 02 0A 08 05 05 01 0B 00 03 0A 08 05 05 01 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 36 00 06 0A 08 05 05 01 0E 00 04 0A 08 05 05 01 FF FF 07 0A 00 00 00 00 09 00 01 0A 08 05 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:P90 (Meteor)
+00 06 05 01 18 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 4B 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 45 00 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 3B 00 06 0A 00 00 00 00 3B 00 04 0A 00 00 00 00 3D 00 07 0A 00 00 00 00 22 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Scorpion (default)
+01 06 05 01 18 00 10 0A 01 06 05 01 00 00 00 00 00 00 00 00 4B 00 02 0A 01 06 05 01 FF FF 03 0A 00 00 00 00 45 00 05 0A 01 06 05 01 FF FF 09 0A 00 00 00 00 3B 00 06 0A 01 06 05 01 3B 00 04 0A 01 06 05 01 3D 00 07 0A 01 06 05 01 22 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Scorpion (Cerberus)
+02 06 05 01 19 00 10 0A 02 06 05 01 00 00 00 00 00 00 00 00 4C 00 02 0A 02 06 05 01 FF FF 03 0A 00 00 00 00 46 00 05 0A 02 06 05 01 FF FF 09 0A 00 00 00 00 3D 00 06 0A 02 06 05 01 3C 00 04 0A 02 06 05 01 3D 00 07 0A 02 06 05 01 23 00 01 0A 02 06 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Scorpion (Eternal Damnation)
 00 03 05 01 02 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 0B 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 07 00 06 0A 00 00 00 00 FF FF 04 0A 00 00 00 00 08 00 07 0A 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (default)
 01 03 05 01 02 00 10 0A 01 03 05 01 00 00 00 00 00 00 00 00 0B 00 02 0A 01 03 05 01 FF FF 03 0A 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 07 00 06 0A 01 03 05 01 07 00 04 0A 01 03 05 01 08 00 07 0A 01 03 05 01 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Phoenix Wings)
 02 03 05 01 02 00 10 0A 02 03 05 01 00 00 00 00 00 00 00 00 0B 00 02 0A 02 03 05 01 FF FF 03 0A 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 09 00 06 0A 02 03 05 01 FF FF 04 0A 00 00 00 00 08 00 07 0A 02 03 05 01 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Golden Dragons)
@@ -2679,6 +2684,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 06 03 05 01 02 00 10 0A 06 03 05 01 00 00 00 00 00 00 00 00 0B 00 02 0A 06 03 05 01 0A 00 03 0A 06 03 05 01 31 00 05 0A 06 03 05 01 FF FF 09 0A 00 00 00 00 08 00 06 0A 06 03 05 01 08 00 04 0A 06 03 05 01 1A 00 07 0A 06 03 05 01 02 00 01 0A 06 03 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Serpentine)
 07 03 05 01 02 00 10 0A 07 03 05 01 00 00 00 00 00 00 00 00 0B 00 02 0A 07 03 05 01 0B 00 03 0A 07 03 05 01 31 00 05 0A 07 03 05 01 04 00 09 0A 07 03 05 01 09 00 06 0A 07 03 05 01 04 00 04 0A 07 03 05 01 08 00 07 0A 07 03 05 01 08 00 01 0A 07 03 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Whitecap)
 08 03 05 01 02 00 10 0A 08 03 05 01 00 00 00 00 00 00 00 00 0A 00 02 0A 08 03 05 01 0D 00 03 0A 08 03 05 01 31 00 05 0A 08 03 05 01 FF FF 09 0A 00 00 00 00 09 00 06 0A 08 03 05 01 0E 00 04 0A 08 03 05 01 08 00 07 0A 08 03 05 01 00 00 01 0A 08 03 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Witch's Brew)
+09 03 05 01 02 00 10 0A 09 03 05 01 00 00 00 00 00 00 00 00 0B 00 02 0A 09 03 05 01 FF FF 03 0A 00 00 00 00 31 00 05 0A 09 03 05 01 03 00 09 0A 09 03 05 01 08 00 06 0A 09 03 05 01 07 00 04 0A 09 03 05 01 3B 00 07 0A 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0A 0A 00 00 00 00 00 00 00 00:Mac10 (Brimstone)
 00 04 05 01 01 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 22 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 15 00 06 0A 00 00 00 00 FF FF 04 0A 00 00 00 00 22 00 07 0A 00 00 00 00 07 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:VKTR (Default)
 01 04 05 01 01 00 10 0A 01 04 05 01 00 00 00 00 00 00 00 00 22 00 02 0A 01 04 05 01 FF FF 03 0A 00 00 00 00 28 00 05 0A 01 04 05 01 FF FF 09 0A 00 00 00 00 09 00 06 0A 01 04 05 01 FF FF 04 0A 00 00 00 00 25 00 07 0A 01 04 05 01 08 00 01 0A 01 04 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:VKTR (Virus)
 02 04 05 01 01 00 10 0A 02 04 05 01 00 00 00 00 00 00 00 00 22 00 02 0A 02 04 05 01 FF FF 03 0A 00 00 00 00 2A 00 05 0A 02 04 05 01 FF FF 09 0A 00 00 00 00 19 00 06 0A 02 04 05 01 FF FF 04 0A 00 00 00 00 24 00 07 0A 02 04 05 01 03 00 01 0A 02 04 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:VKTR (Speedracer)
@@ -2747,6 +2753,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 02 01 01 01 0B 00 10 0A 02 01 01 01 0C 00 00 0A 02 01 01 01 38 00 02 0A 02 01 01 01 00 00 00 00 00 00 00 00 34 00 05 0A 02 01 01 01 FF FF 09 0A 00 00 00 00 2A 00 06 0A 02 01 01 01 1E 00 04 0A 02 01 01 01 00 00 00 00 00 00 00 00 01 00 01 0A 02 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:XFive(Frostbite)
 03 01 01 01 0B 00 10 0A 03 01 01 01 0D 00 00 0A 03 01 01 01 38 00 02 0A 03 01 01 01 00 00 00 00 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 2A 00 06 0A 03 01 01 01 2E 00 04 0A 03 01 01 01 00 00 00 00 00 00 00 00 0D 00 01 0A 03 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:XFive(Parkour)
 04 01 01 01 0B 00 10 0A 04 01 01 01 0B 00 00 0A 04 01 01 01 37 00 02 0A 04 01 01 01 00 00 00 00 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 29 00 06 0A 04 01 01 01 FF FF 04 0A 00 00 00 00 00 00 00 00 00 00 00 00 01 00 01 0A 04 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:XFive(Engima)
+05 01 01 01 0B 00 10 0A 05 01 01 01 0B 00 00 0A 05 01 01 01 38 00 02 0A 05 01 01 01 00 00 00 00 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 2A 00 06 0A 05 01 01 01 15 00 04 0A 05 01 01 01 00 00 00 00 00 00 00 00 09 00 01 0A 05 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:XFive(Eruptor)
 01 04 01 01 0C 00 10 0A 01 04 01 01 00 00 00 0A 01 04 01 01 25 00 02 0A 01 04 01 01 00 00 00 00 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 17 00 06 0A 01 04 01 01 1F 00 04 0A 01 04 01 01 FF FF 07 0A 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:G18(Tracer)
 02 04 01 01 0C 00 10 0A 02 04 01 01 00 00 00 0A 02 04 01 01 25 00 02 0A 02 04 01 01 00 00 00 00 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 17 00 06 0A 02 04 01 01 1F 00 04 0A 02 04 01 01 FF FF 07 0A 00 00 00 00 FF FF 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:G18(Octagon)
 03 04 01 01 0C 00 10 0A 03 04 01 01 00 00 00 0A 03 04 01 01 26 00 02 0A 03 04 01 01 00 00 00 00 00 00 00 00 27 00 05 0A 03 04 01 01 FF FF 09 0A 00 00 00 00 17 00 06 0A 03 04 01 01 23 00 04 0A 03 04 01 01 2F 00 07 0A 03 04 01 01 16 00 01 0A 03 04 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:G18(Mirage)
@@ -3614,6 +3621,29 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
+                <DevilEntry>
+                  <ID>3795</ID>
+                  <Description>"OPCUSTOM"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:empty
+33751050:Foreward|Tactician (Basecap)
+33751053:Falcon|VR Goggles
+33751040:Wolverine|Dragonscale (horns)
+33751041:Wolverine|Monstrosity (skull facemask)
+33751042:Wolverine|Savage (fang necklace)
+33751043:Vixen|Lucifers Love (neckband)
+33751044:Vixen|Obsidian (skinsuit top)
+33751045:Vixen|S3 Abyss (combatsuit top)
+33751046:Vixen|Serpent (sleeve)
+33751047:Vixen|Fire Vein (sleeve)
+33751048:Vixen|Lava Drip (hooded jacked)
+33751049:Vixen|Ninth Circle (crown)
+33751051:Vixen|Beelzebub (horns)
+33751052:Vixen|Hells Belles (finger nails)
+33751054:Vixen|Flaming War (horns)
+33751055:Vixen|Seventh Circle (finger nails)
+</DropDownList>
+                  <GroupHeader>1</GroupHeader>
+                </DevilEntry>
               </DevilEntries>
             </DevilEntry>
             <DevilEntry>
@@ -3701,7 +3731,8 @@ GameAssembly.dll+4DF582B: CC                    - int 3
             <DevilEntry>
               <ID>3024</ID>
               <Description>"operator                                  (doubleclick on value to select)   ---&gt;"</Description>
-              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">33554432:Ranger
+              <Options moManualExpandCollapse="1"/>
+              <DropDownList DisplayValueAsItem="1">33554432:Ranger
 33554437:Lightning
 33554434:Viper
 33554433:Rush
@@ -3734,6 +3765,139 @@ GameAssembly.dll+4DF582B: CC                    - int 3
               <Offsets>
                 <Offset>50</Offset>
               </Offsets>
+              <DevilEntries>
+                <DevilEntry>
+                  <ID>3790</ID>
+                  <Description>"Operator Customize"</Description>
+                  <Options moHideChildren="1"/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2025-02-09
+  Author : ZoDDeL
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(customize,Project.dll,42 0F 10 44 01 20 42 8B 84) // should be unique
+alloc(newmem,$1000,customize)
+
+label(code)
+label(return)
+
+newmem:
+  cmp rcx+r8+20],#33554453
+  je pointer
+  cmp rcx+r8+20],#33554458
+  je pointer
+  cmp rcx+r8+20],#33554443
+  je pointer
+  cmp rcx+r8+20],#33554454
+  je pointer
+  jmp code
+
+
+pointer:
+  push r13
+  lea r13,[rcx+r8+20]
+  mov [_customize],r13
+  pop r13
+  jmp code
+
+
+code:
+  movups xmm0,[rcx+r8+20]
+  jmp return
+
+_customize:
+dd #0
+
+
+
+customize:
+  jmp newmem
+  nop
+return:
+registersymbol(customize)
+registersymbol(_customize)
+
+
+[DISABLE]
+
+customize:
+  db 42 0F 10 44 01 20
+
+unregistersymbol(customize)
+unregistersymbol(_customize)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3C8CC84
+
+Project.dll+3C8CC53: 0F 8D 2A 01 00 00        - jnl Project.dll+3C8CD83
+Project.dll+3C8CC59: 41 3B 51 18              - cmp edx,[r9+18]
+Project.dll+3C8CC5D: 0F 83 C6 02 00 00        - jae Project.dll+3C8CF29
+Project.dll+3C8CC63: 4D 8B 41 10              - mov r8,[r9+10]
+Project.dll+3C8CC67: 4D 85 C0                 - test r8,r8
+Project.dll+3C8CC6A: 0F 84 D5 02 00 00        - je Project.dll+3C8CF45
+Project.dll+3C8CC70: 41 3B 50 18              - cmp edx,[r8+18]
+Project.dll+3C8CC74: 0F 83 A9 02 00 00        - jae Project.dll+3C8CF23
+Project.dll+3C8CC7A: 48 63 C2                 - movsxd  rax,edx
+Project.dll+3C8CC7D: 48 69 C8 84 00 00 00     - imul rcx,rax,00000084
+// ---------- INJECTING HERE ----------
+Project.dll+3C8CC84: 42 0F 10 44 01 20        - movups xmm0,[rcx+r8+20]
+// ---------- DONE INJECTING  ----------
+Project.dll+3C8CC8A: 42 8B 84 01 A0 00 00 00  - mov eax,[rcx+r8+000000A0]
+Project.dll+3C8CC92: 42 0F 10 4C 01 30        - movups xmm1,[rcx+r8+30]
+Project.dll+3C8CC98: 89 45 A0                 - mov [rbp-60],eax
+Project.dll+3C8CC9B: 0F 29 44 24 20           - movaps [rsp+20],xmm0
+Project.dll+3C8CCA0: 42 0F 10 44 01 40        - movups xmm0,[rcx+r8+40]
+Project.dll+3C8CCA6: 0F 29 4C 24 30           - movaps [rsp+30],xmm1
+Project.dll+3C8CCAB: 42 0F 10 4C 01 50        - movups xmm1,[rcx+r8+50]
+Project.dll+3C8CCB1: 0F 29 44 24 40           - movaps [rsp+40],xmm0
+Project.dll+3C8CCB6: 42 0F 10 44 01 60        - movups xmm0,[rcx+r8+60]
+Project.dll+3C8CCBC: 0F 29 4C 24 50           - movaps [rsp+50],xmm1
+}
+</AssemblerScript>
+                  <DevilEntries>
+                    <DevilEntry>
+                      <ID>3791</ID>
+                      <Description>"slot 1 (equip operator to update)"</Description>
+                      <DropDownListLink>OPCUSTOM</DropDownListLink>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_customize</Address>
+                      <Offsets>
+                        <Offset>4</Offset>
+                      </Offsets>
+                    </DevilEntry>
+                    <DevilEntry>
+                      <ID>3796</ID>
+                      <Description>"slot 2 (equip operator to update)"</Description>
+                      <DropDownListLink>OPCUSTOM</DropDownListLink>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_customize</Address>
+                      <Offsets>
+                        <Offset>8</Offset>
+                      </Offsets>
+                    </DevilEntry>
+                    <DevilEntry>
+                      <ID>3797</ID>
+                      <Description>"slot 3 (equip operator to update)"</Description>
+                      <DropDownListLink>OPCUSTOM</DropDownListLink>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_customize</Address>
+                      <Offsets>
+                        <Offset>C</Offset>
+                      </Offsets>
+                    </DevilEntry>
+                  </DevilEntries>
+                </DevilEntry>
+              </DevilEntries>
             </DevilEntry>
             <DevilEntry>
               <ID>3025</ID>
