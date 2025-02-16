@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.4)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.5)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -3277,8 +3277,27 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3489</ID>
                   <Description>"UNDERBARREL"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">167968787:MilliMart CQR Grip(M4)
-168034303:Nothing (AK default)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No Modifications
+168034303:No Modifications
+167968788:Pickle Grip
+167968771:Mil Foregrip
+167968775:Magpul Angled Fore Grip
+167968784:Merc Foregrip
+167968769:Tyrant Designs MOD Foregrip
+167968778:TangoDown Stubby Vertical Grip
+167968768:Tyrant Designs HALO MiniVert Grip
+167968783:Harris Steel Bipod
+167968786:Fortis SHIFT Angular Grip
+167968781:Daniel Defense Vertical Grip
+167968779:CAA MGRIP
+167968773:Larue Tactical Forward Universal Grip
+167968770:Fortis SHIFT Vertical Grip
+167968776:Railscales Anchor Vertical Grip
+167968777:Railscales Karve Handstop
+167968780:Railscales RSB Vertical Grip
+167968787:MiliMart CQR Grip
+167968782:AccuTac Composite Bipod
+167968772:Mac Heavy Foregrip
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
@@ -3331,28 +3350,71 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3495</ID>
                   <Description>"MAG"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">168165393:30-Round Mags (M4/SIG MCX default)
-168165407:50-Round Magpul Drum Mags(M4/SIG MCX)
-168165413:30-Round 9mm Light Mags (M4/SIG MCX)
-168165394:30-Round .300 Blackout Mags (M4/SIG MCX)
-168165425:40-Round Extended PMAG (M4/SIG MCX)
-168165406:60-Round SureFire Mags (M4/SIG MCX)
-168165408:100-Round Double Drum Mags (M4/SIG MCX)
-168165412:20-Round Spear .277 Fury Mags (M4/SIG MCX)
-168165427:20-Round Straight Mags (M4)
-168165428:12-Shell Shotgun Mags (M4)
-168165426:50-Round MiliMart Mags (M4)
-168165429:20-Shell Dragonbreath Mags (M4)
-168034316:30-Round Steel Mags (AK default)
-168165387:75-Round Steel Drum Mags (AK)
-168165423:20-Round Steel Mags (AK)
-168165388:30-Round 9mm Vityaz Mags (AK)
-168165389:45-Round Molot Mags (AK)
-168165411:30-Round AK-12 Polymer Mags
-168165410:80-Round Hybrid Mags (AK)
-168165424:10-Round Super Speed Mags (AK)
-168165438:18-Shell Saiga Dragonbreath Mags (AK)
-168165386:30-Round 5.45 Magpul Mags (AK)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No Modifications
+168165393:30-Round Mags
+168165427:Straight 20-Round Mags
+168165407:Magpul 50-Round Drum Mags
+168165413:9mm 30-Round Light Mags
+168165394:.300 Blackout 30-Round Mags
+168165425:40-Round Extended PMAG
+168165406:SureFire 60-Round Mags
+168165408:Double Drum 100-Round Mags
+168165412:Spear .227 Fury 20-Round Mags
+168165426:MiliMart 50-Round Mags
+168165429:Dragonbreath 20-Shell Mags
+168165390:30-Round Steel Mags
+168165387:75-Round Steel Drum Mags
+168165423:20-Round Steel Mags
+168165388:9mm 30-Round Vityaz Mags
+168165389:45-Round Molot Mags
+168165411:AK-12 30-Round Polymer Mags
+168165410:80-Round Hybrid Mags
+168165424:10-Round Super Speed Mags
+168165438:Saiga Dragonbreath 18-Shell Mags
+168165386:5.45 30-Round Magpul Mags
+168165428:Shotgun 12-Shell Mags
+168165376:30-Round Mags
+168165379:Drum 50-Round Mags
+168165377:10mm Auto 30-Round Mags
+168165382:Rubber Loop 30-Round Mags
+168165381:Lite 15-Round Mags
+168165380:Stacked 30-Round Mags
+168165378:Twin Drum 100-Round Mags
+168165430:50-Round Mags
+168165431:V-max Tip Cartridge 50-Round Mags
+168165432:Incendiary Cartridge 50-Round Mags
+168165435:9x19mm 30-Round Polymer Mags
+168165436:9x21mm 25-Round Mags
+168165437:9x19mm 40-Round Twin Mags
+168165379:Drum 50-Round Mags
+168165383:.45 ACP 30-Round Mags
+168165384:9mm 30-Round Mags
+168165385:KCI 50-Round Drum Mags
+168165397:9mm 40-Round Mags
+168165398:10mm 33-Round Mags
+168165401:9mm 15-Round Mags
+168165419:12-Gauge Std Rounds
+168165420:Hardcast Slug Rounds
+168165421:Multi-Defence Rounds
+168165422:Double Round Ball Rounds
+168165434:Shotgun 8-Shell Mag
+168165433:Adaptive Viper 14-Shell Mag
+168165391:5-Round Mags
+168165392:8-Round Mags
+168165414:17-Round Mags
+168165415:21-Round Extended Mags
+168165416:19-Round 10mm Cmpetition Mags
+168165400:26-Round Mags
+168165399:17-Round Mags
+168165417:21-Round Mags
+168165418:25-Round Extended Mags
+168165404:7-Round Mags
+168165403:10-Round Mags
+168165402:12-Round Speed Mags
+168165405:12-Round Saber+ Mags
+168165409:1911 compact default mag
+168165395:7-Round Mags
+168165396:13-Round Mags
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
