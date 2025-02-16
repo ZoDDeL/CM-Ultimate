@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.3)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -3120,10 +3120,33 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3483</ID>
                   <Description>"RECEIVER"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">168820755:M4 Mil (M4)
-168820756:VR80 Heavy (M4)
-168820754:Shark Performance Skel (M4)
-168820740:AK Mil Factory (AK default)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">168820741:Virtus
+168820752:Virtus SKEL
+168820740:AK Mil Factory
+168820762:AK Alpha
+168820755:M4 Mil
+168820756:VR80 Heavy
+168820754:Shark Performance Skel
+168820736:MP.V Standard
+168820757:P90 SpecOps
+168820758:P20 Prototype
+168820760:Evo 3 Standart
+168820761:Evo 3+
+168820738:Mac10 Origional
+168820737:VKTR Gen2
+168820739:M3 Performance
+168820759:M26SSA Mil
+168820742:R7000 Alpha
+168820745:ESS Chassis
+168820743:Arctic Warfare M
+168820744:Single Shot Std
+168820746:P-18 USMC
+168820748:Gen4 Mil
+168820747:XFULL Spectre
+168820749:1911 Combat Arms
+168820750:1911 XS Compact
+168820751:XIX Eagle .50 AE
+168820753:Minigun
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
@@ -3159,25 +3182,87 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3487</ID>
                   <Description>"BARREL"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">167903258:Nova Tactical/Default (M3 super)
-167903260:24" CQB SWAT
-167903259:32" SuperSport Extended (M3 super)
-167903305:21" MidEast M2 Super (M3 super)
-167903257:21" Ti Justice (M3 super)
-167903294:MK18/Default (M4)
-167903289:HK SKel (M4)
-167903290:Hogue Heavy Extended (M4)
-167903291:Falcon Atlas (M4)
-167903295:Rock Island Tris (M4)
-167903297:Rugr Classic (M4)
-167903293:F1 Speedster (M4)
-167903292:RP Pyramid Gen 3 (M4)
-167903299:MiliMart Flash Mini (M4)
-167903296:Rock Island Tris Precision (M4)
-167903298:F1 Marksman (M4)
-167903264:Hawk Ti Full Auto (Desert Eagle)
-167903311:Gauss Mk. VII (R7000)
-167903283:Army Standard (AK default)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No Modifications
+167903254:Virtus SBR
+167903255:Virtus Marksman
+167903256:Virtus CQB Mini
+167903283:Army Standard
+167903245:Spetsnaz Tactical
+167903246:8.1 Romanian
+167903247:23 RPK Military
+167903248:Ghost Elite
+167903249:8.1 Vityaz Lite
+167903284:18.2 Vepr Extended
+167903294:MK18
+167903289:HK Skel
+167903290:Hogue Heavy Extended
+167903291:Falcon Atlas
+167903295:Rock Island Tris
+167903297:Rugr Classic
+167903293:F1 Speedster
+167903292:RP Pyramid Gen 3
+167903299:MiliMart Flash Mini
+167903296:Rock Island Tris Precision
+167903298:F1 Marksman
+167903234:SWAT
+167903232:Tactical
+167903235:SWAT Vented
+167903236:Monolithic Integral Suppressor
+167903238:Mini QCK+
+167903240:SWAT Light
+167903239:MiliMart Hammer
+167903233:SWAT Light Vented
+167903241:Falcon Tactical
+167903237:Rapture Ultra Light
+167903300:Stock Threaded
+167903301:Quick Spear
+167903302:Rapture Tactical
+167903303:HAGA Hammer
+167903304:MiliMart Rhino
+167903307:Evo Standart
+167903308:Evo Extended
+167903309:MidEast MLOK Handguard
+167903310:Viper ESSH
+167903243:Original Threaded
+167903244:6.1 Task Force Heavy
+167903242:6.5 Rifled
+167903266:Origional Threaded
+167903267:12 Vertex Tactical
+167903268:16 Carbine Enhanced
+167903258:Nova Tactical
+167903260:24 CQB SWAT
+167903259:32 SuperSport Extended
+167903305:21 MidEast M2 Super
+167903257:21 Ti Justice
+167903306:3 Shorty
+167903280:Precision Fluted
+167903279:Timberwolf Spiral
+167903278:16 Bull Lightweight
+167903252:Mil Standard
+167903251:Marksman Spiral
+167903250:16 Lightweight Tactical
+167903253:20 SpecOps Tactical
+167903277:26 Witt Integral
+167903311:Gauss Mk.VII
+167903285:SIG Standard
+167903286:3.7 Factory XL Sport
+167903270:Gen4 Standard
+167903271:Edge Grey Ghost LT
+167903273:Frontline Tac Extended
+167903272:Edge Hexagon Precisin
+167903269:MiliMart Alpha Auto
+167903287:XSeries Integral
+167903288:Max Power Extended
+167903274:Factory Standard
+167903275:TTi Master
+167903276:Wanted Engraved
+167903281:Morta Mini
+167903282:Wilson Tactical
+167903261:6 Factory Standard
+167903263:10 Ultralight
+167903264:HAWK Ti Full AUTO
+167903262:Peacemake XXXL
+167903265:14 Extended Precision
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
@@ -3383,9 +3468,41 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3501</ID>
                   <Description>"OPTICS"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">167837699:Optech MRS Open
-167837701:Kahles K624i Precision
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0: No Modifications
+167903231:No Modifications
+167837703:Command Arms Iron Sight
+167837721:KAC Micro Sights
+167837724:P90 Ironsights
+167837730:Evo Ironsights
+167837725:M26SSA Ironsights
+167837728:Ironsight
+167837723:Spec Arms Carry
+167837722:Scalar Peak-01
+167837720:Predator Ti
+167837729:Steg Spikes
+167837726:Pointer
+167837727:Specter
+167837697:Leupold DeltaPoint
+167837698:EOTECH HWS
+167837714:Kobra Gen 3
+167837696:Aimpoint Micro
+167837699:Optech MRS Open
+167837712:Triijcon TA02 LED
+167837706:Aimpoint Micro AR Mount
+167837707:Aimpoint ACRO
 167837716:BRAVO 4
+167837708:Trijicon MRO
+167837715:OSA Monicle
+167837701:Kahles K624i Precision Rifle Scope
+167837709:Zenit PK-06
+167837713:Elcan Spectre
+167837705:Trijicon SRO
+167837717:Vortex Razor
+167837731:Evo Holosight
+167837711:EOTech Vudu
+167837704:Holosun HS510C
+167837710:Leupold Mark 4 HAMR
+167837718:Vortex Venom
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
@@ -3792,7 +3909,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
               <ID>3024</ID>
               <Description>"operator                                  (doubleclick on value to select)   ---&gt;"</Description>
               <Options moManualExpandCollapse="1"/>
-              <DropDownList DisplayValueAsItem="1">33554432:Ranger
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">33554432:Ranger
 33554437:Lightning
 33554434:Viper
 33554433:Rush
