@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.3)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.4)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -3448,12 +3448,67 @@ GameAssembly.dll+4DF582B: CC                    - int 3
                 <DevilEntry>
                   <ID>3499</ID>
                   <Description>"STOCK"</Description>
-                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">168230962:Millimart Integral (M4)
-168230968:Full Heavy Duty Kit (P90)
-168230953:Daniel Defense Collapible Buttstock (M4)
-168230944:ComTech Champion (M3)
-168230950:Magpul UBR (M3)
-168230960:MiliMart USW Carbine(G18)
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No Modifications
+168296447:No Modifications
+168230934:SIG Factory Original
+168230937:SIG Telescoping Stock
+168230935:SIG Visor Stock
+168230950:Magpul UBR
+168230963:Edge Hexagon Buffer Tube
+168230918:ACE Ultra Lite
+168230947:SB Tactical SBA3
+168230938:SIG Skel Folding Stock
+168230953:Daniel Defense Collapsible Buttstock
+168230940:No Stock Conversion
+168230949:Strike Industries Viper
+168230961:Strike Advanced Extension
+168230936:SIG Skel Ultralight
+168230954:Fortis Ultra Light
+168230928:Mil Wood Stock
+168230922:AKSU Tris Folding Stock
+168230913:Maxim Defense CQB7
+168230926:Mil Polymer Stock
+168230925:Underfolder Stock
+168230929:VZ AKP Stock
+168230927:RPK Mil Stock
+168230930:Tantal Wire Stock
+168230931:No Stock Conversion
+168230923:Zenit PT1 Folding Stock
+168230933:Magpul Prescision Stock
+168230943:SG Heavy
+168230962:MiliMart Integral
+168230964:Gunslinger Quick+
+168230914:Classic Straight-line Stock
+168230912:A3 Retractable Stock
+168230915:Magpul ACR
+168230916:SP5 Tactical Lite
+168230917:GSG9 Tactical
+168230919:Sling End Cap
+168230965:HAGA Stock Extension
+168230966:HD Prescision Cheek Riser
+168230967:Qck+ Sling
+168230969:HD Prescision Extended
+168230968:Full Heavy Duty Kit
+168230973:Evo Standart
+168230972:Strike Industries QFS
+168230974:No Stock Conversion
+168230920:Mac Original
+168230921:Mac Original Extended
+168230971:No Stock Conversion
+168230946:VKTR Original Stock
+168230948:QD Sling Swivel
+168230945:SuperNova SWAT
+168230944:ComTech Champion
+168230951:Breacher Pistol Grip
+168230941:Liberator Grip
+168230952:No Stock Conversion
+168230932:MDT Skeleton
+168230955:AWM Mil Standard
+168230956:No Stock Conversion
+168230958:ReCharge Tac Handle
+168230959:ALG Scope Mount Kit
+168230970:JPOsaka Blade
+168230960:MiliMart USW Carbine
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
