@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.58 (02.16.5)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.59 (02.17.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -185,11 +185,12 @@ slava ukraini
 8B 53 20 48 81 C1 78 1C 00 00 45 33 C0 E8 73
 8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 B3
 8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 33
+8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 03
 }
 
 [ENABLE]
 
-aobscanmodule(bundles,Project.dll,8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 33) // should be unique
+aobscanmodule(bundles,Project.dll,8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 03) // should be unique
 alloc(newmem,$2000,bundles)
 
 label(code)
@@ -2013,8 +2014,7 @@ newmem:
   //cmp [pPlayer],0  // crash prevention while dead/dying
   //je clean
   //mov rax,[Project.dll+050411A0]
-  mov rax,[Project.dll+05067930]
-  //mov rax,["Project.dll"+04B23AB8]
+  mov rax,[Project.dll+05053928]
   cmp rax,0  // crash prevention while dead/dying
   je clean
 
@@ -2312,7 +2312,7 @@ label(return)
 newmem:
   push rax
   //mov rax,[Project.dll+050411A0]
-  mov rax,[Project.dll+05067930]
+  mov rax,[Project.dll+05053928]
 
   cmp rax,0  // crash prevention while dead/dying
   je clean
