@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.59 (02.17.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.59 (02.18.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -8698,7 +8698,96 @@ youtube.com/ZoDDeL
 	pushGitHub( nil, true )
 
 
+	local url = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/CM_Ultimate.DE"
+	local filename = "C:/CM_Ultimate.DE"
 
+	function downloadFile(url, filename)
+	    if fileExists(filename) then
+        os.remove(filename)
+		end
+
+
+		local http = getInternet()
+		local file = io.open(filename, "wb")
+		if file then
+			file:write(http.getURL(url))
+			file:close()
+		end
+		http.destroy()
+
+	end
+
+	function pushDownload( sender, force )
+		local state = not( downloadmenuitem.Caption == 'Download latest Table' )
+		if force ~= nil then
+		   state = not force
+		end
+		downloadmenuitem.Caption = state and 'Download latest Table' or 'Download latest Table'
+		if force == nil then
+			downloadFile(url, filename)
+			sleep(1000)
+			loadTable(filename)
+		end
+	end
+
+	function addDownloadButton()
+		if downloadmenualreadyexists then return end
+		local parent = getMainForm().Menu.Items
+		downloadmenuitem = createMenuItem( parent )
+		parent.add( downloadmenuitem )
+		downloadmenuitem.Caption = 'Download Table'
+		downloadmenuitem.OnClick = pushDownload
+		downloadmenualreadyexists = 'yes'
+	end
+
+	addDownloadButton()
+	pushDownload( nil, true )
+
+
+    local urlESP = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/BattlepassHUABYJoelmatic.dll"
+	local filenameESP = "C:/BattlepassHUABYJoelmatic.dll"
+
+	function downloadFileESP(urlESP, filenameESP)
+	    if fileExists(filenameESP) then
+        os.remove(filenameESP)
+		end
+
+
+		local http = getInternet()
+		local file = io.open(filenameESP, "wb")
+		if file then
+			file:write(http.getURL(urlESP))
+			file:close()
+		end
+		http.destroy()
+
+	end
+
+	function pushDownloadESP( sender, force )
+		local state = not( downloadmenuitemESP.Caption == 'INJECTION DONE!' )
+		if force ~= nil then
+		   state = not force
+		end
+		downloadmenuitemESP.Caption = state and 'INJECTION DONE!' or 'Inject BATTLEPASS'
+		if force == nil then
+			downloadFile(urlESP, filenameESP)
+			sleep(1000)
+			injectDLL(filenameESP)
+		end
+	end
+
+	function addDownloadButtonESP()
+		if downloadmenuESPalreadyexists then return end
+		local parent = getMainForm().Menu.Items
+		downloadmenuitemESP = createMenuItem( parent )
+		parent.add( downloadmenuitemESP )
+		downloadmenuitemESP.Caption = 'INJECTION DONE!'
+		downloadmenuitemESP.OnClick = pushDownloadESP
+		downloadmenuESPalreadyexists = 'yes'
+	end
+
+	addDownloadButtonESP()
+	pushDownloadESP( nil, true )
 
 
 end
