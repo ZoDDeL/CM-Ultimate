@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.23.81 / 0.23.84 (02.19.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.23.86 (02.21.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -2014,7 +2014,7 @@ newmem:
   //cmp [pPlayer],0  // crash prevention while dead/dying
   //je clean
   //mov rax,[Project.dll+050411A0]
-  mov rax,[Project.dll+0504F690]
+  mov rax,[Project.dll+05065318]
   cmp rax,0  // crash prevention while dead/dying
   je clean
 
@@ -2312,7 +2312,7 @@ label(return)
 newmem:
   push rax
   //mov rax,[Project.dll+050411A0]
-  mov rax,[Project.dll+0504F690]
+  mov rax,[Project.dll+05065318]
 
   cmp rax,0  // crash prevention while dead/dying
   je clean
