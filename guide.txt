@@ -1,0 +1,61 @@
+step 1.
+run devil engine 666.exe (in the devil engine 666 folder)
+(if you cannot use devilengine 666 because your CPU is too old
+then use devilengine 333.exe instead)
+
+do the first time setup:
+go to Edit > Settings > General Settings
+set "Table: Lua script" to "Always"
+
+go to plugins
+hit "Add new" go into devil engine 666 folder
+and select nameless64.dll then hit open
+hit the checkbox beside the plugin
+if you see the titlebar constantly changes to a random name everything worked fine.
+(keep in mind that changing the path of devil engine or renaming the folder will break
+the plugin setting and you need to redo this step!)
+
+
+
+step 2.
+run combat master
+drag and drop the CM_Ultimate.DE file into the open Devil Engine window
+if drag and drop doesnt work try hotkey ctrl+o and select the table (CM_Ultimate.DE)
+or use the yellow folder button with the little green arrow in the top left
+and select the table (CM_Ultimate.DE)
+
+
+
+how to use battlepass unlock:
+hit the injection button once.
+you should hear a beep sound (if not something gone wrong)
+then you just have to change your operator by equipping another.
+this will trigger the buying of the S3 battlepass.
+keep in mind you still have to level the battlepass to access every item
+or just use the multiSwapper.
+
+
+
+extra:
+devil engine 666 is a modified CE 7.5 and uses the x86_64-SSE4-AVX2 build
+devil engine 333 is a modified CE 7.5 that only requires a 64bit CPU + OS (if you have problems with the 666 version)
+
+you should close your browser, discord and unnessary folders before running the table because the tripwire closes your
+game if it founds any blacklisted words / strings in your opened processes, folders, browser tabs etc.
+
+
+problems with nameless64.dll ?
+
+get latest .net framework
+https://dotnet.microsoft.com/en-us/download/dotnet-framework
+
+get latest 64bit vc redist
+https://aka.ms/vs/17/release/vc_redist.x64.exe
+
+make sure to have an short path without any weird signs for devil engine folder (D:/devil engine/)
+run devil engine as admin.
+add nameless64.dll
+
+dont move the folder after,
+dont rename anything.
+
