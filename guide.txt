@@ -59,3 +59,34 @@ add nameless64.dll
 dont move the folder after,
 dont rename anything.
 
+script dont work / crash (vacuum / godmode)
+make sure the table version = game version.
+for example table version is 23.81 but game is 23.86 then you can expect that things dont work.
+you need to get the latest table.
+in the top right corner of the table hit the text "download latest table".
+this will download and replace your currently opened table contents.
+no save it.
+hit in the top left corner File > Save.
+now your outdated table is updated and saved.
+if you forgot to saving part you can also look into C:\
+that the download location of the table (and the BP unlock dll)
+
+
+battlepass unlock doesnt work.
+first make sure you have the latest .net framework / latest 64bit vc redist.
+you need to be admin on windows! try to run devil engine as admin.
+maybe your anti-virus blocks / deletes the unlock .dll in that case disable your antivirus software.
+maybe you pc / internet is slow. retry the injection (click the "injection done" text once more).
+check if the file download was okay by looking at C:\ for a file called "BattlepassHUABYJoelmatic.dll" with the size of 249KB.
+if this file doesnt exists your download doesnt work / antivirus deletes the file.
+if the file exists but the unlock doesnt work the execution might stuck.
+you could try to manual inject the .dll file.
+open devil engine, run combat master, start the CM ultimate table, press hotkey CTRL+m to opene memory viewer, press hotkey CTRL+i, select "BattlepassHUABYJoelmatic.dll" on C:\ and click Open.
+you get asked to execute the function of the .dll press yes. press ok.
+if the "BattlepassHUABYJoelmatic.dll" doesnt exist than just manually download it from github
+https://github.com/ZoDDeL/CM-Ultimate/blob/main/BattlepassHUABYJoelmatic.dll
+(safe link as / save file as)
+
+
+
+
