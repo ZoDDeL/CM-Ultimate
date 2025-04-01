@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.24 (04.01.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.01.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -1587,7 +1587,7 @@ newmem:
   //je clean
   //mov rax,[Project.dll+050411A0]
   //mov rax,[Project.dll+05065318]
-  mov rax,[Project.dll+050B8B70]
+  mov rax,[Project.dll+050A1CC0]
   cmp rax,0  // crash prevention while dead/dying
   je clean
 
@@ -1886,7 +1886,7 @@ newmem:
   push rax
   //mov rax,[Project.dll+050411A0]
   //mov rax,[Project.dll+05065318]
-  mov rax,[Project.dll+050B8B70]
+  mov rax,[Project.dll+050A1CC0]
 
   cmp rax,0  // crash prevention while dead/dying
   je clean
