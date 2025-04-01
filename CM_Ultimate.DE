@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.24 (04.01.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.24.24 (04.01.2)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -332,7 +332,7 @@ code:
   jmp return
 
 toggleCash:
-dd #0
+dd #1
 
 toggleInstantOPS:
 dd #1
@@ -528,16 +528,15 @@ GameAssembly.dll+4C4847B: 0F 11 41 C0              - movups [rcx-40],xmm0
 </AssemblerScript>
             </DevilEntry>
             <DevilEntry>
-              <ID>3011</ID>
+              <ID>4595</ID>
               <Description>"turn daily CP rewards into 15.000"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
-  Date   : 2024-11-26
+  Date   : 2025-04-01
   Author : ZoDDeL
 
   This script does blah blah blah
-
 
 67108883 = 15000CP
 67108882 = 9100CP
@@ -584,25 +583,26 @@ group 10CP + 20CP + 30CP
 
 [ENABLE]
 
-aobscanmodule(dailyCP,Project.dll,0F B6 8F E0 00 00 00 85) // should be unique
+aobscanmodule(dailyCP,Project.dll,0F 10 42 58 0F 11 03) // should be unique
 alloc(newmem,$1000,dailyCP)
 
 label(code)
 label(return)
 
 newmem:
-  cmp dword ptr [rdx+64],#67108865
+  cmp dword ptr [rdx+58+4],#67108865
   je boost  // 67371017
   jmp code
 
 boost:
-  mov [rdx+64],#67108883
-  mov [rdx+84],#67108883
-  mov [rdx+A4],#67108883
+  mov [rdx+58+4],#67108883
+  mov [rdx+58+24],#67108883
+  mov [rdx+58+44],#67108883
   jmp code
 
 code:
-  movzx ecx,byte ptr [rdi+000000E0]
+  movups xmm0,[rdx+58]
+  movups [rbx],xmm0
   jmp return
 
 dailyCP:
@@ -614,37 +614,37 @@ registersymbol(dailyCP)
 [DISABLE]
 
 dailyCP:
-  db 0F B6 8F E0 00 00 00
+  db 0F 10 42 58 0F 11 03
 
 unregistersymbol(dailyCP)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: GameAssembly.dll+4C476BB
+// ORIGINAL CODE - INJECTION POINT: Project.dll+3E83201
 
-GameAssembly.dll+4C47698: 83 B9 E4 00 00 00 00  - cmp dword ptr [rcx+000000E4],00
-GameAssembly.dll+4C4769F: 75 05                 - jne GameAssembly.dll+4C476A6
-GameAssembly.dll+4C476A1: E8 7A 0F A6 FB        - call GameAssembly.il2cpp_field_set_value+4940
-GameAssembly.dll+4C476A6: 33 C9                 - xor ecx,ecx
-GameAssembly.dll+4C476A8: E8 F3 82 EE FF        - call GameAssembly.dll+4B2F9A0
-GameAssembly.dll+4C476AD: 48 85 C0              - test rax,rax
-GameAssembly.dll+4C476B0: 74 77                 - je GameAssembly.dll+4C47729
-GameAssembly.dll+4C476B2: 48 8B 50 30           - mov rdx,[rax+30]
-GameAssembly.dll+4C476B6: 48 85 D2              - test rdx,rdx
-GameAssembly.dll+4C476B9: 74 6E                 - je GameAssembly.dll+4C47729
+Project.dll+3E831E6: 48 83 C4 20     - add rsp,20
+Project.dll+3E831EA: 5F              - pop rdi
+Project.dll+3E831EB: C3              - ret 
+Project.dll+3E831EC: 0F 10 42 78     - movups xmm0,[rdx+78]
+Project.dll+3E831F0: 48 8B C3        - mov rax,rbx
+Project.dll+3E831F3: 0F 11 03        - movups [rbx],xmm0
+Project.dll+3E831F6: 48 8B 5C 24 30  - mov rbx,[rsp+30]
+Project.dll+3E831FB: 48 83 C4 20     - add rsp,20
+Project.dll+3E831FF: 5F              - pop rdi
+Project.dll+3E83200: C3              - ret 
 // ---------- INJECTING HERE ----------
-GameAssembly.dll+4C476BB: 0F B6 8F E0 00 00 00  - movzx ecx,byte ptr [rdi+000000E0]
+Project.dll+3E83201: 0F 10 42 58     - movups xmm0,[rdx+58]
 // ---------- DONE INJECTING  ----------
-GameAssembly.dll+4C476C2: 85 C9                 - test ecx,ecx
-GameAssembly.dll+4C476C4: 74 4E                 - je GameAssembly.dll+4C47714
-GameAssembly.dll+4C476C6: 83 E9 01              - sub ecx,01
-GameAssembly.dll+4C476C9: 74 31                 - je GameAssembly.dll+4C476FC
-GameAssembly.dll+4C476CB: 83 F9 01              - cmp ecx,01
-GameAssembly.dll+4C476CE: 74 14                 - je GameAssembly.dll+4C476E4
-GameAssembly.dll+4C476D0: 0F 57 C0              - xorps xmm0,xmm0
-GameAssembly.dll+4C476D3: 48 8B C3              - mov rax,rbx
-GameAssembly.dll+4C476D6: 0F 11 03              - movups [rbx],xmm0
-GameAssembly.dll+4C476D9: 48 8B 5C 24 30        - mov rbx,[rsp+30]
+Project.dll+3E83205: 0F 11 03        - movups [rbx],xmm0
+Project.dll+3E83208: 48 8B C3        - mov rax,rbx
+Project.dll+3E8320B: 48 8B 5C 24 30  - mov rbx,[rsp+30]
+Project.dll+3E83210: 48 83 C4 20     - add rsp,20
+Project.dll+3E83214: 5F              - pop rdi
+Project.dll+3E83215: C3              - ret 
+Project.dll+3E83216: E8 15 D9 62 FC  - call Project.dll+4B0B30
+Project.dll+3E8321B: CC              - int 3 
+Project.dll+3E8321C: CC              - int 3 
+Project.dll+3E8321D: CC              - int 3 
 }
 </AssemblerScript>
             </DevilEntry>
@@ -2236,7 +2236,7 @@ Project.dll+3C8927B: 41 83 78 18 01     - cmp dword ptr [r8+18],01
               <ID>3629</ID>
               <Description>"instant level player rank (1-3 kills for lv 55)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : CombatMaster.exe
+              <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version:
   Date   : 2025-02-05
   Author : ZoDDeL
