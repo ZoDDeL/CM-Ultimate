@@ -7,7 +7,7 @@ do the first time setup:
 go to Edit > Settings > General Settings
 set "Table: Lua script" to "Always"
 
-go to plugins
+go to plugins ( Edit > Settings > Plugins )
 hit "Add new" go into devil engine 666 folder
 and select nameless64.dll then hit open
 hit the checkbox beside the plugin
