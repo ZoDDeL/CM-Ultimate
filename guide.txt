@@ -61,6 +61,9 @@ dont rename anything.
 
 script dont work / crash (vacuum / godmode)
 make sure the table version = game version.
+game version you can see either in the options screen
+or while in a match / shooting range at the right bottom.
+
 for example table version is 23.81 but game is 23.86 then you can expect that things dont work.
 you need to get the latest table.
 in the top right corner of the table hit the text "download latest table".
