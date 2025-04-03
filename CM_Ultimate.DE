@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.03.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.04.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -7915,29 +7915,9 @@ youtube.com/ZoDDeL
 </Comments>
   <LuaScript>if not syntaxcheck then
 
-local ps_command = string.format(
-    'powershell -Command "$src = Join-Path $env:USERPROFILE \'AppData\\LocalLow\\AlfaBravoInc\\Combat Master\'; '..
-    'if (-not (Test-Path $src)) {[Console]::Error.WriteLine(\'Source_not_found\'); exit 1}; '..
-    '$zip = Join-Path (Split-Path $src) (\'CombatMaster_%s.zip\'); '..
-    'Compress-Archive -Path $src -DestinationPath $zip -Force; '..
-    'if ($?) {Write-Host (\'Successfull: \' + $zip)}"',
-    os.date("%Y-%m-%d")
-)
-
-if os.execute(ps_command) == 0 then
-    print("Success")
-else
-
-end
-
 
 	--getMemoryViewForm().Visible = true
 	getAutoAttachList().add("CombatMaster.exe")
-
-
-
-
-
 
 
 	function cycleFullCompact( sender, force )
@@ -7965,6 +7945,47 @@ end
 	cycleFullCompact( nil, true )
 
 
+	function pushBackup( sender, force )
+		local state = not( backupmenuitem.Caption == 'backup done' )
+		if force ~= nil then
+		   state = not force
+		end
+		backupmenuitem.Caption = state and 'backup done' or 'Create Profile Backup'
+		if force == nil then
+		
+			local ps_command = string.format(
+				'powershell -Command "$src = Join-Path $env:USERPROFILE \'AppData\\LocalLow\\AlfaBravoInc\\Combat Master\'; '..
+				'if (-not (Test-Path $src)) {[Console]::Error.WriteLine(\'Source_not_found\'); exit 1}; '..
+				'$zip = Join-Path (Split-Path $src) (\'CombatMaster_%s.zip\'); '..
+				'Compress-Archive -Path $src -DestinationPath $zip -Force; '..
+				'if ($?) {Write-Host (\'Successfull: \' + $zip)}"',
+				os.date("%Y-%m-%d")
+			)
+
+			if os.execute(ps_command) == 0 then
+				print("Success")
+			else
+
+			end
+			
+		end
+	end
+
+	function addBackupButton()
+		if backupmenualreadyexists then return end
+		local parent = getMainForm().Menu.Items
+		backupmenuitem = createMenuItem( parent )
+		parent.add( backupmenuitem )
+		backupmenuitem.Caption = 'backup done'
+		backupmenuitem.OnClick = pushBackup
+		backupmenualreadyexists = 'yes'
+	end
+
+	addBackupButton()
+	pushBackup( nil, true )
+
+
+
 	function pushYoutube( sender, force )
 		local state = not( youtubemenuitem.Caption == 'my Youtube' )
 		if force ~= nil then
@@ -7977,7 +7998,7 @@ end
 	end
 
 	function addYoutubeButton()
-		if donomenualreadyexists then return end
+		if youtubemenualreadyexists then return end
 		local parent = getMainForm().Menu.Items
 		youtubemenuitem = createMenuItem( parent )
 		parent.add( youtubemenuitem )
