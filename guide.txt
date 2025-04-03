@@ -11,7 +11,7 @@ go to plugins ( Edit > Settings > Plugins )
 hit "Add new" go into devil engine 666 folder
 and select nameless64.dll then hit open
 hit the checkbox beside the plugin
-if you see the titlebar constantly changes to a random name everything worked fine.
+if you see the titlebar constantly change to a random name everything worked fine.
 (keep in mind that changing the path of devil engine or renaming the folder will break
 the plugin setting and you need to redo this step!)
 
@@ -20,7 +20,7 @@ the plugin setting and you need to redo this step!)
 step 2.
 run combat master
 drag and drop the CM_Ultimate.DE file into the open Devil Engine window
-if drag and drop doesnt work try hotkey ctrl+o and select the table (CM_Ultimate.DE)
+or press hotkey ctrl+o and select the table (CM_Ultimate.DE)
 or use the yellow folder button with the little green arrow in the top left
 and select the table (CM_Ultimate.DE)
 
@@ -30,9 +30,14 @@ how to use battlepass unlock:
 hit the injection button once.
 you should hear a beep sound (if not something gone wrong)
 then you just have to change your operator by equipping another.
-this will trigger the buying of the S3 battlepass.
+this will trigger the buying of the battlepass.
 keep in mind you still have to level the battlepass to access every item
 or just use the multiSwapper.
+best way to level the battlepass is in custom lobby with bots.
+best scripts for that task:
+mega XP (dont forget to switch the toggle from off to mega)
+bot vacuum
+super passive bots
 
 
 
@@ -54,7 +59,7 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 make sure to have an short path without any weird signs for devil engine folder (D:/devil engine/)
 run devil engine as admin.
-add nameless64.dll
+add nameless64.dll ( its in the devil engine folder )
 
 dont move the folder after,
 dont rename anything.
@@ -68,7 +73,8 @@ for example table version is 23.81 but game is 23.86 then you can expect that th
 you need to get the latest table.
 in the top right corner of the table hit the text "download latest table".
 this will download and replace your currently opened table contents.
-no save it.
+
+now save it.
 hit in the top left corner File > Save.
 now your outdated table is updated and saved.
 if you forgot to saving part you can also look into C:\
@@ -84,12 +90,21 @@ check if the file download was okay by looking at C:\ for a file called "Battlep
 if this file doesnt exists your download doesnt work / antivirus deletes the file.
 if the file exists but the unlock doesnt work the execution might stuck.
 you could try to manual inject the .dll file.
-open devil engine, run combat master, start the CM ultimate table, press hotkey CTRL+m to opene memory viewer, press hotkey CTRL+i, select "BattlepassHUABYJoelmatic.dll" on C:\ and click Open.
+open devil engine, run combat master, start the CM ultimate table, press hotkey CTRL+m to opene memory viewer, press hotkey CTRL+i,
+and select the BP unlock .dll bundled with the release (example BP unlock S4 24.26.dll)
 you get asked to execute the function of the .dll press yes. press ok.
-if the "BattlepassHUABYJoelmatic.dll" doesnt exist than just manually download it from github
+if that doesnt work it might be outdated (check your game version).
+
+alternative you can manually download the latest commit of the BP unlock on github.
 https://github.com/ZoDDeL/CM-Ultimate/blob/main/BattlepassHUABYJoelmatic.dll
 (safe link as / save file as)
 
 
-
-
+last words:
+there is one unversal rule>
+if table version = game version then everything works!
+same goes for the BP unlock.
+because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
+if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
+same goes for saying XY isnt working.
+so if you read this guide add "swordfish" to your youtube comment.
