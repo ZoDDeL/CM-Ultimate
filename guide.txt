@@ -54,7 +54,8 @@ you should close your browser, discord and unnessary folders before running the 
 game if it founds any blacklisted words / strings in your opened processes, folders, browser tabs etc.
 if it still closes after you 100% read this guide,
 (using devil engine on a short clean path, nameless plugin runs and constantly renames the devil engine frames
-no background applications like discord a browser etc. and no open files, folders or pathes that include any possible badowrd like hack, cheat, aimbot etc.)
+no background applications like discord a browser etc. and no open files, folders or pathes that include any
+possible badword[blacklisted string tripwire scan for] like hack, cheat, aimbot etc.)
 you must have anything running that triggers the tripwire.
 you may try todo a fresh windows install because your system is already flawed with some bullsh1t.
 DONT ASK FOR HELP IN YOUTUBE COMMENTS SINCE I CANNOT COME OVER TO YOUR HOUSE AND REPAIR YOUR SH1T!!!
