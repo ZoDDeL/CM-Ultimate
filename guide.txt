@@ -41,12 +41,23 @@ super passive bots
 
 
 
-extra:
+what is devilengine?
 devil engine 666 is a modified CE 7.5 and uses the x86_64-SSE4-AVX2 build
 devil engine 333 is a modified CE 7.5 that only requires a 64bit CPU + OS (if you have problems with the 666 version)
 
+
+
+problems , crashes:
+
+THE GAME CLOSES ITSELF (false claimed as crash)
 you should close your browser, discord and unnessary folders before running the table because the tripwire closes your
 game if it founds any blacklisted words / strings in your opened processes, folders, browser tabs etc.
+if it still closes after you 100% read this guide,
+(using devil engine on a short clean path, nameless plugin runs and constantly renames the devil engine frames
+no background applications like discord a browser etc. and no open files, folders or pathes that include any possible badowrd like hack, cheat, aimbot etc.)
+you must have anything running that triggers the tripwire.
+you may try todo a fresh windows install because your system is already flawed with some bullsh1t.
+DONT ASK FOR HELP IN YOUTUBE COMMENTS SINCE I CANNOT COME OVER TO YOUR HOUSE AND REPAIR YOUR SH1T!!!
 
 
 problems with nameless64.dll ?
@@ -111,4 +122,4 @@ same goes for the BP unlock.
 because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
 if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
 same goes for saying XY isnt working.
-so if you read this guide add "swordfish" to your youtube comment.
+so if you read this guide add "RainbowRoad" to your youtube comment.
