@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.04.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.07.1)"</Description>
       <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <DevilEntries>
@@ -7952,6 +7952,8 @@ youtube.com/ZoDDeL
 		end
 		backupmenuitem.Caption = state and 'backup done' or 'Create Profile Backup'
 		if force == nil then
+
+            shellExecute('%USERPROFILE%/AppData/LocalLow/AlfaBravoInc')
 		
 			local ps_command = string.format(
 				'powershell -Command "$src = Join-Path $env:USERPROFILE \'AppData\\LocalLow\\AlfaBravoInc\\Combat Master\'; '..
@@ -7961,6 +7963,9 @@ youtube.com/ZoDDeL
 				'if ($?) {Write-Host (\'Successfull: \' + $zip)}"',
 				os.date("%Y-%m-%d")
 			)
+
+            local target_folder = os.getenv("USERPROFILE").."\\AppData\\LocalLow\\AlfaBravoInc"
+            os.execute('explorer "'..target_folder..'"')
 
 			if os.execute(ps_command) == 0 then
 				print("Success")
