@@ -80,6 +80,10 @@ now your outdated table is updated and saved.
 if you forgot to saving part you can also look into C:\
 that the download location of the table (and the BP unlock dll)
 
+near memory allocation error on activating a script.
+means you didnt proper disable scripts before.
+the only way to fix this is to restart your pc.
+
 
 battlepass unlock doesnt work.
 first make sure you have the latest .net framework / latest 64bit vc redist.
