@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DevilTable DevilEngineTableVersion="45">
+<DevilTable DevilEngineTableVersion="46">
   <DevilEntries>
     <DevilEntry>
-      <ID>0</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.07.1)"</Description>
+      <ID>4600</ID>
+      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.09.1)"</Description>
       <Options moHideChildren="1"/>
-      <GroupHeader>1</GroupHeader>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+
+if syntaxcheck then return end
+
+-- (UTF-16LE)
+-- 6000.0.41f1 (46e447368a18)  -- 24.26
+local expectedBytes = {
+    0x36, 0x00, 0x30, 0x00, 0x30, 0x00, 0x30, 0x00,
+    0x2E, 0x00, 0x30, 0x00, 0x2E, 0x00, 0x34, 0x00,
+    0x31, 0x00, 0x66, 0x00, 0x31, 0x00, 0x20, 0x00,
+    0x28, 0x00, 0x34, 0x00, 0x36, 0x00, 0x65, 0x00,
+    0x34, 0x00, 0x34, 0x00, 0x37, 0x00, 0x33, 0x00,
+    0x36, 0x00, 0x38, 0x00, 0x61, 0x00, 0x31, 0x00,
+    0x38, 0x00, 0x29, 0x00
+}
+
+-- Engine.dll+2750864  -- 24.26
+local function CheckVersion()
+    local targetAddress = "Engine.dll+2750864"
+
+    -- Adress
+    local addr = getAddress(targetAddress)
+    if not addr or addr == 0 then
+        return false, "Adress not found"
+    end
+
+    -- Bytes
+    local buffer = readBytes(addr, #expectedBytes, true)
+    if not buffer or #buffer ~= #expectedBytes then
+        return false, "Byte-Length missmatch"
+    end
+
+    -- Byte-for-Byte-Compare
+    for i = 1, #expectedBytes do
+        if buffer[i] ~= expectedBytes[i] then
+            return false, "Byte-Error on Position " .. i
+        end
+    end
+
+    return true
+end
+
+-- Mainlogic
+local success, errMsg = CheckVersion()
+if not success then
+    messageDialog("Wrong Table/Game Version: " .. (errMsg or ""), mtError, mbOK)
+    error("version missmatch")
+end
+
+{$asm}
+[ENABLE]
+
+[DISABLE]
+
+
+</AssemblerScript>
       <DevilEntries>
         <DevilEntry>
           <ID>3673</ID>
@@ -8132,11 +8188,11 @@ youtube.com/ZoDDeL
 	end
 
 	function pushDownloadESP( sender, force )
-		local state = not( downloadmenuitemESP.Caption == 'INJECTION DONE!' )
+		local state = not( downloadmenuitemESP.Caption == 'INJ3CTION DONE!' )
 		if force ~= nil then
 		   state = not force
 		end
-		downloadmenuitemESP.Caption = state and 'INJECTION DONE!' or 'Inject BATTLEPASS'
+		downloadmenuitemESP.Caption = state and 'INJ3CTION DONE!' or 'INJ3CT BATTLEP4SS'
 		if force == nil then
 			downloadFile(urlESP, filenameESP)
 			sleep(1000)
@@ -8149,13 +8205,14 @@ youtube.com/ZoDDeL
 		local parent = getMainForm().Menu.Items
 		downloadmenuitemESP = createMenuItem( parent )
 		parent.add( downloadmenuitemESP )
-		downloadmenuitemESP.Caption = 'INJECTION DONE!'
+		downloadmenuitemESP.Caption = 'INJ3CTION DONE!'
 		downloadmenuitemESP.OnClick = pushDownloadESP
 		downloadmenuESPalreadyexists = 'yes'
 	end
 
 	addDownloadButtonESP()
 	pushDownloadESP( nil, true )
+
 
 
 end
