@@ -2,6 +2,8 @@ step 0.
 get the new devil engine build here:
 https://github.com/ZoDDeL/CM-Ultimate/releases/download/0.24.26_09.april.2025/Devil_Engine_666.zip
 and extract it somewhere with a short path like D:\devil_engine_666
+when you cannot extract the .zip it might be your windows defender / antivirus program that hold the archive hostage (false positive).
+so you need to whitelist the .zip or temporary disable defender / antivirus!
 
 
 step 1.
