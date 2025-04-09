@@ -1,12 +1,18 @@
+step 0.
+get the new devil engine build here:
+https://github.com/ZoDDeL/CM-Ultimate/releases/download/0.24.26_09.april.2025/Devil_Engine_666.zip
+and extract it somewhere with a short path like D:\devil_engine_666
+
+
 step 1.
-run devil engine 666.exe (in the devil engine 666 folder)
-(if you cannot use devilengine 666 because your CPU is too old
-then use devilengine 333.exe instead)
+run devil engine.exe (in the devil engine 666 folder)
 
 do the first time setup:
 go to Edit > Settings > General Settings
 set "Table: Lua script" to "Always"
 
+
+OPTIONAL (currently not required for the new devil engine build 7.6!)
 go to plugins ( Edit > Settings > Plugins )
 hit "Add new" go into devil engine 666 folder
 and select nameless64.dll then hit open
@@ -18,6 +24,16 @@ the plugin setting and you need to redo this step!)
 
 
 step 2.
+associate the filetype .DE (CM_Ultimate.DE) with devil engine.
+(this is for windows 10 and might be different in windows 11)
+right click on CM_Ultimate.DE, properties, aside "opens with:" click on "change"
+click "more apps" and scroll down and click "look for another app on this pc"
+now navigate into the devil_engine_666 folder and select "Devil Engine.exe"
+
+now you can execute the table via doubleclick
+(but run the game before and wait until you see your character)
+
+without file type association:
 run combat master
 drag and drop the CM_Ultimate.DE file into the open Devil Engine window
 or press hotkey ctrl+o and select the table (CM_Ultimate.DE)
@@ -42,8 +58,7 @@ super passive bots
 
 
 what is devilengine?
-devil engine 666 is a modified CE 7.5 and uses the x86_64-SSE4-AVX2 build
-devil engine 333 is a modified CE 7.5 that only requires a 64bit CPU + OS (if you have problems with the 666 version)
+devil engin is a modified CheatEngine 7.6 build.
 
 
 
@@ -123,4 +138,4 @@ same goes for the BP unlock.
 because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
 if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
 same goes for saying XY isnt working.
-so if you read this guide add "RainbowRoad" to your youtube comment.
+so if you read this guide add "Omnislash" to your youtube comment.
