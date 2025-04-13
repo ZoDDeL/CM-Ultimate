@@ -140,4 +140,17 @@ same goes for the BP unlock.
 because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
 if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
 same goes for saying XY isnt working.
-so if you read this guide add "Omnislash" to your youtube comment.
+so if you read this guide add "Mirror Shield" to your youtube comment.
+
+NO REQUESTS!!!
+i dont do solve any requests. i have neither the time nor the interest in doing abc to xyz mobile game / online only stuff.
+primarily i do tables for singleplayer games with a few exceptions. games that iam interested in and that are not in common public trainers (wemod, fling etc.) exists or because of a missing feature.
+i also dont add new features to comkbat master. i stopped research new stuff for a while since its not worth the effort. from season 1 to now (S4) nobody donated anything!
+we have de facto everything with the multiSwapper alone and with all the unlocker/free/instant scripts most of the stuff is permanent unlocked.
+updating each script once the game got updated take a lot of time. thats why i dropped some scripts (inf ammo lobby, inf streaks lobby etc.) over time because they were not very usefull in the current state.
+also nobody else does anything for combat master since season 1 (exception joelmatics BP unlock source in S3) and really nobody else beside me did ever anything in the cheat engine format (at least not public).
+
+CREDITS:
+credits to FireNinja who spend alot time to help me with annoying tasks in the multiSwapper and gave some usefull ideas and clues (nameless plugin, mass hex edit)
+credits to Verity for his inspiring work in S1 ( i named my table after his CM-Lite hack and even figured out to make a CE script similar to his bot vacuum)
+credits to the pioneers at UC who firstly datamined / debugged  combat master pre season 1 so i could get the info about unity explorer and melon loader to modify internals of the game and bring them over to cheat engine.
