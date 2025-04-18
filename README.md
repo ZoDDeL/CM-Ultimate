@@ -9,7 +9,7 @@
 
 ### 🔓 **[Unlockers]**  
 - Bundles (makes all shop bundles FREE)
-- Blackmarket (every chechtsa is free / Cost 0 CP)
+- Blackmarket (every chest is free / Cost 0 CP)
 - Operations (unlock operation rewards without the need of playing them + sets CP rewards to 15000)
 - Daily tasks (finishes the tasks / another script sets rewards CP to 15000)
 
@@ -17,6 +17,7 @@
 - Godmode (you exclusive will be invincible)
 - Bot vacuum (bots will be teleported to a postion close to yours or to a static point on the map)
 - Passive bots (bots wont attack and just walk around a bit)
+- Mega XP (changes the XP per kill and assist to 4000. works for other players too)
 - Infinite match time, among others
 
 ### 🔄 **[MultiSwapper]**  
@@ -26,7 +27,6 @@
 - No recoil
 - Infinite jumps
 - Instant max level for player and weapons
-- Set CP rewards for dailies/operations to 15,000
 - Change XP token duration
 
 ### 🏹 **[Extras]**  
