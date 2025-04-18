@@ -30,7 +30,8 @@
 - Change XP token duration
 
 ### 🏹 **[Extras]**  
-- External loading of .dll files directly from GitHub (BP unlock)
+- External loading of .dll files directly from GitHub (BattlePass unlock)
+- one click create an backup of your local player profile / savegame (use it often to avoid data loss by buggy cloud saving!!!)
 
 ---
 
@@ -69,6 +70,7 @@ To run the Devil Engine Table, you need Devil Engine.
 ## 📥 Download
 
 🔗 [Download CM-Ultimate Table](https://github.com/ZoDDeL/CM-Ultimate/releases)
+(look in assets)
 
 ---
 
