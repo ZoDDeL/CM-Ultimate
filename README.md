@@ -1,21 +1,22 @@
 # CM-Ultimate
 
-## 🔥 An Advanced Cheat Engine Table for Combat Master
+## 🔥 An Advanced Devil Engine Table for Combat Master
+(Devil Engine is a Hex Edit of Cheat Engine!)
 
 ---
 
 ## ✨ Included Features
 
 ### 🔓 **[Unlockers]**  
-- Bundles
-- Blackmarket
-- Operations
-- Daily tasks
+- Bundles (makes all shop bundles FREE)
+- Blackmarket (every chechtsa is free / Cost 0 CP)
+- Operations (unlock operation rewards without the need of playing them + sets CP rewards to 15000)
+- Daily tasks (finishes the tasks / another script sets rewards CP to 15000)
 
 ### 🛠 **[Lobby Modding]**  
-- Godmode
-- Bot vacuum
-- Passive bots
+- Godmode (you exclusive will be invincible)
+- Bot vacuum (bots will be teleported to a postion close to yours or to a static point on the map)
+- Passive bots (bots wont attack and just walk around a bit)
 - Infinite match time, among others
 
 ### 🔄 **[MultiSwapper]**  
@@ -29,7 +30,7 @@
 - Change XP token duration
 
 ### 🏹 **[Extras]**  
-- External loading of aimbot/ESP .dll directly from GitHub
+- External loading of .dll files directly from GitHub (BP unlock)
 
 ---
 
@@ -48,13 +49,20 @@
 ## 💰 Donations
 If you want to support the development:  
 🔗 [Donate via PayPal](https://paypal.me/zoddel)
+or bitcoin:
+bc1qzkuvnn82kchnwu029smtt22cgjeh8rfftqej3z
 
 ---
 
 ## 🛠 Requirements
-To run the Cheat Engine Table, you need to have Cheat Engine installed.
+To run the Devil Engine Table, you need Devil Engine.
 
-🔗 [Download Cheat Engine](https://cheatengine.org/)
+🔗 [Download Devil Engine](https://github.com/ZoDDeL/CM-Ultimate/releases)
+(look in assets)
+
+🔗 [latest .net framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
+🔗 [latest 64bit vc redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
 
 ---
 
@@ -69,16 +77,12 @@ To run the Cheat Engine Table, you need to have Cheat Engine installed.
 ### 📌 How to Update to the Latest Version
 1. Click on the **"Download latest Table"** button at the top right of the table header.
 2. This will download the most recent commit and replace its contents.
-3. Save the new version: **File → Save** or check `C:/CM_Ultimate.CT`.
+3. Save the new version: **File → Save** or check `C:/CM_Ultimate.DE`.
 
 ---
 
 ## 📖 Usage Instructions
-1. Make sure you have **Cheat Engine 7.5 or newer** installed (not loose files).
-2. **Run the game** and stay on the main screen.
-3. **Open the file** `CM_Ultimate.CT` with a double click.
-4. When prompted to execute Lua code, select **Allow** or **Allow Always** (to avoid future prompts).
-   - This is required for the custom header in the Cheat Engine window (buttons, compact mode) and to automatically hook the game executable.
+[read the guide](https://github.com/ZoDDeL/CM-Ultimate/blob/main/guide.txt)
 
 ---
 
