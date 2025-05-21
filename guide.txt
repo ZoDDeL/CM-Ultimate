@@ -7,8 +7,15 @@ and extract it somewhere with a short path like D:\devil_engine_666
 when you cannot extract the .zip it might be your windows defender / antivirus program that hold the archive hostage (false positive).
 so you need to whitelist the .zip or temporary disable defender / antivirus!
 
+open the folder and make sure each devil engine exe runs as admin!
+right click on Devil Engine.exe > Properties > Compatibility > checkmark (Run this program as administrator).
+repeat this step for each other devil engine exe
+(devilengine-x86_64-SSE4-AVX2.exe / devilengine-x86_64.exe / devilengine-i386.exe)
+
+
 also download the table under assets
 CM_Ultimate.DE
+
 
 OPTIONAL:
 download
