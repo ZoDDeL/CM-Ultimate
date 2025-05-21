@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.24.26 (04.09.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (05.20.1)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -24,7 +24,8 @@ local expectedBytes = {
 
 -- Engine.dll+2750864  -- 24.26
 local function CheckVersion()
-    local targetAddress = "Engine.dll+2750864"
+    --local targetAddress = "Engine.dll+2750864" -- 24.26
+    local targetAddress = "Engine.dll+27D9864"  -- 25.17
 
     -- Adress
     local addr = getAddress(targetAddress)
@@ -186,11 +187,12 @@ slava ukraini
 8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 33
 8B 53 20 48 81 C1 98 1C 00 00 45 33 C0 E8 03
 8B 53 18 48 81 C1 98 1C 00 00
+8B 53 18 48 81 C1 A0 1C 00 00
 }
 
 [ENABLE]
 
-aobscanmodule(bundles,Project.dll,8B 53 18 48 81 C1 98 1C 00 00) // should be unique
+aobscanmodule(bundles,Project.dll,8B 53 18 48 81 C1 A0 1C 00 00) // should be unique
 alloc(newmem,$2000,bundles)
 
 label(code)
@@ -235,7 +237,8 @@ free:
 code:
   mov edx,[rbx+18]
 //add rcx,00001C78
-  add rcx,00001C98
+//add rcx,00001C98
+  add rcx,00001CA0
   jmp return
 
 freeAOB:
@@ -253,7 +256,8 @@ registersymbol(freeAOB)
 bundles:
 //db 8B 53 20 48 81 C1 78 1C 00 00
 //db 8B 53 20 48 81 C1 98 1C 00 00
-  db 8B 53 18 48 81 C1 98 1C 00 00
+//db 8B 53 18 48 81 C1 98 1C 00 00
+  db 8B 53 18 48 81 C1 A0 1C 00 00
 
 unregistersymbol(bundles)
 unregistersymbol(freeAOB)
@@ -1643,7 +1647,7 @@ newmem:
   //je clean
   //mov rax,[Project.dll+050411A0]
   //mov rax,[Project.dll+05065318]
-  mov rax,[Project.dll+050A1CC0]
+  mov rax,[Project.dll+050EEE20]
   cmp rax,0  // crash prevention while dead/dying
   je clean
 
@@ -1927,13 +1931,13 @@ Engine.dll+1152148: 48 8B 84 24 C8 00 00 00           - mov rax,[rsp+000000C8]
   This script does blah blah blah
 }
 
-define(address,"Project.dll"+7FEB7E)
+define(address,"Project.dll"+80AB3E)
 define(bytes,89 7C CA 20 3B F7)
 
 [ENABLE]
 
 assert(address,bytes)
-alloc(newmem,$1000,"Project.dll"+7FEB7E)
+alloc(newmem,$1000,"Project.dll"+80AB3E)
 
 label(code)
 label(return)
@@ -1942,7 +1946,8 @@ newmem:
   push rax
   //mov rax,[Project.dll+050411A0]
   //mov rax,[Project.dll+05065318]
-  mov rax,[Project.dll+050A1CC0]
+  mov rax,[Project.dll+050EEE20]
+
 
   cmp rax,0  // crash prevention while dead/dying
   je clean
@@ -2379,11 +2384,14 @@ Project.dll+3D30C5A: 5F              - pop rdi
   Author : ZoDDeL
 
   This script does blah blah blah
+
+39 98 E8 07 00 00
+39 98 F0 07 00 00
 }
 
 [ENABLE]
 
-aobscanmodule(multiSwapper,Project.dll,39 98 E8 07 00 00) // should be unique
+aobscanmodule(multiSwapper,Project.dll,39 98 F0 07 00 00) // should be unique
 alloc(newmem,$1000,multiSwapper)
 
 label(code)
@@ -2391,13 +2399,15 @@ label(return)
 
 newmem:
   push rdx
-  lea rdx,[rax+000007C8]
+  //lea rdx,[rax+000007C8]
+  lea rdx,[rax+000007D0]
   mov [_multiSwapper],rdx
   pop rdx
   jmp code
 
 code:
-  cmp [rax+000007E8],ebx
+  //cmp [rax+000007E8],ebx
+  cmp [rax+000007F0],ebx
   jmp return
 
 _multiSwapper:
@@ -2412,7 +2422,7 @@ registersymbol(_multiSwapper)
 [DISABLE]
 
 multiSwapper:
-  db 39 98 E8 07 00 00
+  db 39 98 F0 07 00 00
 
 unregistersymbol(multiSwapper)
 unregistersymbol(_multiSwapper)
@@ -2526,6 +2536,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 02 01 04 01 05 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 16 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 0E 00 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 12 00 06 0A 02 01 04 01 19 00 04 0A 00 00 00 00 16 00 07 0A 00 00 00 00 07 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (.300 Banana)
 0C 01 04 01 05 00 10 0A 0C 01 04 01 00 00 00 00 00 00 00 00 18 00 02 0A 0C 01 04 01 09 00 03 0A 0C 01 04 01 0E 00 05 0A 0C 01 04 01 FF FF 09 0A 00 00 00 00 12 00 06 0A 0C 01 04 01 29 00 04 0A 0C 01 04 01 19 00 07 0A 0C 01 04 01 11 00 01 0A 0C 01 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (Tidal Wave)
 0D 01 04 01 05 00 10 0A 0D 01 04 01 00 00 00 00 00 00 00 00 18 00 02 0A 0D 01 04 01 FF FF 03 0A 00 00 00 00 1C 00 05 0A 0D 01 04 01 FF FF 09 0A 00 00 00 00 31 00 06 0A 0D 01 04 01 13 00 04 0A 0D 01 04 01 17 00 07 0A 0D 01 04 01 0C 00 01 0A 0D 01 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:Sig MCX (Crypt Keeper)
+05 05 04 01 1B 00 10 0A 05 05 04 01 00 00 00 00 00 00 00 00 50 00 02 0A 05 05 04 01 16 00 03 0A 05 05 04 01 47 00 05 0A 00 00 00 00 04 00 09 0A 05 05 04 01 41 00 06 0A 05 05 04 01 0C 00 04 0A 00 00 00 00 42 00 07 0A 05 05 04 01 03 00 01 0A 05 05 04 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:AS VAL (Goldstream)
 00 00 05 01 00 00 10 0A 00 00 00 00 00 00 00 00 00 00 00 00 02 00 02 0A 00 00 00 00 FF FF 03 0A 00 00 00 00 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 00 00 06 0A 00 00 00 00 01 00 04 0A 00 00 00 00 02 00 07 0A 00 00 00 00 01 00 01 0A 00 00 00 00 00 01 0D 0A 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:MP.V (default)
 01 00 05 01 00 00 10 0A 01 00 05 01 00 00 00 00 00 00 00 00 09 00 02 0A 01 00 05 01 01 00 03 0A 01 00 05 01 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 01 00 06 0A 01 00 05 01 04 00 04 0A 01 00 05 01 07 00 07 0A 01 00 05 01 01 00 01 0A 01 00 05 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:MP.V (Nitro)
 02 00 05 01 00 00 10 0A 02 00 05 01 00 00 00 00 00 00 00 00 00 00 02 0A 02 00 05 01 03 00 03 0A 02 00 05 01 FF FF 05 0A 00 00 00 00 FF FF 09 0A 00 00 00 00 02 00 06 0A 02 00 05 01 06 00 04 0A 02 00 05 01 06 00 07 0A 02 00 05 01 01 00 01 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF 00 0A 0A 00 00 00 00 00 00 00 00:MP.V (Sledgehammer)
