@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.25.17 (05.20.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (05.23.1)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -3952,6 +3952,22 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 33751052:Vixen|Hells Belles (finger nails)
 33751054:Vixen|Flaming War (horns)
 33751055:Vixen|Seventh Circle (finger nails)
+33751069:Nighthawk|Iceman (sun glasses)
+33751062:Nighthawk|Cranial (helmet)
+33751070:Nighthawk|Patriot (helmet)
+33751074:Nighthawk|Header (helmet)
+33751076:Nighthawk|Raptor (helmet)
+33751058:Nighthawk|Killstreak (jacket)
+33751061:Nighthawk|Navigator (jacket)
+33751065:Nighthawk|Guardian (jacket)
+33751075:Nighthawk|Thermal Null (jacket)
+33751059:Nighthawk|Full Speed (vest)
+33751064:Nighthawk|High-G (vest)
+33751077:Nighthawk|Strike Vector (vest)
+33751060:Nighthawk|Full Force (pants)
+33751066:Nighthawk|Nomex (pants)
+33751078:Nighthawk|Interceptor (pants)
+33751079:Nighthawk|Deckwalkers (gloves)
 </DropDownList>
                   <GroupHeader>1</GroupHeader>
                 </DevilEntry>
@@ -4069,6 +4085,7 @@ GameAssembly.dll+4DF582B: CC                    - int 3
 33554457:Pincushion
 33554458:Falcon
 33554454:Vixen
+33554450:Nighthawk
 </DropDownList>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
@@ -4106,6 +4123,8 @@ newmem:
   cmp rcx+r8+20],#33554443
   je pointer
   cmp rcx+r8+20],#33554454
+  je pointer
+  cmp rcx+r8+20],#33554450
   je pointer
   jmp code
 
@@ -4204,6 +4223,28 @@ Project.dll+3C8CCBC: 0F 29 4C 24 50           - movaps [rsp+50],xmm1
                       <Address>_customize</Address>
                       <Offsets>
                         <Offset>C</Offset>
+                      </Offsets>
+                    </DevilEntry>
+                    <DevilEntry>
+                      <ID>4601</ID>
+                      <Description>"slot 4 (equip operator to update)"</Description>
+                      <DropDownListLink>OPCUSTOM</DropDownListLink>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_customize</Address>
+                      <Offsets>
+                        <Offset>10</Offset>
+                      </Offsets>
+                    </DevilEntry>
+                    <DevilEntry>
+                      <ID>4602</ID>
+                      <Description>"slot 5 (equip operator to update)"</Description>
+                      <DropDownListLink>OPCUSTOM</DropDownListLink>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>_customize</Address>
+                      <Offsets>
+                        <Offset>14</Offset>
                       </Offsets>
                     </DevilEntry>
                   </DevilEntries>
