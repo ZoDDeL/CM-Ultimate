@@ -18,16 +18,17 @@
 - Bot vacuum (bots will be teleported to a postion close to yours or to a static point on the map)
 - Passive bots (bots wont attack and just walk around a bit)
 - Mega XP (changes the XP per kill and assist to 4000. works for other players too)
-- Infinite match time, among others
 
 ### 🔄 **[MultiSwapper]**  
-- Fully change your loadout: weapons, attachments, operators, skills, killstreaks, etc.
+- Fully change your loadout: weapons, attachments, operators, skills, killstreaks, weapon skins/camos/details etc.
+- create overpowered weapons by combining attachments from different weapons to gain accuracy, damage, movespeed, mag size, firerate.
+- use unreleased weapons like M1 Socom, PS5 controller, gatling gun, antidote darts.
+- use every blueprint build + extreme overpowered custom weaponbuilds from me like the M4 dragonbreath akimbo etc.
 
 ### 🎯 **[Misc]**  
 - No recoil
 - Infinite jumps
 - Instant max level for player and weapons
-- Change XP token duration
 
 ### 🏹 **[Extras]**  
 - External loading of .dll files directly from GitHub (BattlePass unlock)
