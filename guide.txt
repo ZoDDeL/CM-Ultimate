@@ -62,6 +62,9 @@ and select the table (CM_Ultimate.DE)
 
 
 how to use battlepass unlock:
+before you start make sure that you dont activate ANY other script before the injection!!!
+if you already have any script active, disable them and close the game to start over.
+
 hit the injection button once.
 you should hear a beep sound (if not something gone wrong)
 then you just have to change your operator by equipping another.
