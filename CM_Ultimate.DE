@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.25.17 (05.23.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.05.1)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -8220,8 +8220,54 @@ youtube.com/ZoDDeL
 	pushDownload( nil, true )
 
 
-    local urlESP = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/BattlepassHUABYJoelmatic.dll"
-	local filenameESP = "C:/BattlepassHUABYJoelmatic.dll"
+    local urlBP = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/BattlepassHUABYJoelmatic.dll"
+	local filenameBP = "C:/BattlepassHUABYJoelmatic.dll"
+
+	function downloadFileBP(urlBP, filenameBP)
+	    if fileExists(filenameBP) then
+        os.remove(filenameBP)
+		end
+
+
+		local http = getInternet()
+		local file = io.open(filenameBP, "wb")
+		if file then
+			file:write(http.getURL(urlBP))
+			file:close()
+		end
+		http.destroy()
+
+	end
+
+	function pushDownloadBP( sender, force )
+		local state = not( downloadmenuitemBP.Caption == 'BP INJ3CTION DONE!' )
+		if force ~= nil then
+		   state = not force
+		end
+		downloadmenuitemBP.Caption = state and 'BP INJ3CTION DONE!' or 'INJ3CT BATTLEP4SS'
+		if force == nil then
+			downloadFile(urlBP, filenameBP)
+			sleep(1000)
+			injectDLL(filenameBP)
+		end
+	end
+
+	function addDownloadButtonBP()
+		if downloadmenuBPalreadyexists then return end
+		local parent = getMainForm().Menu.Items
+		downloadmenuitemBP = createMenuItem( parent )
+		parent.add( downloadmenuitemBP )
+		downloadmenuitemBP.Caption = 'BP INJ3CTION DONE!'
+		downloadmenuitemBP.OnClick = pushDownloadBP
+		downloadmenuBPalreadyexists = 'yes'
+	end
+
+	addDownloadButtonBP()
+	pushDownloadBP( nil, true )
+
+
+    local urlESP = "https://raw.githubusercontent.com/ZoDDeL/CM-Ultimate/refs/heads/main/ESP.dll"
+	local filenameESP = "C:/ESP.dll"
 
 	function downloadFileESP(urlESP, filenameESP)
 	    if fileExists(filenameESP) then
@@ -8240,11 +8286,11 @@ youtube.com/ZoDDeL
 	end
 
 	function pushDownloadESP( sender, force )
-		local state = not( downloadmenuitemESP.Caption == 'INJ3CTION DONE!' )
+		local state = not( downloadmenuitemESP.Caption == 'ESP INJ3CTION DONE!' )
 		if force ~= nil then
 		   state = not force
 		end
-		downloadmenuitemESP.Caption = state and 'INJ3CTION DONE!' or 'INJ3CT BATTLEP4SS'
+		downloadmenuitemESP.Caption = state and 'ESP INJ3CTION DONE!' or 'INJ3CT ESP'
 		if force == nil then
 			downloadFile(urlESP, filenameESP)
 			sleep(1000)
@@ -8257,7 +8303,7 @@ youtube.com/ZoDDeL
 		local parent = getMainForm().Menu.Items
 		downloadmenuitemESP = createMenuItem( parent )
 		parent.add( downloadmenuitemESP )
-		downloadmenuitemESP.Caption = 'INJ3CTION DONE!'
+		downloadmenuitemESP.Caption = 'ESP INJ3CTION DONE!'
 		downloadmenuitemESP.OnClick = pushDownloadESP
 		downloadmenuESPalreadyexists = 'yes'
 	end
