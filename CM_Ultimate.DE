@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.05.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.05.2)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -2135,7 +2135,7 @@ GameAssembly.dll+4A32C6E: 48 8B C8                 - mov rcx,rax
             </DevilEntry>
             <DevilEntry>
               <ID>3657</ID>
-              <Description>"inf jump (affects all in lobby / works online too for player only)"</Description>
+              <Description>"inf jump + no FallDMG (affects all in lobby / works online too for player only)"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript Async="1">{ Game   : CombatMaster.exe
   Version: 
@@ -2164,7 +2164,8 @@ label(return)
 newmem:
 
 code:
-  mov [rbx+00000094],#0 // dil / 4byte 0 = not jumped / 1 = jumped
+  mov byte ptr [rbx+00000094],#0 // isInAir   / dil / 4byte 0 = not jumped / 1 = jumped
+  mov byte ptr [rbx+00000096],#0 // isFalling
   jmp return
 
 infJump:
