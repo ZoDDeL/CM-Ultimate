@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.05.2)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.13.1)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -2052,6 +2052,103 @@ GameAssembly.dll+9EB021: 8B 53 38              - mov edx,[rbx+38]
                     <Offset>28</Offset>
                     <Offset>8</Offset>
                     <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+              </DevilEntries>
+            </DevilEntry>
+            <DevilEntry>
+              <ID>4608</ID>
+              <Description>"modify matchtime 13m (Custom Lobby Host)"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : CombatMaster.exe
+  Version: 
+  Date   : 2025-08-13
+  Author : ZoDDeL
+
+  This script does blah blah blah
+
+inf time
+FF FF 7F 7F 00 00 80 7F
+
+180
+300
+480
+780
+}
+
+[ENABLE]
+
+aobscanmodule(matchtime13,Project.dll,F3 0F 10 05 F0 5A 1F 03) // should be unique
+alloc(newmem,$1000,matchtime13)
+
+label(code)
+label(return)
+
+newmem:
+  lea rbx,[Project.dll+4C17528]
+  mov [_matchtime],rbx
+
+code:
+  movss xmm0,[Project.dll+4C17528]
+  jmp return
+
+_matchtime:
+dd (float)0
+
+matchtime13:
+  jmp newmem
+  nop 3
+return:
+registersymbol(matchtime13)
+registersymbol(_matchtime)
+
+[DISABLE]
+
+matchtime13:
+  db F3 0F 10 05 F0 5A 1F 03
+
+unregistersymbol(matchtime13)
+unregistersymbol(_matchtime)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Project.dll+1A21A30
+
+Project.dll+1A21A0F: 83 E9 01                 - sub ecx,01
+Project.dll+1A21A12: 74 30                    - je Project.dll+1A21A44
+Project.dll+1A21A14: 83 E9 01                 - sub ecx,01
+Project.dll+1A21A17: 74 21                    - je Project.dll+1A21A3A
+Project.dll+1A21A19: 83 F9 01                 - cmp ecx,01
+Project.dll+1A21A1C: 74 12                    - je Project.dll+1A21A30
+Project.dll+1A21A1E: 81 FA FF 00 00 00        - cmp edx,000000FF
+Project.dll+1A21A24: 75 28                    - jne Project.dll+1A21A4E
+Project.dll+1A21A26: F3 0F 10 05 9E 5B 1F 03  - movss xmm0,[Project.dll+4C175CC]
+Project.dll+1A21A2E: EB 26                    - jmp Project.dll+1A21A56
+// ---------- INJECTING HERE ----------
+Project.dll+1A21A30: F3 0F 10 05 F0 5A 1F 03  - movss xmm0,[Project.dll+4C17528]
+// ---------- DONE INJECTING  ----------
+Project.dll+1A21A38: EB 1C                    - jmp Project.dll+1A21A56
+Project.dll+1A21A3A: F3 0F 10 05 B6 5A 1F 03  - movss xmm0,[Project.dll+4C174F8]
+Project.dll+1A21A42: EB 12                    - jmp Project.dll+1A21A56
+Project.dll+1A21A44: F3 0F 10 05 78 5A 1F 03  - movss xmm0,[Project.dll+4C174C4]
+Project.dll+1A21A4C: EB 08                    - jmp Project.dll+1A21A56
+Project.dll+1A21A4E: F3 0F 10 05 3A 5A 1F 03  - movss xmm0,[Project.dll+4C17490]
+Project.dll+1A21A56: 0F 2F C8                 - comiss xmm1,xmm0
+Project.dll+1A21A59: 0F 83 BB 00 00 00        - jae Project.dll+1A21B1A
+Project.dll+1A21A5F: 48 8B 17                 - mov rdx,[rdi]
+Project.dll+1A21A62: 48 8B CF                 - mov rcx,rdi
+}
+</AssemblerScript>
+              <DevilEntries>
+                <DevilEntry>
+                  <ID>4615</ID>
+                  <Description>"max matchtime in seconds (updates in match)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>_matchtime</Address>
+                  <Offsets>
+                    <Offset>0</Offset>
                   </Offsets>
                 </DevilEntry>
               </DevilEntries>
