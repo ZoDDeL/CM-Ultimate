@@ -18,6 +18,7 @@
 - Bot vacuum (bots will be teleported to a postion close to yours or to a static point on the map)
 - Passive bots (bots wont attack and just walk around a bit)
 - Mega XP (changes the XP per kill and assist to 4000. works for other players too)
+- Modify Max Match Time (changes the value for the 13minute Matchtime to whatever you want)
 
 ### 🔄 **[MultiSwapper]**  
 - Fully change your loadout: weapons, attachments, operators, skills, killstreaks, weapon skins/camos/details etc.
@@ -31,7 +32,7 @@
 - Instant max level for player and weapons
 
 ### 🏹 **[Extras]**  
-- External loading of .dll files directly from GitHub (BattlePass unlock)
+- External loading of .dll files directly from GitHub (BattlePass unlock / ESP hack etc.)
 - one click create an backup of your local player profile / savegame (use it often to avoid data loss by buggy cloud saving!!!)
 
 ---
