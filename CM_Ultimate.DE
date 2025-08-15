@@ -3,7 +3,7 @@
   <DevilEntries>
     <DevilEntry>
       <ID>4600</ID>
-      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.13.1)"</Description>
+      <Description>"&lt;-----     CM Ultimate 0.25.17 (08.15.1)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>{$lua}
@@ -2468,6 +2468,94 @@ Project.dll+3D30C56: 48 83 C4 20     - add rsp,20
 Project.dll+3D30C5A: 5F              - pop rdi
 }
 </AssemblerScript>
+            </DevilEntry>
+            <DevilEntry>
+              <ID>4627</ID>
+              <Description>"player pointer (only for lobby host)"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <DevilEntries>
+                <DevilEntry>
+                  <ID>4623</ID>
+                  <Description>"health"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"Project.dll"+050EEE20</Address>
+                  <Offsets>
+                    <Offset>20</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+                <DevilEntry>
+                  <ID>4618</ID>
+                  <Description>"ammo 1"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"Project.dll"+050EEE20</Address>
+                  <Offsets>
+                    <Offset>248</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+                <DevilEntry>
+                  <ID>4620</ID>
+                  <Description>"ammo 2"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"Project.dll"+050EEE20</Address>
+                  <Offsets>
+                    <Offset>260</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+                <DevilEntry>
+                  <ID>4622</ID>
+                  <Description>"lethal"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"Project.dll"+050EEE20</Address>
+                  <Offsets>
+                    <Offset>278</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+                <DevilEntry>
+                  <ID>4626</ID>
+                  <Description>"streak"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>"Project.dll"+050EEE20</Address>
+                  <Offsets>
+                    <Offset>668</Offset>
+                    <Offset>A0</Offset>
+                    <Offset>10</Offset>
+                    <Offset>68</Offset>
+                    <Offset>28</Offset>
+                    <Offset>8</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </DevilEntry>
+              </DevilEntries>
             </DevilEntry>
           </DevilEntries>
         </DevilEntry>
