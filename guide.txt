@@ -1,8 +1,6 @@
 step 0.
 get the new devil engine build here:
-https://github.com/ZoDDeL/CM-Ultimate/releases
-the latest release is always the first/top one.
-look into assets and download Devil_Engine_666.zip 
+https://github.com/ZoDDeL/CM-Ultimate/releases/download/0.25.17_20.may.2025/Devil_Engine_666.zip
 and extract it somewhere with a short path like D:\devil_engine_666
 when you cannot extract the .zip it might be your windows defender / antivirus program that hold the archive hostage (false positive).
 so you need to whitelist the .zip or temporary disable defender / antivirus!
@@ -13,14 +11,14 @@ repeat this step for each other devil engine exe
 (devilengine-x86_64-SSE4-AVX2.exe / devilengine-x86_64.exe / devilengine-i386.exe)
 
 
-also download the table under assets
-CM_Ultimate.DE
+download the table under assets.
+CM_Ultimate.DE / WWL_Ultimate.DE
 
 
 OPTIONAL:
-download
-BP.unlock.S4.24.26.dll
-if you want to try the manual BP unlock instead of the inbuild injection logic (download + inject at 1 click)
+download the battlepass unlock under assets.
+CM_BP.dll / WWL_BP.dll
+for manual BP unlock instead of the inbuild injection logic (download + inject at 1 click)
 
 
 step 1.
@@ -43,21 +41,24 @@ the plugin setting and you need to redo this step!)
 
 
 step 2.
-associate the filetype .DE (CM_Ultimate.DE) with devil engine.
+associate the filetype .DE (CM_Ultimate.DE or WWL_Ultimate.DE) with devil engine.
 (this is for windows 10 and might be different in windows 11)
-right click on CM_Ultimate.DE, properties, aside "opens with:" click on "change"
+right click on CM_Ultimate.DE / WWL_Ultimate.DE, properties, aside "opens with:" click on "change"
 click "more apps" and scroll down and click "look for another app on this pc"
 now navigate into the devil_engine_666 folder and select "Devil Engine.exe"
 
 now you can execute the table via doubleclick and running devil engine first is not needed anymore.
 (but run the game before and wait until you see your character)
 
+run the game and whenn you are in the main screen (shows your character) you can run the table (CM_Ultimate.DE or WWL_Ultimate.DE).
+
+
 without file type association:
-run combat master
-drag and drop the CM_Ultimate.DE file into the open Devil Engine window
-or press hotkey ctrl+o and select the table (CM_Ultimate.DE)
+run combat master / world war leagion
+drag and drop the table (CM_Ultimate.DE or WWL_Ultimate.DE) file into the open Devil Engine window
+or press hotkey ctrl+o and select the table (CM_Ultimate.DE or WWL_Ultimate.DE)
 or use the yellow folder button with the little green arrow in the top left
-and select the table (CM_Ultimate.DE)
+and select the table (CM_Ultimate.DE or WWL_Ultimate.DE
 
 
 
@@ -69,7 +70,7 @@ hit the injection button once.
 you should hear a beep sound (if not something gone wrong)
 then you just have to change your operator by equipping another.
 this will trigger the buying of the battlepass.
-keep in mind you still have to level the battlepass to access every item
+keep in mind you still have to level the battlepass to unlock every item
 or just use the multiSwapper.
 best way to level the battlepass is in custom lobby with bots.
 best scripts for that task:
@@ -119,15 +120,12 @@ game version you can see either in the options screen
 or while in a match / shooting range at the right bottom.
 
 for example table version is 23.81 but game is 23.86 then you can expect that things dont work.
-you need to get the latest table.
+you need to get the latest table / a table version matching your game version.
 in the top right corner of the table hit the text "download latest table".
-this will download and replace your currently opened table contents.
+this will download the latest table and opens the folder where it downloaded to ( C:\ ).
 
-now save it.
-hit in the top left corner File > Save.
-now your outdated table is updated and saved.
-if you forgot to saving part you can also look into C:\
-that the download location of the table (and the BP unlock dll)
+just copy/move the table somewhere you wanna use it and run it (close the old table before)
+
 
 near memory allocation error on activating a script.
 means you didnt proper disable scripts before.
@@ -139,18 +137,17 @@ first make sure you have the latest .net framework / latest 64bit vc redist.
 you need to be admin on windows! try to run devil engine as admin.
 maybe your anti-virus blocks / deletes the unlock .dll in that case disable your antivirus software.
 maybe you pc / internet is slow. retry the injection (click the "injection done" text once more).
-check if the file download was okay by looking at C:\ for a file called "BattlepassHUABYJoelmatic.dll" with the size of 249KB.
+check if the file download was okay by looking at C:\ for a file called "BattlepassHUABYJoelmatic.dll" (pre WWL era)
+or "CM_BP.dll" for recent combat master BP unlock or "WWL_BP.dll" for world war legion BP unlock with the size of ~250KB.
 if this file doesnt exists your download doesnt work / antivirus deletes the file.
 if the file exists but the unlock doesnt work the execution might stuck.
 you could try to manual inject the .dll file.
-open devil engine, run combat master, start the CM ultimate table, press hotkey CTRL+m to opene memory viewer, press hotkey CTRL+i,
-and select the BP unlock .dll bundled with the release (example BP unlock S4 24.26.dll)
-you get asked to execute the function of the .dll press yes. press ok.
-if that doesnt work it might be outdated (check your game version).
+run combat master, start a table, press hotkey CTRL+m to open memory viewer, press hotkey CTRL+i,
+and select the BP unlock .dll ( C:\ or the the download location if you get a .dll from the release assets ).
 
-alternative you can manually download the latest commit of the BP unlock on github.
-https://github.com/ZoDDeL/CM-Ultimate/blob/main/BattlepassHUABYJoelmatic.dll
-(safe link as / save file as)
+you get asked to execute the function of the .dll press yes. press ok.
+if that doesnt work it might be outdated.
+check your game version (options or in a match bottom right).
 
 
 last words:
@@ -160,15 +157,15 @@ same goes for the BP unlock.
 because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
 if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
 same goes for saying XY isnt working.
-so if you read this guide add "Hedgehog" to your youtube comment.
+so if you read this guide add "MasterSword" to your youtube comment.
 
 NO REQUESTS!!!
-i dont do solve any requests. i have neither the time nor the interest in doing abc to xyz mobile game / online only stuff.
-primarily i do tables for singleplayer games with a few exceptions. games that iam interested in and that are not in common public trainers (wemod, fling etc.) exists or because of a missing feature.
-i also dont add new features to comkbat master. i stopped research new stuff for a while since its not worth the effort. from season 1 to now (S4) nobody donated anything!
+i dont solve any requests. i have neither the time nor the interest in doing abc to xyz mobile game / online only stuff.
+mostly i do tables for singleplayer games with a few exceptions. games that iam interested in and that are not in common public trainers (wemod, fling etc.) exists or because of a missing feature.
+i also dont add new features to the table. i stopped researching new stuff for a while since its not worth the effort.
 we have de facto everything with the multiSwapper alone and with all the unlocker/free/instant scripts most of the stuff is permanent unlocked.
 updating each script once the game got updated take a lot of time. thats why i dropped some scripts (inf ammo lobby, inf streaks lobby etc.) over time because they were not very usefull in the current state.
-also nobody else does anything for combat master since season 1 (exception joelmatics BP unlock source in S3) and really nobody else beside me did ever anything in the cheat engine format (at least not public).
+
 
 CREDITS:
 credits to FireNinja who spend alot time to help me with annoying tasks in the multiSwapper and gave some usefull ideas and clues (nameless plugin, mass hex edit)
@@ -355,3 +352,4 @@ NO REQUESTS!!!
 归功于 FireNinja，他花费了大量时间帮助我处理多 Swapper 中的烦人任务，并提供了一些有用的想法和线索（匿名插件、批量十六进制编辑）
 归功于 Verity，他在 S1 中的启发式工作（我根据他的 CM-Lite 黑客给我的表格命名，甚至想出了一个类似于他的机器人吸尘器的 CE 脚本）
 归功于 UC 的先驱们，他们首先挖掘/调试了 1 赛季前的战斗大师，这样我就能获得关于 Unity Explorer 和 Melon Loader 的信息，以修改游戏的内部并带到 Cheat Engine 中。
+
