@@ -12,11 +12,13 @@ repeat this step for each other devil engine exe
 
 
 download the table under assets.
+https://github.com/ZoDDeL/CM-Ultimate/releases
 CM_Ultimate.DE / WWL_Ultimate.DE
 
 
 OPTIONAL:
 download the battlepass unlock under assets.
+https://github.com/ZoDDeL/CM-Ultimate/releases
 CM_BP.dll / WWL_BP.dll
 for manual BP unlock instead of the inbuild injection logic (download + inject at 1 click)
 
@@ -352,3 +354,4 @@ NO REQUESTS!!!
 感谢 FireNinja，他花费了大量时间帮助我处理 multiSwapper 中的烦人任务，并提供了有用的想法和线索（匿名插件，大量十六进制编辑）
 感谢 Verity，他在 S1 中的启发性工作（我以他的 CM-Lite 破解版命名了我的表格，甚至想出了制作类似他的机器人吸尘器的 CE 脚本）
 感谢 UC 的先驱者，他们首先数据挖掘/调试了《战斗大师》预季 1，使我能够获取关于 Unity Explorer 和 Melon Loader 的信息，以修改游戏内部并将其带到作弊引擎中。
+
