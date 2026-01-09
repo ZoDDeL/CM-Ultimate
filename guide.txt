@@ -4,6 +4,7 @@ https://github.com/ZoDDeL/CM-Ultimate/releases/download/0.25.17_20.may.2025/Devi
 and extract it somewhere with a short path like D:\devil_engine_666
 when you cannot extract the .zip it might be your windows defender / antivirus program that hold the archive hostage (false positive).
 so you need to whitelist the .zip or temporary disable defender / antivirus!
+(real time protection and anti tamper)
 
 open the folder and make sure each devil engine exe runs as admin!
 right click on Devil Engine.exe > Properties > Compatibility > checkmark (Run this program as administrator).
@@ -16,15 +17,10 @@ https://github.com/ZoDDeL/CM-Ultimate/releases
 CM_Ultimate.DE / WWL_Ultimate.DE
 
 
-OPTIONAL:
-download the battlepass unlock under assets.
-https://github.com/ZoDDeL/CM-Ultimate/releases
-CM_BP.dll / WWL_BP.dll
-for manual BP unlock instead of the inbuild injection logic (download + inject at 1 click)
-
-
 step 1.
 run devil engine.exe (in the devil engine 666 folder)
+(devil engine.exe isnt the real devil engine its just a launcher that runs the right DE for you.
+some people have problems with that. just try to devilengine-x86_64.exe or devilengine-i386.exe instead)
 
 do the first time setup:
 go to Edit > Settings > General Settings
@@ -35,7 +31,7 @@ OPTIONAL (currently not required for the new devil engine build 7.6!)
 go to plugins ( Edit > Settings > Plugins )
 hit "Add new" go into devil engine 666 folder
 and select nameless64.dll then hit open
-hit the checkbox beside the plugin
+hit the checkbox aside the plugin
 if you see the titlebar constantly change to a random name everything worked fine.
 (keep in mind that changing the path of devil engine or renaming the folder will break
 the plugin setting and you need to redo this step!)
@@ -47,12 +43,13 @@ associate the filetype .DE (CM_Ultimate.DE or WWL_Ultimate.DE) with devil engine
 (this is for windows 10 and might be different in windows 11)
 right click on CM_Ultimate.DE / WWL_Ultimate.DE, properties, aside "opens with:" click on "change"
 click "more apps" and scroll down and click "look for another app on this pc"
-now navigate into the devil_engine_666 folder and select "Devil Engine.exe"
+now navigate into the devil_engine_666 folder and select "Devil Engine.exe" or
+"devilengine-x86_64.exe" or "devilengine-i386.exe"
 
-now you can execute the table via doubleclick and running devil engine first is not needed anymore.
+now you can execute the table by doubleclick instead of running devil engine first.
 (but run the game before and wait until you see your character)
 
-run the game and whenn you are in the main screen (shows your character) you can run the table (CM_Ultimate.DE or WWL_Ultimate.DE).
+run the game and when you are in the main screen (shows your character) you can run the table (CM_Ultimate.DE or WWL_Ultimate.DE).
 
 
 without file type association:
@@ -60,18 +57,22 @@ run combat master / world war leagion
 drag and drop the table (CM_Ultimate.DE or WWL_Ultimate.DE) file into the open Devil Engine window
 or press hotkey ctrl+o and select the table (CM_Ultimate.DE or WWL_Ultimate.DE)
 or use the yellow folder button with the little green arrow in the top left
-and select the table (CM_Ultimate.DE or WWL_Ultimate.DE
+and select the table (CM_Ultimate.DE or WWL_Ultimate.DE)
 
 
 
 how to use battlepass unlock:
-before you start make sure that you dont activate ANY other script before the injection!!!
+before you start make sure that you dont activate ANY other script before!!!
 if you already have any script active, disable them and close the game to start over.
 
-hit the injection button once.
-you should hear a beep sound (if not something gone wrong)
+click the checkbox aside the BP unlock script.
+
 then you just have to change your operator by equipping another.
 this will trigger the buying of the battlepass.
+you should see that the operator from the BP should show up in your operator list.
+next disable the script.
+(while the script is active you cannot change your operator skins!)
+
 keep in mind you still have to level the battlepass to unlock every item
 or just use the multiSwapper.
 best way to level the battlepass is in custom lobby with bots.
@@ -79,6 +80,10 @@ best scripts for that task:
 mega XP (dont forget to switch the toggle from off to mega)
 bot vacuum
 super passive bots
+also the engine speedhack is usefull (x2-x5).
+at the top of the table hit "full view mode".
+on the right edge of the table hit the checkmark for "enable sp33Dh4Ck" and enter a number.
+make sure to have v-sync diabled ingame (fps limit is okay ingame or by rtss, nvidia driver etc.)
 
 
 what is devilengine?
@@ -92,6 +97,7 @@ problems , crashes:
 THE GAME CLOSES ITSELF (false claimed as crash)
 you should close your browser, discord and unnessary folders before running the table because the tripwire closes your
 game if it founds any blacklisted words / strings in your opened processes, folders, browser tabs etc.
+a reboot may help.
 if it still closes after you 100% read this guide,
 (using devil engine on a short clean path, nameless plugin runs and constantly renames the devil engine frames
 no background applications like discord a browser etc. and no open files, folders or pathes that include any
@@ -134,24 +140,6 @@ means you didnt proper disable scripts before.
 the only way to fix this is to restart your pc.
 
 
-battlepass unlock doesnt work.
-first make sure you have the latest .net framework / latest 64bit vc redist.
-you need to be admin on windows! try to run devil engine as admin.
-maybe your anti-virus blocks / deletes the unlock .dll in that case disable your antivirus software.
-maybe you pc / internet is slow. retry the injection (click the "injection done" text once more).
-check if the file download was okay by looking at C:\ for a file called "BattlepassHUABYJoelmatic.dll" (pre WWL era)
-or "CM_BP.dll" for recent combat master BP unlock or "WWL_BP.dll" for world war legion BP unlock with the size of ~250KB.
-if this file doesnt exists your download doesnt work / antivirus deletes the file.
-if the file exists but the unlock doesnt work the execution might stuck.
-you could try to manual inject the .dll file.
-run combat master, start a table, press hotkey CTRL+m to open memory viewer, press hotkey CTRL+i,
-and select the BP unlock .dll ( C:\ or the the download location if you get a .dll from the release assets ).
-
-you get asked to execute the function of the .dll press yes. press ok.
-if that doesnt work it might be outdated.
-check your game version (options or in a match bottom right).
-
-
 last words:
 there is one unversal rule>
 if table version = game version then everything works!
@@ -159,7 +147,7 @@ same goes for the BP unlock.
 because i have to manually upload commits to github with the version name and i only do it with stuff i tested /  fixed.
 if you request help in comments of my youtube channel and dont write your gameversion + table version expect to get handled rude!
 same goes for saying XY isnt working.
-so if you read this guide add "MasterSword" to your youtube comment.
+so if you read this guide add "Clair Obscur" to your youtube comment.
 
 NO REQUESTS!!!
 i dont solve any requests. i have neither the time nor the interest in doing abc to xyz mobile game / online only stuff.
@@ -170,6 +158,7 @@ updating each script once the game got updated take a lot of time. thats why i d
 
 
 CREDITS:
+credits to Dark Byte for creating cheat engine.
 credits to FireNinja who spend alot time to help me with annoying tasks in the multiSwapper and gave some usefull ideas and clues (nameless plugin, mass hex edit)
 credits to Verity for his inspiring work in S1 ( i named my table after his CM-Lite hack and even figured out to make a CE script similar to his bot vacuum)
 credits to the pioneers at UC who firstly datamined / debugged  combat master pre season 1 so i could get the info about unity explorer and melon loader to modify internals of the game and bring them over to cheat engine.
@@ -354,3 +343,4 @@ NO REQUESTS!!!
 归功于 FireNinja，他花费了大量时间帮助我处理多 Swapper 中的烦人任务，并提供了一些有用的想法和线索（匿名插件、批量十六进制编辑）
 归功于 Verity，他在 S1 中的启发式工作（我根据他的 CM-Lite 黑客给我的表格命名，甚至想出了一个类似于他的机器人吸尘器的 CE 脚本）
 归功于 UC 的先驱们，他们首先挖掘/调试了 1 赛季前的战斗大师，这样我就能获得关于 Unity Explorer 和 Melon Loader 的信息，以修改游戏的内部并带到 Cheat Engine 中。
+
