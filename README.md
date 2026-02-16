@@ -3,6 +3,8 @@
 ## 🔥 An Advanced Devil Engine Table for Combat Master
 (Devil Engine is a Hex Edit of Cheat Engine!)
 
+
+![table_preview](table 0.29.2.png)
 ---
 
 ## ✨ Included Features
