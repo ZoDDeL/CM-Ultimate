@@ -10,6 +10,7 @@
 ## ✨ Included Features
 
 ### 🔓 **[Unlockers]**  
+- Battlepass (gives you the current season battlepass FREE)
 - Bundles (makes all shop bundles FREE)
 - Blackmarket (every chest is free / Cost 0 CP)
 - Operations (unlock operation rewards without the need of playing them + sets CP rewards to 15000)
@@ -30,11 +31,11 @@
 
 ### 🎯 **[Misc]**  
 - No recoil
-- Infinite jumps
+- Infinite jumps + No Fall Damage
 - Instant max level for player and weapons
 
 ### 🏹 **[Extras]**  
-- External loading of .dll files directly from GitHub (BattlePass unlock / ESP hack etc.)
+- loading of .dll files to inject them (BattlePass unlock on older versions / ESP hack etc.)
 - one click create an backup of your local player profile / savegame (use it often to avoid data loss by buggy cloud saving!!!)
 
 ---
