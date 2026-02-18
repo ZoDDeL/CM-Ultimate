@@ -4,7 +4,7 @@
 (Devil Engine is a Hex Edit of Cheat Engine!)
 
 
-![table_preview](https://github.com/ZoDDeL/CM-Ultimate/blob/b37f46cf72aeda1445250f056ceb0884d5614e53/table%200.29.2.png)
+![table_preview](table%200.29.2.png)
 ---
 
 ## ✨ Included Features
