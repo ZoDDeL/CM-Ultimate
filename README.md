@@ -1,6 +1,6 @@
-# CM-Ultimate
+# CM-Ultimate / WWL-Ultimate
 
-## 🔥 An Advanced Devil Engine Table for Combat Master
+## 🔥 An Advanced Devil Engine Table for Combat Master / World War Legion
 (Devil Engine is a Hex Edit of Cheat Engine!)
 
 
@@ -74,17 +74,8 @@ To run the Devil Engine Table, you need Devil Engine.
 
 ## 📥 Download
 
-🔗 [Download CM-Ultimate Table](https://github.com/ZoDDeL/CM-Ultimate/releases)
+🔗 [Download CM-Ultimate / WWL-Ultimate Table](https://github.com/ZoDDeL/CM-Ultimate/releases)
 (look in assets)
-
----
-
-## ⚠️ Important: Getting the Latest Version
-
-### 📌 How to Update to the Latest Version
-1. Click on the **"Download latest Table"** button at the top right of the table header.
-2. This will download the most recent commit and replace its contents.
-3. Save the new version: **File → Save** or check `C:/CM_Ultimate.DE`.
 
 ---
 
@@ -93,7 +84,7 @@ To run the Devil Engine Table, you need Devil Engine.
 
 ---
 
-💀 Enjoy CM-Ultimate and dominate Combat Master! 💀
+💀 Enjoy CM-Ultimate / WWL-Ultimate and dominate! 💀
 
 &nbsp;
 
