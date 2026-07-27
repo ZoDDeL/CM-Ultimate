@@ -27,7 +27,7 @@ go to Edit > Settings > General Settings
 set "Table: Lua script" to "Always"
 
 
-OPTIONAL (currently not required for the new devil engine build 7.6!)
+OPTIONAL (currently not required for the new devil engine build 7.6/7.7!)
 go to plugins ( Edit > Settings > Plugins )
 hit "Add new" go into devil engine 666 folder
 and select nameless64.dll then hit open
