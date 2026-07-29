@@ -5,6 +5,7 @@ and extract it somewhere with a short path like D:\devil_engine_666
 when you cannot extract the .zip it might be your windows defender / antivirus program that hold the archive hostage (false positive).
 so you need to whitelist the .zip or temporary disable defender / antivirus!
 (real time protection and anti tamper)
+the password is: zoddel
 
 open the folder and make sure each devil engine exe runs as admin!
 right click on Devil Engine.exe > Properties > Compatibility > checkmark (Run this program as administrator).
