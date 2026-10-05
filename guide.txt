@@ -48,7 +48,6 @@ now navigate into the devil_engine_666 folder and select "Devil Engine.exe" or
 "devilengine-x86_64.exe" or "devilengine-i386.exe"
 
 now you can execute the table by doubleclick instead of running devil engine first.
-(but run the game before and wait until you see your character)
 
 
 without file type association:
