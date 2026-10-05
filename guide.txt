@@ -50,8 +50,6 @@ now navigate into the devil_engine_666 folder and select "Devil Engine.exe" or
 now you can execute the table by doubleclick instead of running devil engine first.
 (but run the game before and wait until you see your character)
 
-run the game and when you are in the main screen (shows your character) you can run the table (CM_Ultimate.DE or WWL_Ultimate.DE).
-
 
 without file type association:
 run combat master / world war leagion
