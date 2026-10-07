@@ -3,8 +3,7 @@
 ## 🔥 An Advanced Devil Engine Table for Combat Master / World War Legion
 (Devil Engine is a Hex Edit of Cheat Engine!)
 
-
-![table_preview](https://github.com/ZoDDeL/CM-Ultimate/blob/main/table%200.29.2.png)
+![table_preview](https://github.com/ZoDDeL/CM-Ultimate/blob/main/latest_table.png)
 ---
 
 ## ✨ Included Features
